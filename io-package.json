@@ -1,0 +1,76 @@
+{
+	"common": {
+		"name": "accuweather",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "AccuWeather",
+		"titleLang": {
+			"en": "AccuWeather",
+			"de": "AccuWeather",
+			"ru": "AccuWeather",
+			"pt": "AccuWeather",
+			"nl": "AccuWeather",
+			"fr": "AccuWeather",
+			"it": "AccuWeather",
+			"es": "AccuWeather",
+			"pl": "AccuWeather",
+			"zh-cn": "机构AccuWeather"
+		},
+		"desc": {
+			"en": "Weather forecast using AccuWeather API",
+			"de": "Wettervorhersage mit AccuWeather API",
+			"ru": "Прогноз погоды с использованием AccuWeather API",
+			"pt": "Previsão do tempo usando a API AccuWeather",
+			"nl": "Weersverwachting met AccuWeather API",
+			"fr": "Prévisions météorologiques à l'aide de l'API AccuWeather",
+			"it": "Previsioni del tempo utilizzando l'API AccuWeather",
+			"es": "Pronóstico del tiempo usando AccuWeather API",
+			"pl": "Prognoza pogody za pomocą interfejsu API AccuWeather",
+			"zh-cn": "使用AccuWeather API的天气预报"
+		},
+		"authors": [
+			"algar42 <igor.aleschenkov@gmail.com>"
+		],
+		"keywords": [
+			"Weather",
+			"AccuWeather",
+			"Forecast"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "accuweather.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/algar42/ioBroker.accuweather/master/admin/accuweather.png",
+		"readme": "https://github.com/algar42/ioBroker.accuweather/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "weather",
+		"compact": true,
+		"materialize": true,
+		"dependencies": [
+			{
+				"js-controller": ">=1.4.2"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
