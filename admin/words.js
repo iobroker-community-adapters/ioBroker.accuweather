@@ -14,28 +14,40 @@ systemDictionary = {
 		"pl": "Ustawienia adaptera dla accuweather",
 		"zh-cn": "accuweather的适配器设置"
 	},
-	"option1": {
-		"en": "option1",
-		"de": "Option 1",
-		"ru": "Опция 1",
-		"pt": "Opção 1",
-		"nl": "Optie 1",
-		"fr": "Option 1",
-		"it": "opzione 1",
-		"es": "Opción 1",
-		"pl": "opcja 1",
-		"zh-cn": "选项1"
+	"apiKey": {
+		"en": "API Key",
+		"de": "API-Schlüssel",
+		"ru": "Ключ API",
+		"pt": "Chave API",
+		"nl": "API sleutel",
+		"fr": "clé API",
+		"it": "Chiave API",
+		"es": "Clave API",
+		"pl": "Klucz API",
+		"zh-cn": "API密钥"
 	},
-	"option2": {
-		"en": "option2",
-		"de": "Option 2",
-		"ru": "option2",
-		"pt": "opção 2",
-		"nl": "Optie 2",
-		"fr": "Option 2",
-		"it": "opzione 2",
-		"es": "opcion 2",
-		"pl": "Opcja 2",
-		"zh-cn": "选项2"
+	"loKey": {
+		"en": "Location Key",
+		"de": "Standortschlüssel",
+		"ru": "Ключ местоположения",
+		"pt": "Chave de localização",
+		"nl": "Locatiesleutel",
+		"fr": "Clé de localisation",
+		"it": "Chiave di posizione",
+		"es": "Clave de ubicación",
+		"pl": "Klucz lokalizacji",
+		"zh-cn": "位置键"
+	},
+	"language": {
+		"en": "Language",
+		"de": "Sprache",
+		"ru": "язык",
+		"pt": "Língua",
+		"nl": "Taal",
+		"fr": "La langue",
+		"it": "linguaggio",
+		"es": "Idioma",
+		"pl": "Język",
+		"zh-cn": "语言"
 	}
 };

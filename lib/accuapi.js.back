@@ -1,0 +1,99 @@
+const request = require('request-promise')
+	
+
+	const accuapi = () => {
+	  return (API_KEY) => {
+	    const baseUrl = 'http://dataservice.accuweather.com'
+	
+	    //adapter.log.info(baseUrl);	
+	    // Queries all location keys based on keyword search
+	    const queryLocations = query => {
+	      const params = {
+	        url: baseUrl + '/locations/v1/cities/autocomplete',
+	        qs: {apikey: API_KEY, q: query},
+	        json: true
+	      }
+	      return request(params)
+	        .then(resp => resp)
+	        .catch(err => console.error(err))
+	    }
+	
+
+	    // Gets the first result for AccuWeather-specific location keys so that a query can be made to get the weather
+	    const getFirstLocationKey = query => queryLocations(query)
+	        .then(([body,]) => body ? body.Key : undefined)
+	        .catch(err => console.error(err))
+	
+
+	    // Gets location key from object containing { lat: Number, long: Number }
+	    const getGeoLocation = ({lat, long}) => {
+	      const queryString = lat.toString() + ', ' + long.toString()
+	      const params = {
+	        url: baseUrl + '/locations/v1/cities/geoposition/search',
+	        qs: {apikey: API_KEY, q: queryString},
+	        json: true
+	      }
+	      return request(params)
+	        .then(resp => resp.Key)
+	        .catch(err => console.error(err))
+	    }
+	
+
+	    /*
+	    Takes string of keyword, string/number of location key,
+	    or object containing {lat: Number, long: Number}
+	     */
+	    const getCurrentConditions = (query, options) => {
+	      if ((typeof query !== 'string' && typeof query !== 'number' && typeof query !== 'object')
+	        || Array.isArray(query)) {
+	        throw new TypeError('Query argument should be string, number, or object, instead received ' + typeof query)
+	      }
+	
+	      console.log(API_KEY);	
+	      const unit = options ? options.unit : "Farenheit"
+	      // If query is a string, then do a keyword search and return the most relevant result's location key.
+	      // If query is a number (it is the location Key) then use that key
+	      const locationKey = typeof query === 'object' ? getGeoLocation(query) :
+	                          isNaN(query) ? getFirstLocationKey(query) : Promise.resolve(parseInt(query))
+	      return locationKey
+	        .then(key => key ? key : Promise.reject('No result found for query'))
+	        .then(key => {
+	          const params = {
+	            url: baseUrl + '/currentconditions/v1/' + key,
+	            qs: {apikey: API_KEY, details: true},
+	            json: true
+	          }
+	          return request(params)
+	        })
+	        .then(([body,]) => {
+	          if (unit == "Farenheit") {
+	            return {
+	              Summary: body.WeatherText,
+	              Temperature: body.Temperature.Imperial.Value,
+	              RealFeel: body.RealFeelTemperature.Imperial.Value,
+	              Precipitation: body.Precip1hr.Imperial
+	            }
+	          } else {
+	            return {
+	              Summary: body.WeatherText,
+	              Temperature: body.Temperature.Metric.Value,
+	              RealFeel: body.RealFeelTemperature.Metric.Value,
+	              Precipitation: body.Precip1hr.Metric
+	            }
+	          }
+	        })
+	        .catch(err => console.error(err))
+	    }
+	
+
+	    return {
+	      queryLocations,
+	      getCurrentConditions
+	    }
+	  }
+	}
+	
+
+	module.exports = accuapi
+
+

@@ -68,8 +68,9 @@
 		]
 	},
 	"native": {
-		"option1": true,
-		"option2": "42"
+		"apiKey": "",
+		"loKey": "",
+		"language": "en-us"
 	},
 	"objects": [],
 	"instanceObjects": []
