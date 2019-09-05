@@ -2,7 +2,7 @@
 .idea
 node_modules
 nbproject
-
+lib/test-data
 # npm package files
 iobroker.*.tgz
 
