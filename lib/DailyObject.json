@@ -102,6 +102,17 @@
         },
         "native": {}
     },
+    "Daily.dayn.dayPart.IconURLS": {
+        "type": "state",
+        "common": {
+            "name": "SVG Weather Icon URL",
+            "type": "string",
+            "read": "true",
+            "write": "false",
+            "role": "media.url"
+        },
+        "native": {}
+    },
     "Daily.dayn.dayPart.IconPhrase": {
         "type": "state",
         "common": {

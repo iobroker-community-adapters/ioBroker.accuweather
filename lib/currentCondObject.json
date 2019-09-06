@@ -32,6 +32,17 @@
         },
         "native": {}
     },
+    "nextHour.WeatherIconURLS": {
+        "type": "state",
+        "common": {
+            "name": "SVG Weather Icon URL",
+            "type": "string",
+            "read": "true",
+            "write": "false",
+            "role": "media.url"
+        },
+        "native": {}
+    },
     "nextHour.WeatherText": {
         "type": "state",
         "common": {

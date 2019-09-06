@@ -66,8 +66,12 @@ class Accuweather extends utils.Adapter {
 								for (let key1 in json1) {
 									if (typeof json1[key1] !== "object") {
 										await this.setStateAsync("Daily.Day" + day + "." + key + "." + key1, { val: json1[key1], ack: true });
-										if (key1==="Icon") {await this.setStateAsync("Daily.Day" + day + "." + key + ".IconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json1[key1]).padStart(2, "0")+"-s.png", ack: true });}
+										if (key1==="Icon") {
+											await this.setStateAsync("Daily.Day" + day + "." + key + ".IconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json1[key1]).padStart(2, "0")+"-s.png", ack: true });
+											await this.setStateAsync("Daily.Day" + day + "." + key + ".IconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/"+String(json1[key1]).padStart(2, "0")+".svg", ack: true });
+										}
 										//https://developer.accuweather.com/sites/default/files/36-s.png
+										//http://vortex.accuweather.com/adc2010/images/slate/icons/1.svg
 									} else
 									if (typeof json1[key1] == "object") {
 
@@ -102,7 +106,10 @@ class Accuweather extends utils.Adapter {
 			for (let key in json) {
 				if (typeof json[key] !== "object") {
 					await this.setStateAsync("Hourly.h" + hour + "." + key, { val: json[key], ack: true });
-					if (key==="WeatherIcon") {await this.setStateAsync("Hourly.h" + hour  + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json[key]).padStart(2, "0")+"-s.png", ack: true });}
+					if (key==="WeatherIcon") {
+						await this.setStateAsync("Hourly.h" + hour  + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json[key]).padStart(2, "0")+"-s.png", ack: true });
+						await this.setStateAsync("Hourly.h" + hour  + ".WeatherIconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/"+String(json[key]).padStart(2, "0")+".svg", ack: true });
+					}
 				} else
 				if (typeof json[key] == "object") {
 
@@ -130,7 +137,10 @@ class Accuweather extends utils.Adapter {
 				//this.log.debug("Current: " + key + ": " + typeof json[key]);
 				if (typeof json[key] !== "object" && json[key] !== null) {
 					await this.setStateAsync("Current." + key, { val: json[key], ack: true });
-					if (key==="WeatherIcon") {await this.setStateAsync("Current" + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json[key]).padStart(2, "0")+"-s.png", ack: true });}
+					if (key==="WeatherIcon") {
+						await this.setStateAsync("Current" + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json[key]).padStart(2, "0")+"-s.png", ack: true });
+						await this.setStateAsync("Current" + ".WeatherIconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/"+String(json[key]).padStart(2, "0")+".svg", ack: true });
+					}
 				}
 				else if (json[key] !== null) {
 					if (json[key].Metric !== undefined) {
