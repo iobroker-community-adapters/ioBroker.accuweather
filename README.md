@@ -14,74 +14,28 @@
 
 Weather forecast using AccuWeather API
 
-## Developer manual
-This section is intended for the developer. It can be deleted later
+Adapter receives Current Conditions (updated every hour), 5 Days daily forecast (update once daily at approximately 7am), and 12 hours forecast (updated every six hours at 12am, 6am, 12pm and 6pm). 
 
-### Getting started
+## Getting started
 
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.accuweather`
-1. Initialize the current folder as a new git repository:  
-	```bash
-	git init
-	git add .
-	git commit -m "Initial commit"
-	```
-1. Link your local repository with the one on GitHub:  
-	```bash
-	git remote add origin https://github.com/algar42/ioBroker.accuweather
-	```
+### Get API Key
 
-1. Push all files to the GitHub repo:  
-	```bash
-	git push origin master
-	```
-1. Head over to [main.js](main.js) and start programming!
+To get API Key, register on https://developer.accuweather.com/ and create application in \"My Apps\" menu. Once application created you will have API key generated. 
+For free use it is possible to make 50 requests to API. 
 
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description                                              |
-|-------------|----------------------------------------------------------|
-| `test:js`   | Executes the tests you defined in `*.test.js` files.     |
-| `test:package`    | Ensures your `package.json` and `io-package.json` are valid. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `coverage` | Generates code coverage using your test files. |
+### Get Location Key
 
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
+In order to get location key, go to https://www.accuweather.com/ and enter your city name, or try to enter your coordinates (latitude, longitude) as you have them e.g. in IoBroker settings. 
+Your location key wil be the number at the end of URL of forecast.
 
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-See the documentation of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually on a local ioBroker installation
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-	```bash
-	npm pack
-	```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-	```bash
-	cd /opt/iobroker
-	npm i /path/to/tarball.tgz
-	```
-
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.accuweather`)
-1. Execute `iobroker upload accuweather` on the ioBroker host
 
 ## Changelog
 
+### 0.1.0
+* (algar42) First release
+
 ### 0.0.1
-* (algar42) initial release
+* (algar42) initial commit
 
 ## License
 MIT License
