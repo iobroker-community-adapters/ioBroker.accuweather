@@ -19,7 +19,18 @@
             "write": "false",
             "role": "value"
         },
-        "native": {"iconURL":""}
+        "native": {}
+    },
+    "nextHour.WeatherIconURL": {
+        "type": "state",
+        "common": {
+            "name": "Weather Icon URL",
+            "type": "string",
+            "read": "true",
+            "write": "false",
+            "role": "media.url"
+        },
+        "native": {}
     },
     "nextHour.WeatherText": {
         "type": "state",
