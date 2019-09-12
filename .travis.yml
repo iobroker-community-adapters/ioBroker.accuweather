@@ -29,3 +29,4 @@ script:
   - npm run test:unit
   - export DEBUG=testing:*
   - npm run test:integration
+
