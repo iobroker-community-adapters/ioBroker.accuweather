@@ -8,6 +8,11 @@ node_js:
   - '8'
   - '10'
 
+deploy:
+  provider: npm
+  email: "igor.aleschenkov@gmail.com"
+  api_key: "76c29029-2db0-4097-9050-ba576b965613"
+
 env:
   - CXX=g++-4.8
 addons:
