@@ -1,8 +1,20 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "0.1.0",
+		"version": "1.0.0",
 		"news": {
+			"1.0.0": {
+   				 "en": "Production release",
+			         "de": "Produktionsfreigabe",
+                                 "ru": "Первая Версия",
+			         "pt": "Lançamento de produção",
+                                 "nl": "Productie release",
+                                 "fr": "Production",
+                                 "it": "Rilascio di produzione",
+                                 "es": "Lanzamiento de la producción",
+                                 "pl": "Dopuszczenie do produkcji",
+                                 "zh-cn": "生产发布"
+                        },
 			"0.1.0": {
 				"en": "initial release",
 				"de": "Erstveröffentlichung",
