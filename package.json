@@ -1,6 +1,6 @@
 {
   "name": "iobroker.accuweather",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Weather forecast using AccuWeather API",
   "author": {
     "name": "algar42",
@@ -58,6 +58,9 @@
   },
   "bugs": {
     "url": "https://github.com/algar42/ioBroker.accuweather/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "readmeFilename": "README.md"
 }
