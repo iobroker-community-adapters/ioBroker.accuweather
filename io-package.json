@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "1.0.1",
+		"version": "1.0.0",
 		"news": {
 			"1.0.1": {
    				 "en": "Production release",
