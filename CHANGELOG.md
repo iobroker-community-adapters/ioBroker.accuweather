@@ -6,5 +6,5 @@
 	(at the beginning of a new line )
 -->
 
-## __WORK IN PROGRESS__
+## v1.0.2 (2019-09-12)
 
