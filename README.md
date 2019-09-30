@@ -31,8 +31,8 @@ Your location key wil be the number at the end of URL of forecast.
 
 ## Changelog
 
-### 0.1.0
-* (algar42) First release
+### 1.0.2
+* (algar42) Production Releas
 
 ### 0.0.1
 * (algar42) initial commit
