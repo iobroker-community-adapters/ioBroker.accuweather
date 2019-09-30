@@ -8,7 +8,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.accuweather.png?downloads=true)](https://nodei.co/npm/iobroker.accuweather/)
 
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/algar42/ioBroker.accuweather/master.svg)](https://travis-ci.org/algar42/ioBroker.accuweather)
+**Tests:**: [![Travis-CI](http://img.shields.io/travis/algar42/ioBroker.accuweather/master.svg)](https://travis-ci.org/algar42/ioBroker.accuweather) [![Greenkeeper badge](https://badges.greenkeeper.io/iobroker-community-adapters/ioBroker.accuweather.svg)](https://greenkeeper.io/)
 
 ## accuweather adapter for ioBroker
 
