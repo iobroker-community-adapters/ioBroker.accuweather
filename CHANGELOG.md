@@ -7,4 +7,5 @@
 -->
 
 ## v1.0.2 (2019-09-12)
+ Production Release
 
