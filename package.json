@@ -6,7 +6,7 @@
     "name": "algar42",
     "email": "igor.aleschenkov@gmail.com"
   },
-  "homepage": "https://github.com/algar42/ioBroker.accuweather",
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.accuweather",
   "license": "MIT",
   "keywords": [
     "Weather",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/algar42/ioBroker.accuweather"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.accuweather"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^1.0.3",
@@ -57,7 +57,7 @@
     "lint": "eslint"
   },
   "bugs": {
-    "url": "https://github.com/algar42/ioBroker.accuweather/issues"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.accuweather/issues"
   },
   "publishConfig": {
     "access": "public"
