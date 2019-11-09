@@ -33,59 +33,91 @@ class Accuweather extends utils.Adapter {
 
 
 
-	/**
-	 * Is called when databases are connected and adapter received configuration.
-	 */
+	getCardinalDirection(angle) {
+		if (typeof angle === "string") angle = parseInt(angle);
+		if (angle <= 0 || angle > 360 || typeof angle === "undefined") return "☈";
+		const arrows = { north: "↑N", north_east: "↗NE", east: "→E", south_east: "↘SE", south: "↓S", south_west: "↙SW", west: "←W", north_west: "↖NW" };
+		const directions = Object.keys(arrows);
+		const degree = 360 / directions.length;
+		angle = angle + degree / 4;
+		for (let i = 0; i < directions.length; i++) {
+			if (angle >= (i * degree) && angle < (i + 1) * degree) return arrows[directions[i]];
+		}
+		return arrows["north"];
+	}
 
-	async setDailyStates(obj) {
+
+	setDailyStates(obj) {
 		const days = obj.DailyForecasts;
 		try {
 			for (let day = 1; day <= 5; day++) {
-				let json = days[day - 1];
-				for (let key in json) {
+				const json = days[day - 1];
+				for (const key in json) {
+					let dt = null;
 					switch (key) {
 						case "Date":
-							await this.setStateAsync("Daily.Day" + day + "." + key, { val: json[key], ack: true });
+							dt = new Date(json[key]);
+							this.setState("Daily.Day" + day + "." + key, { val: json[key], ack: true });
+							this.setState("Summary.DateTime_d" + day, { val: json[key], ack: true });
+							this.setState("Summary.DayOfWeek_d"+day, { val: dt.toLocaleString(this.config.language, {weekday: "short"}), ack: true });
 							break;
 						case "Sun":
-							await this.setStateAsync("Daily.Day" + day + ".Sunrise", { val: json[key]["Rise"], ack: true });
-							await this.setStateAsync("Daily.Day" + day + ".Sunset", { val: json[key]["Set"], ack: true });
+							this.setState("Daily.Day" + day + ".Sunrise", { val: json[key]["Rise"], ack: true });
+							this.setState("Daily.Day" + day + ".Sunset", { val: json[key]["Set"], ack: true });
+							if (day == 1) {
+								this.setState("Summary.Sunrise", { val: json[key]["Rise"], ack: true });
+								this.setState("Summary.Sunset", { val: json[key]["Set"], ack: true });	
+							}
 							break;
 						case "Temperature":
-							await this.setStateAsync("Daily.Day" + day + ".Temperature.Minimum", { val: json[key]["Minimum"].Value, ack: true });
-							await this.setStateAsync("Daily.Day" + day + ".Temperature.Maximum", { val: json[key]["Maximum"].Value, ack: true });
+							this.setState("Daily.Day" + day + ".Temperature.Minimum", { val: json[key]["Minimum"].Value, ack: true });
+							this.setState("Daily.Day" + day + ".Temperature.Maximum", { val: json[key]["Maximum"].Value, ack: true });
+							this.setState("Summary.TempMin_d" + day, { val: json[key]["Minimum"].Value, ack: true });
+							this.setState("Summary.TempMax_d" + day, { val: json[key]["Maximum"].Value, ack: true });
 							break;
 						case "RealFeelTemperature":
-							await this.setStateAsync("Daily.Day" + day + ".RealFeelTemperature.Minimum", { val: json[key]["Minimum"].Value, ack: true });
-							await this.setStateAsync("Daily.Day" + day + ".RealFeelTemperature.Maximum", { val: json[key]["Maximum"].Value, ack: true });
+							this.setState("Daily.Day" + day + ".RealFeelTemperature.Minimum", { val: json[key]["Minimum"].Value, ack: true });
+							this.setState("Daily.Day" + day + ".RealFeelTemperature.Maximum", { val: json[key]["Maximum"].Value, ack: true });
 							break;
 						case "Day":
 						case "Night":
 							{
-								let json1 = json[key];
-								for (let key1 in json1) {
+								const json1 = json[key];
+								for (const key1 in json1) {
 									if (typeof json1[key1] !== "object") {
-										await this.setStateAsync("Daily.Day" + day + "." + key + "." + key1, { val: json1[key1], ack: true });
-										if (key1==="Icon") {
-											await this.setStateAsync("Daily.Day" + day + "." + key + ".IconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json1[key1]).padStart(2, "0")+"-s.png", ack: true });
-											await this.setStateAsync("Daily.Day" + day + "." + key + ".IconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/"+String(json1[key1]).padStart(2, "0")+".svg", ack: true });
+										this.setState("Daily.Day" + day + "." + key + "." + key1, { val: json1[key1], ack: true });
+										if (key1 === "Icon") {
+											this.setState("Daily.Day" + day + "." + key + ".IconURL", { val: "https://developer.accuweather.com/sites/default/files/" + String(json1[key1]).padStart(2, "0") + "-s.png", ack: true });
+											this.setState("Daily.Day" + day + "." + key + ".IconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/" + String(json1[key1]).padStart(2, "0") + ".svg", ack: true });
+											if (key == "Day") {
+												this.setState("Summary.WeatherIconURL_d" + day, { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/" + String(json1[key1]).padStart(2, "0") + ".svg", ack: true });
+												this.setState("Summary.WeatherIcon_d"+day, { val: json1[key1], ack: true });
+											}
+										} else
+										if (key == "Day") {
+											if (key1=="IconPhrase") {
+												this.setState("Summary.WeatherText_d"+day, { val: json1[key1], ack: true });
+											} else this.setState("Summary."+key1+"_d"+day, { val: json1[key1], ack: true });	
 										}
-										//https://developer.accuweather.com/sites/default/files/36-s.png
-										//http://vortex.accuweather.com/adc2010/images/slate/icons/1.svg
+										
 									} else
 									if (typeof json1[key1] == "object") {
 
 										if (json1[key1]["Value"] !== undefined) {
 											if (["TotalLiquid", "Rain", "Snow", "Ice"].includes(key1)) {
-												await this.setStateAsync("Daily.Day" + day + "." + key + "." + key1 + "Volume", { val: json1[key1].Value, ack: true });
-											} else { await this.setStateAsync("Daily.Day" + day + "." + key + "." + key1, { val: json1[key1].Value, ack: true }); }
+												this.setState("Daily.Day" + day + "." + key + "." + key1 + "Volume", { val: json1[key1].Value, ack: true });
+												this.setState("Summary." + key1 + "Volume_d" + day, { val: json1[key1].Value, ack: true });
+											} else { this.setState("Daily.Day" + day + "." + key + "." + key1, { val: json1[key1].Value, ack: true }); }
 										} else
 										if (key1 == "Wind") {
-											await this.setStateAsync("Daily.Day" + day + "." + key + ".WindSpeed", { val: json1[key1].Speed.Value, ack: true });
-											await this.setStateAsync("Daily.Day" + day + "." + key + ".WindDirection", { val: json1[key1].Direction.Degrees, ack: true });
+											this.setState("Daily.Day" + day + "." + key + ".WindSpeed", { val: json1[key1].Speed.Value, ack: true });
+											this.setState("Daily.Day" + day + "." + key + ".WindDirection", { val: json1[key1].Direction.Degrees, ack: true });
+											this.setState("Summary.WindSpeed_d"+day, { val: json1[key1].Speed.Value, ack: true });
+											this.setState("Summary.WindDirection_d"+day, { val: json1[key1].Direction.Degrees, ack: true });
+											this.setState("Summary.WindDirectionStr_d"+day, { val: this.getCardinalDirection(json1[key1].Direction.Degrees), ack: true });
 										} else
 										if (key1 == "WindGust") {
-											await this.setStateAsync("Daily.Day" + day + "." + key + ".WindGust", { val: json1[key1].Speed.Value, ack: true });
+											this.setState("Daily.Day" + day + "." + key + ".WindGust", { val: json1[key1].Speed.Value, ack: true });
 										}
 									}
 								}
@@ -96,66 +128,83 @@ class Accuweather extends utils.Adapter {
 					}
 				}
 			}
-			
+
 		} catch (err) { this.log.error(err); }
 	}
 
-	async setNextHourStates(obj, item, hour) {
+	setNextHourStates(obj, item, hour) {
 		const json = obj[item];
 		try {
-			for (let key in json) {
+			for (const key in json) {
 				if (typeof json[key] !== "object") {
-					await this.setStateAsync("Hourly.h" + hour + "." + key, { val: json[key], ack: true });
-					if (key==="WeatherIcon") {
-						await this.setStateAsync("Hourly.h" + hour  + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json[key]).padStart(2, "0")+"-s.png", ack: true });
-						await this.setStateAsync("Hourly.h" + hour  + ".WeatherIconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/"+String(json[key]).padStart(2, "0")+".svg", ack: true });
+					this.setState("Hourly.h" + hour + "." + key, { val: json[key], ack: true });
+					if (key === "WeatherIcon") {
+						this.setState("Hourly.h" + hour + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/" + String(json[key]).padStart(2, "0") + "-s.png", ack: true });
+						this.setState("Hourly.h" + hour + ".WeatherIconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/" + String(json[key]).padStart(2, "0") + ".svg", ack: true });
 					}
 				} else
 				if (typeof json[key] == "object") {
 
 					if (json[key]["Value"] !== undefined) {
 						if (["TotalLiquid", "Rain", "Snow", "Ice"].includes(key)) {
-							await this.setStateAsync("Hourly.h" + hour + "." + key + "Volume", { val: json[key].Value, ack: true });
-						} else { await this.setStateAsync("Hourly.h" + hour + "." + key, { val: json[key].Value, ack: true }); }
+							this.setState("Hourly.h" + hour + "." + key + "Volume", { val: json[key].Value, ack: true });
+						} else { this.setState("Hourly.h" + hour + "." + key, { val: json[key].Value, ack: true }); }
 					} else
 					if (key == "Wind") {
-						await this.setStateAsync("Hourly.h" + hour + ".WindSpeed", { val: json[key].Speed.Value, ack: true });
-						await this.setStateAsync("Hourly.h" + hour + ".WindDirection", { val: json[key].Direction.Degrees, ack: true });
+						this.setState("Hourly.h" + hour + ".WindSpeed", { val: json[key].Speed.Value, ack: true });
+						this.setState("Hourly.h" + hour + ".WindDirection", { val: json[key].Direction.Degrees, ack: true });
 					} else
 					if (key == "WindGust") {
-						await this.setStateAsync("Hourly.h" + hour + ".WindGust", { val: json[key].Speed.Value, ack: true });
+						this.setState("Hourly.h" + hour + ".WindGust", { val: json[key].Speed.Value, ack: true });
 					}
 				}
 			}
 		} catch (err) { this.log.error(err); }
 	}
 
-	async setCurrentStates(obj) {
+	setCurrentStates(obj) {
 		const json = obj[0];
 		try {
-			for (let key in json) {
+			for (const key in json) {
 				//this.log.debug("Current: " + key + ": " + typeof json[key]);
 				if (typeof json[key] !== "object" && json[key] !== null) {
-					await this.setStateAsync("Current." + key, { val: json[key], ack: true });
-					if (key==="WeatherIcon") {
-						await this.setStateAsync("Current" + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/"+String(json[key]).padStart(2, "0")+"-s.png", ack: true });
-						await this.setStateAsync("Current" + ".WeatherIconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/"+String(json[key]).padStart(2, "0")+".svg", ack: true });
+					this.setState("Current." + key, { val: json[key], ack: true });
+
+					if (key === "WeatherIcon") {
+						this.setState("Current" + ".WeatherIconURL", { val: "https://developer.accuweather.com/sites/default/files/" + String(json[key]).padStart(2, "0") + "-s.png", ack: true });
+						this.setState("Current" + ".WeatherIconURLS", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/" + String(json[key]).padStart(2, "0") + ".svg", ack: true });
+						this.setState("Summary.WeatherIconURL", { val: "http://vortex.accuweather.com/adc2010/images/slate/icons/" + String(json[key]).padStart(2, "0") + ".svg", ack: true });
+						this.setState("Summary.WeatherIcon", { val: json[key], ack: true });
+					} else
+					if (key === "LocalObservationDateTime") {
+						const dt = new Date(json[key]);
+						const dow = dt.toLocaleString(this.config.language, {weekday: "short"});
+						this.setState("Summary.CurrentDateTime", { val: json[key], ack: true });
+						this.setState("Summary.DayOfWeek", { val: dow, ack: true });
+						this.log.debug("Date " + dt + ", dow: "+ dt.toLocaleString(this.config.language, {weekday: "short"}));
+					}
+					else {
+						this.setState("Summary." + key, { val: json[key], ack: true });
 					}
 				}
 				else if (json[key] !== null) {
 					if (json[key].Metric !== undefined) {
 						//this.log.debug(key + ": " + json[key].Metric.Value);
-						await this.setStateAsync("Current." + key, { val: json[key].Metric.Value, ack: true });
+						this.setState("Current." + key, { val: json[key].Metric.Value, ack: true });
+						this.setState("Summary." + key, { val: json[key].Metric.Value, ack: true });
 					} else
 					if (key == "Wind") {
-						await this.setStateAsync("Current.WindSpeed", { val: json[key].Speed.Metric.Value, ack: true });
-						await this.setStateAsync("Current.WindDirection", { val: json[key].Direction.Degrees, ack: true });
+						this.setState("Current.WindSpeed", { val: json[key].Speed.Metric.Value, ack: true });
+						this.setState("Summary.WindSpeed", { val: json[key].Speed.Metric.Value, ack: true });
+						this.setState("Current.WindDirection", { val: json[key].Direction.Degrees, ack: true });
+						this.setState("Summary.WindDirection", { val: json[key].Direction.Degrees, ack: true });
+						this.setState("Summary.WindDirectionStr", { val: this.getCardinalDirection(json[key].Direction.Degrees), ack: true });
 					} else
 					if (key == "WindGust") {
-						await this.setStateAsync("Current.WindGust", { val: json[key].Speed.Metric.Value, ack: true });
+						this.setState("Current.WindGust", { val: json[key].Speed.Metric.Value, ack: true });
 					} else
 					if (key == "PressureTendency") {
-						await this.setStateAsync("Current.PressureTendency", { val: json[key].LocalizedText, ack: true });
+						this.setState("Current.PressureTendency", { val: json[key].LocalizedText, ack: true });
 					}
 				}
 			}
@@ -163,7 +212,7 @@ class Accuweather extends utils.Adapter {
 	}
 
 	setHourlyStates(obj) {
-		for (let hr in obj) {
+		for (const hr in obj) {
 			if (typeof obj[hr] == "object" && obj[hr]["DateTime"]) {
 				const d = new Date(obj[hr]["DateTime"]);
 				this.setNextHourStates(obj, hr, d.getHours());
@@ -238,6 +287,7 @@ class Accuweather extends utils.Adapter {
 		nextHour.createHourlyForecastObjects(this);
 		nextHour.createCurrentConditionObjects(this);
 		nextHour.createDailyForecastObjects(this);
+		nextHour.createSummaryObjects(this);
 
 		this.log.debug("API: " + this.config.apiKey + "; Loc: " + this.config.loKey + " Lang: " + this.config.language);
 
@@ -245,35 +295,18 @@ class Accuweather extends utils.Adapter {
 			this.forecast = new Accuapi(this.config.apiKey);
 		} else { this.log.error("API Key is missing. Please enter Accuweather API key"); }
 
-		setInterval(()=>{
-			const _this=this;
-			const cdt=new Date();
-			if ((cdt.getHours()===7 || cdt.getHours()===20) && cdt.getMinutes() <=5 ) {setTimeout(()=>{_this.requst5Days();},Math.random()*10000+1);}
-			if (cdt.getMinutes() <=5 && cdt.getMinutes() > 0) {setTimeout(()=>{_this.requstCurrent();},Math.random()*10000+1);}
-			if ((cdt.getHours()===6 || cdt.getHours()===12 || cdt.getHours()===18 || cdt.getHours()===0) && cdt.getMinutes() <=5) {setTimeout(()=>{_this.requst12Hours();},Math.random()*10000+1);}
-			
+		setInterval(() => {
+			const _this = this;
+			const cdt = new Date();
+			if ((cdt.getHours() === 7 || cdt.getHours() === 20) && cdt.getMinutes() <= 5) { setTimeout(() => { _this.requst5Days(); }, Math.random() * 10000 + 1); }
+			if (cdt.getMinutes() <= 5 && cdt.getMinutes() > 0) { setTimeout(() => { _this.requstCurrent(); }, Math.random() * 10000 + 1); }
+			if ((cdt.getHours() === 6 || cdt.getHours() === 12 || cdt.getHours() === 18 || cdt.getHours() === 0) && cdt.getMinutes() <= 5) { setTimeout(() => { _this.requst12Hours(); }, Math.random() * 10000 + 1); }
+
 		}, 300000);
 
 		this.requst12Hours();
 		this.requstCurrent();
 		this.requst5Days();
-/*
-		setInterval(() => {
-			this.requst12Hours();
-		}, 21600000);
-
-		setInterval(() => {
-			this.requstCurrent();
-		}, 3600000);
-*/
-		//this.log.info(fres);
-		//accu=require('./lib/accuapi')()('GqmgWXup3W4DSrGoHpGdB32MR9bSAlPI');
-		// Initialize your adapter here
-
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
-		//this.log.info("config option1: " + this.config.option1);
-		//this.log.info("config option2: " + this.config.option2);
 
 		/*
 		For every state in the system there has to be also an object of type state
@@ -281,7 +314,7 @@ class Accuweather extends utils.Adapter {
 		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
 		*/
 
-		
+
 		await this.setObjectAsync("updateCurrent", {
 			type: "state",
 			common: {
@@ -362,7 +395,7 @@ class Accuweather extends utils.Adapter {
 	 */
 	onObjectChange(id, obj) {
 		if (obj) {
-			
+
 
 			this.log.debug(`object ${id} changed: ${JSON.stringify(obj)}`);
 		} else {
@@ -379,9 +412,9 @@ class Accuweather extends utils.Adapter {
 	onStateChange(id, state) {
 		if (state) {
 			// The state was changed
-			if (id.indexOf("updateCurrent")) {this.requstCurrent();} else
-			if (id.indexOf("updateHourly")) {this.requst12Hours();} else
-			if (id.indexOf("updateDaily")) {this.requst5Days();} 
+			if (id.indexOf("updateCurrent")) { this.requstCurrent(); } else
+			if (id.indexOf("updateHourly")) { this.requst12Hours(); } else
+			if (id.indexOf("updateDaily")) { this.requst5Days(); }
 			this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 		} else {
 			// The state was deleted
