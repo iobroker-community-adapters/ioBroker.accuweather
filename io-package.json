@@ -1,19 +1,31 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "1.0.2",
+		"version": "1.1.0",
 		"news": {
+			"1.0.3": {
+				"en": "Summary channel added to support automatic weather device detection by type-detector",
+				"de": "Zusammenfassungskanal hinzugefügt, um die automatische Erkennung von Wettergeräten durch den Typdetektor zu unterstützen",
+				"ru": "Добавлен Summary Channel для поддержки автоматического определения погодных устройств с помощью type-detector",
+				"pt": "Canal de resumo adicionado para oferecer suporte à detecção automática de dispositivos climáticos por detector de tipo",
+				"nl": "Overzichtskanaal toegevoegd om automatische weerapparaatdetectie door typedetector te ondersteunen",
+				"fr": "Chaîne récapitulative ajoutée pour permettre la détection automatique du dispositif météorologique par type",
+				"it": "Aggiunto il canale di riepilogo per supportare il rilevamento automatico dei dispositivi meteorologici mediante rilevatore di tipo",
+				"es": "Resumen del canal agregado para admitir la detección automática de dispositivos meteorológicos por detector de tipo",
+				"pl": "Dodano kanał podsumowania w celu obsługi automatycznego wykrywania urządzenia pogodowego według detektora typu",
+				"zh-cn": "添加了摘要通道以支持类型检测器自动检测天气设备"
+			  },
 			"1.0.2": {
-   				 "en": "Production release",
-			         "de": "Produktionsfreigabe",
-                                 "ru": "Первая Версия",
-			         "pt": "Lançamento de produção",
-                                 "nl": "Productie release",
-                                 "fr": "Production",
-                                 "it": "Rilascio di produzione",
-                                 "es": "Lanzamiento de la producción",
-                                 "pl": "Dopuszczenie do produkcji",
-                                 "zh-cn": "生产发布"
+   				"en": "Production release",
+			    "de": "Produktionsfreigabe",
+            	"ru": "Первая Версия",
+			    "pt": "Lançamento de produção",
+                "nl": "Productie release",
+                "fr": "Production",
+                "it": "Rilascio di produzione",
+                "es": "Lanzamiento de la producción",
+                "pl": "Dopuszczenie do produkcji",
+                "zh-cn": "生产发布"
                         },
 			"0.1.0": {
 				"en": "initial release",

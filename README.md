@@ -28,8 +28,16 @@ For free use it is possible to make 50 requests to API per day.
 In order to get location key, go to https://www.accuweather.com/ and enter your city name, or try to enter your coordinates (latitude, longitude) as you have them e.g. in IoBroker settings. 
 Your location key wil be the number at the end of URL of forecast.
 
+### Using in Lovelace visualization (starting version 1.1.0)
+Summary channel contains current and by-day forecast with role/types of states supported by type-detector. 
+New feature can be used in order to show weather forecast in Lovelace UI. 
+For better view a custom lovelace card is created - see https://github.com/algar42/IoB.lovelace.accuweather-card
+
 
 ## Changelog
+
+### 1.1.0
+* (algar42) Summary channel added to support type-detector and automatic weather device creation
 
 ### 1.0.2
 * (algar42) Production Release
