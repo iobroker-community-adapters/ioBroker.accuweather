@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "1.0.3",
+		"version": "1.1.0",
 		"news": {
 			"1.0.3": {
 				"en": "Summary channel added to support automatic weather device detection by type-detector",
