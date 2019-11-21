@@ -106,15 +106,17 @@ class Accuweather extends utils.Adapter {
 										if (json1[key1]["Value"] !== undefined) {
 											if (["TotalLiquid", "Rain", "Snow", "Ice"].includes(key1)) {
 												this.setState("Daily.Day" + day + "." + key + "." + key1 + "Volume", { val: json1[key1].Value, ack: true });
-												this.setState("Summary." + key1 + "Volume_d" + day, { val: json1[key1].Value, ack: true });
+												if (key=="Day" && key1=="TotalLiquid") this.setState("Summary.TotalLiquidVolume_d" + day, { val: json1[key1].Value, ack: true });
 											} else { this.setState("Daily.Day" + day + "." + key + "." + key1, { val: json1[key1].Value, ack: true }); }
 										} else
 										if (key1 == "Wind") {
 											this.setState("Daily.Day" + day + "." + key + ".WindSpeed", { val: json1[key1].Speed.Value, ack: true });
 											this.setState("Daily.Day" + day + "." + key + ".WindDirection", { val: json1[key1].Direction.Degrees, ack: true });
-											this.setState("Summary.WindSpeed_d"+day, { val: json1[key1].Speed.Value, ack: true });
-											this.setState("Summary.WindDirection_d"+day, { val: json1[key1].Direction.Degrees, ack: true });
-											this.setState("Summary.WindDirectionStr_d"+day, { val: this.getCardinalDirection(json1[key1].Direction.Degrees), ack: true });
+											if (key=="Day") {
+												this.setState("Summary.WindSpeed_d"+day, { val: json1[key1].Speed.Value, ack: true });
+												this.setState("Summary.WindDirection_d"+day, { val: json1[key1].Direction.Degrees, ack: true });
+												this.setState("Summary.WindDirectionStr_d"+day, { val: this.getCardinalDirection(json1[key1].Direction.Degrees), ack: true });
+											}
 										} else
 										if (key1 == "WindGust") {
 											this.setState("Daily.Day" + day + "." + key + ".WindGust", { val: json1[key1].Speed.Value, ack: true });
