@@ -9,6 +9,7 @@
 const utils = require("@iobroker/adapter-core");
 const Accuapi = require("./lib/accuapi");
 const nextHour = require("./lib/nexthour-obj");
+var updateInterval = null;
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -276,7 +277,7 @@ class Accuweather extends utils.Adapter {
 				.details(true)
 				.getCurrent()
 				.then(res => {
-					this.log.debug(JSON.stringify(res));
+					//this.log.debug(JSON.stringify(res));
 					this.setCurrentStates(res);
 				})
 				.catch(err => {
@@ -297,7 +298,7 @@ class Accuweather extends utils.Adapter {
 			this.forecast = new Accuapi(this.config.apiKey);
 		} else { this.log.error("API Key is missing. Please enter Accuweather API key"); }
 
-		setInterval(() => {
+		updateInterval = setInterval(() => {
 			const _this = this;
 			const cdt = new Date();
 			if ((cdt.getHours() === 7 || cdt.getHours() === 20) && cdt.getMinutes() <= 5) { setTimeout(() => { _this.requst5Days(); }, Math.random() * 10000 + 1); }
@@ -317,7 +318,7 @@ class Accuweather extends utils.Adapter {
 		*/
 
 
-		await this.setObjectAsync("updateCurrent", {
+		await this.setObjectNotExistsAsync("updateCurrent", {
 			type: "state",
 			common: {
 				name: "Update Current Weather",
@@ -328,7 +329,7 @@ class Accuweather extends utils.Adapter {
 			},
 			native: {},
 		});
-		await this.setObjectAsync("updateHourly", {
+		await this.setObjectNotExistsAsync("updateHourly", {
 			type: "state",
 			common: {
 				name: "Update 12 Hours Forecast",
@@ -339,7 +340,7 @@ class Accuweather extends utils.Adapter {
 			},
 			native: {},
 		});
-		await this.setObjectAsync("updateDaily", {
+		await this.setObjectNotExistsAsync("updateDaily", {
 			type: "state",
 			common: {
 				name: "Update 5 Days Forecast",
@@ -355,26 +356,6 @@ class Accuweather extends utils.Adapter {
 		// in this template all states changes inside the adapters namespace are subscribed
 		this.subscribeStates("update*");
 
-		/*
-		setState examples
-		you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-		*/
-		// the variable testVariable is set to true as command (ack=false)
-		//await this.setStateAsync("testVariable", true);
-
-		// same thing, but the value is flagged "ack"
-		// ack should be always set to true if the value is received from or acknowledged from the target system
-		//await this.setStateAsync("testVariable", { val: true, ack: true });
-
-		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		//await this.setStateAsync("testVariable", { val: true, ack: true });
-
-		// examples for the checkPassword/checkGroup functions
-		//let result = await this.checkPasswordAsync("admin", "iobroker");
-		//this.log.info("check user admin pw ioboker: " + result);
-
-		//result = await this.checkGroupAsync("admin", "admin");
-		//this.log.info("check group user admin group admin: " + result);
 	}
 
 	/**
@@ -384,6 +365,7 @@ class Accuweather extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			this.log.info("cleaned everything up...");
+			clearInterval(updateInterval);
 			callback();
 		} catch (e) {
 			callback();
