@@ -1,8 +1,20 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "1.1.1",
+		"version": "1.1.2",
 		"news": {
+			"1.1.2": {
+				"en": "Minor updates for compact mode",
+			        "de": "Kleinere Updates für den Kompaktmodus",
+			        "ru": "Незначительные обновления для компактного режима",
+			        "pt": "Pequenas atualizações para o modo compacto",
+			        "nl": "Kleine updates voor compacte modus",
+			        "fr": "Mises à jour mineures pour le mode compact",
+			        "it": "Piccoli aggiornamenti per la modalità compatta",
+			        "es": "Actualizaciones menores para el modo compacto",
+			        "pl": "Niewielkie aktualizacje trybu kompaktowego",
+			        "zh-cn": "压缩模式的次要更新"
+			},
 			"1.1.1": {
 				"en": "Summary channel added to support automatic weather device detection by type-detector",
 				"de": "Zusammenfassungskanal hinzugefügt, um die automatische Erkennung von Wettergeräten durch den Typdetektor zu unterstützen",
