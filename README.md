@@ -36,6 +36,9 @@ For better view a custom lovelace card is created - see https://github.com/algar
 
 ## Changelog
 
+### 1.1.2
+* (algar42) Minor updates for compact mode
+
 ### 1.1.0
 * (algar42) Summary channel added to support type-detector and automatic weather device creation
 
