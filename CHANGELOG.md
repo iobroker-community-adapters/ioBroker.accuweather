@@ -6,6 +6,9 @@
 	(at the beginning of a new line )
 -->
 
+## v1.1.3 (2020-03-04)
+ Minor updates for compact mode
+
 ## v1.1.0 (2019-11-09)
  Summary channel added to support automatic weather device detection by type-detector 
 
