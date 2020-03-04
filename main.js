@@ -10,6 +10,9 @@ const utils = require("@iobroker/adapter-core");
 const Accuapi = require("./lib/accuapi");
 const nextHour = require("./lib/nexthour-obj");
 var updateInterval = null;
+var timeout1 = null;
+var timeout2 = null;
+
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -170,7 +173,7 @@ class Accuweather extends utils.Adapter {
 		try {
 			for (const key in json) {
 				//this.log.debug("Current: " + key + ": " + typeof json[key]);
-				if (typeof json[key] !== "object" && json[key] !== null) {
+				if (typeof json[key] !== "object" || json[key]==null) {
 					this.setState("Current." + key, { val: json[key], ack: true });
 
 					if (key === "WeatherIcon") {
@@ -301,9 +304,9 @@ class Accuweather extends utils.Adapter {
 		updateInterval = setInterval(() => {
 			const _this = this;
 			const cdt = new Date();
-			if ((cdt.getHours() === 7 || cdt.getHours() === 20) && cdt.getMinutes() <= 5) { setTimeout(() => { _this.requst5Days(); }, Math.random() * 10000 + 1); }
-			if (cdt.getMinutes() <= 5 && cdt.getMinutes() > 0) { setTimeout(() => { _this.requstCurrent(); }, Math.random() * 10000 + 1); }
-			if ((cdt.getHours() === 6 || cdt.getHours() === 12 || cdt.getHours() === 18 || cdt.getHours() === 0) && cdt.getMinutes() <= 5) { setTimeout(() => { _this.requst12Hours(); }, Math.random() * 10000 + 1); }
+			if ((cdt.getHours() === 7 || cdt.getHours() === 20) && cdt.getMinutes() <= 5) { timeout1 = setTimeout(() => { _this.requst5Days(); }, Math.random() * 10000 + 1); }
+			if (cdt.getMinutes() <= 5 && cdt.getMinutes() > 0) { timeout2 = setTimeout(() => { _this.requstCurrent(); }, Math.random() * 10000 + 1); }
+			if ((cdt.getHours() === 6 || cdt.getHours() === 12 || cdt.getHours() === 18 || cdt.getHours() === 0) && cdt.getMinutes() <= 5) { timeout1 = setTimeout(() => { _this.requst12Hours(); }, Math.random() * 10000 + 1); }
 
 		}, 300000);
 
@@ -366,6 +369,8 @@ class Accuweather extends utils.Adapter {
 		try {
 			this.log.info("cleaned everything up...");
 			clearInterval(updateInterval);
+                        clearTimeout(timeout1);
+                        clearTimeout(timeout2);
 			callback();
 		} catch (e) {
 			callback();
