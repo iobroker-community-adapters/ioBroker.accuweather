@@ -36,6 +36,9 @@ For better view a custom lovelace card is created - see https://github.com/algar
 
 ## Changelog
 
+### 1.1.4
+* (HGlab01) small bugfix regarding setTimeout range
+
 ### 1.1.3
 * (algar42) Minor updates for compact mode
 
