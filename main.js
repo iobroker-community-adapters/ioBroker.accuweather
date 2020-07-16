@@ -304,9 +304,9 @@ class Accuweather extends utils.Adapter {
 		updateInterval = setInterval(() => {
 			const _this = this;
 			const cdt = new Date();
-			if ((cdt.getHours() === 7 || cdt.getHours() === 20) && cdt.getMinutes() <= 5) { timeout1 = setTimeout(() => { _this.requst5Days(); }, Math.random() * 10000 + 1); }
+			if ((cdt.getHours() === 7 || cdt.getHours() === 20) && cdt.getMinutes() < 5) { timeout1 = setTimeout(() => { _this.requst5Days(); }, Math.random() * 10000 + 1); }
 			if (cdt.getMinutes() <= 5 && cdt.getMinutes() > 0) { timeout2 = setTimeout(() => { _this.requstCurrent(); }, Math.random() * 10000 + 1); }
-			if ((cdt.getHours() === 6 || cdt.getHours() === 12 || cdt.getHours() === 18 || cdt.getHours() === 0) && cdt.getMinutes() <= 5) { timeout1 = setTimeout(() => { _this.requst12Hours(); }, Math.random() * 10000 + 1); }
+			if ((cdt.getHours() === 6 || cdt.getHours() === 12 || cdt.getHours() === 18 || cdt.getHours() === 0) && cdt.getMinutes() <=5) { timeout1 = setTimeout(() => { _this.requst12Hours(); }, Math.random() * 10000 + 1); }
 
 		}, 300000);
 
