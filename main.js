@@ -27,6 +27,7 @@ class Accuweather extends utils.Adapter {
 		super({
 			...options,
 			name: "accuweather",
+			strictObjectChecks: false
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("objectChange", this.onObjectChange.bind(this));
