@@ -5,7 +5,9 @@
 	## __WORK IN PROGRESS__
 	(at the beginning of a new line )
 -->
-
+## v1.1.5 (2021-01-25)
+ Resolve log warning for js-controller 3.2
+ 
 ## v1.1.3 (2020-03-04)
  Minor updates for compact mode
 
