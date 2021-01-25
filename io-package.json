@@ -1,8 +1,20 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "1.1.4",
+		"version": "1.1.5",
 		"news": {
+			"1.1.5": {
+			        "en": "Disable strict object check. Resolve warning with js-controller 3.2",
+			        "de": "Deaktivieren Sie die strikte Objektprüfung. Warnung mit js-controller beheben 3.2",
+			        "ru": "Отключена строгая проверка объекта. Устранение warning на js-controller 3.2",
+			        "pt": "Desative a verificação estrita de objeto. Resolva o aviso com js-controller 3.2",
+			        "nl": "Schakel strikte objectcontrole uit. Los de waarschuwing op met js-controller 3.2",
+			        "fr": "Désactivez la vérification d'objet stricte. Résoudre l'avertissement avec js-controller 3.2",
+			        "it": "Disabilita il controllo degli oggetti rigoroso. Risolvere gli avvisi con js-controller 3.2",
+			        "es": "Desactive la comprobación estricta de objetos. Resolver advertencia con js-controller 3.2",
+			        "pl": "Wyłącz ścisłe sprawdzanie obiektów. Rozwiązanie ostrzeżenia za pomocą kontrolera js 3.2",
+			        "zh-cn": "禁用严格对象检查。使用js-controller 3.2解决警告"
+			 },
 			"1.1.4": {
 			        "en": "Small bug-fixes to check intervals",
 			        "de": "Kleine Fehlerbehebungen zur Überprüfung der Intervalle",
