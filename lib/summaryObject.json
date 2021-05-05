@@ -4,8 +4,8 @@
         "common": {
             "name": "Forecast date",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date"
         },
         "native": {}
@@ -15,8 +15,8 @@
         "common": {
             "name": "Weather Icon",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon"
         },
         "native": {}
@@ -26,8 +26,8 @@
         "common": {
             "name": "SVG Weather Icon URL",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.url"
         },
         "native": {}
@@ -37,8 +37,8 @@
         "common": {
             "name": "Weather Description",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state"
         },
         "native": {}
@@ -48,8 +48,8 @@
         "common": {
             "name": "Temperature",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.current",
             "unit": "°C"
         },
@@ -60,8 +60,8 @@
         "common": {
             "name": "Feels Like Temperature",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.feelslike",
             "unit": "°C"
         },
@@ -72,8 +72,8 @@
         "common": {
             "name": "Wind Speed",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind",
             "unit": "km/h"
         },
@@ -84,8 +84,8 @@
         "common": {
             "name": "Wind Direction",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind",
             "unit": "°"
         },
@@ -96,8 +96,8 @@
         "common": {
             "name": "Wind Direction",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.direction.wind",
             "unit": ""
         },
@@ -108,8 +108,8 @@
         "common": {
             "name": "Humidity",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.humidity",
             "unit": "%"
         },
@@ -120,8 +120,8 @@
         "common": {
             "name": "Pressure",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.pressure",
             "unit":"mmHg"
         },
@@ -132,8 +132,8 @@
         "common": {
             "name": "Day of week",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "dayofweek",
             "unit":""
         },
@@ -144,8 +144,8 @@
         "common": {
             "name": "Sunrise time",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "time.sunrise",
             "unit":""
         },
@@ -156,8 +156,8 @@
         "common": {
             "name": "Sunset time",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "time.sunset",
             "unit":""
         },
@@ -172,8 +172,8 @@
         "common": {
             "name": "Forecast date day 1",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.forecast.1"
         },
         "native": {}
@@ -183,8 +183,8 @@
         "common": {
             "name": "Weather Icon day 1",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.forecast.1"
         },
         "native": {}
@@ -194,8 +194,8 @@
         "common": {
             "name": "SVG Weather Icon URL day 1",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.url.forecast.1"
         },
         "native": {}
@@ -205,8 +205,8 @@
         "common": {
             "name": "Weather Description day 1",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state.forecast.1"
         },
         "native": {}
@@ -216,8 +216,8 @@
         "common": {
             "name": "Min Temperature day 1",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.min.forecast.1",
             "unit": "°C"
         },
@@ -229,8 +229,8 @@
         "common": {
             "name": "Max Temperature day 1",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.max.forecast.1",
             "unit": "°C"
         },
@@ -241,8 +241,8 @@
         "common": {
             "name": "Wind Speed day 1",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind.forecast.1",
             "unit": "km/h"
         },
@@ -253,8 +253,8 @@
         "common": {
             "name": "Wind Direction day 1",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind.forecast.1",
             "unit": "°"
         },
@@ -265,8 +265,8 @@
         "common": {
             "name": "Wind Direction day 1",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.direction.wind.forecast.1",
             "unit": ""
         },
@@ -277,8 +277,8 @@
         "common": {
             "name": "Day of week day 1",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "dayofweek.forecast.1",
             "unit":""
         },
@@ -289,8 +289,8 @@
         "common": {
             "name": "Precipitation Probability day 1",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.1",
             "unit":"%"
         },
@@ -301,8 +301,8 @@
         "common": {
             "name": "Total Precipitation Amount day 1",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.1",
             "unit":"mm"
         },
@@ -316,8 +316,8 @@
         "common": {
             "name": "Forecast date day 2",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.forecast.2"
         },
         "native": {}
@@ -327,8 +327,8 @@
         "common": {
             "name": "Weather Icon day 2",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.forecast.2"
         },
         "native": {}
@@ -338,8 +338,8 @@
         "common": {
             "name": "SVG Weather Icon URL day 2",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.url.forecast.2"
         },
         "native": {}
@@ -349,8 +349,8 @@
         "common": {
             "name": "Weather Description day 2",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state.forecast.2"
         },
         "native": {}
@@ -360,8 +360,8 @@
         "common": {
             "name": "Min Temperature day 2",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.min.forecast.2",
             "unit": "°C"
         },
@@ -373,8 +373,8 @@
         "common": {
             "name": "Max Temperature day 2",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.max.forecast.2",
             "unit": "°C"
         },
@@ -385,8 +385,8 @@
         "common": {
             "name": "Wind Speed day 2",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind.forecast.2",
             "unit": "km/h"
         },
@@ -397,8 +397,8 @@
         "common": {
             "name": "Wind Direction day 2",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind.forecast.2",
             "unit": "°"
         },
@@ -409,8 +409,8 @@
         "common": {
             "name": "Wind Direction day 2",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.direction.wind.forecast.2",
             "unit": ""
         },
@@ -421,8 +421,8 @@
         "common": {
             "name": "Day of week day 2",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "dayofweek.forecast.2",
             "unit":""
         },
@@ -433,8 +433,8 @@
         "common": {
             "name": "Precipitation Probability day 2",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.2",
             "unit":"%"
         },
@@ -445,8 +445,8 @@
         "common": {
             "name": "Total Precipitation Amount day 2",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.2",
             "unit":"mm"
         },
@@ -462,8 +462,8 @@
         "common": {
             "name": "Forecast date day 3",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.forecast.3"
         },
         "native": {}
@@ -473,8 +473,8 @@
         "common": {
             "name": "Weather Icon day 3",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.forecast.3"
         },
         "native": {}
@@ -484,8 +484,8 @@
         "common": {
             "name": "SVG Weather Icon URL day 3",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.url.forecast.3"
         },
         "native": {}
@@ -495,8 +495,8 @@
         "common": {
             "name": "Weather Description day 3",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state.forecast.3"
         },
         "native": {}
@@ -506,8 +506,8 @@
         "common": {
             "name": "Min Temperature day 3",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.min.forecast.3",
             "unit": "°C"
         },
@@ -519,8 +519,8 @@
         "common": {
             "name": "Max Temperature day 3",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.max.forecast.3",
             "unit": "°C"
         },
@@ -531,8 +531,8 @@
         "common": {
             "name": "Wind Speed day 3",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind.forecast.3",
             "unit": "km/h"
         },
@@ -543,8 +543,8 @@
         "common": {
             "name": "Wind Direction day 3",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind.forecast.3",
             "unit": "°"
         },
@@ -555,8 +555,8 @@
         "common": {
             "name": "Wind Direction day 3",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.direction.wind.forecast.3",
             "unit": ""
         },
@@ -567,8 +567,8 @@
         "common": {
             "name": "Day of week day 3",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "dayofweek.forecast.3",
             "unit":""
         },
@@ -579,8 +579,8 @@
         "common": {
             "name": "Precipitation Probability day 3",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.3",
             "unit":"%"
         },
@@ -591,8 +591,8 @@
         "common": {
             "name": "Total Precipitation Amount day 3",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.3",
             "unit":"mm"
         },
@@ -609,8 +609,8 @@
         "common": {
             "name": "Forecast date day 4",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.forecast.4"
         },
         "native": {}
@@ -620,8 +620,8 @@
         "common": {
             "name": "Weather Icon day 4",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.forecast.4"
         },
         "native": {}
@@ -631,8 +631,8 @@
         "common": {
             "name": "SVG Weather Icon URL day 4",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.url.forecast.4"
         },
         "native": {}
@@ -642,8 +642,8 @@
         "common": {
             "name": "Weather Description day 4",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state.forecast.4"
         },
         "native": {}
@@ -653,8 +653,8 @@
         "common": {
             "name": "Min Temperature day 4",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.min.forecast.4",
             "unit": "°C"
         },
@@ -666,8 +666,8 @@
         "common": {
             "name": "Max Temperature day 4",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.max.forecast.4",
             "unit": "°C"
         },
@@ -678,8 +678,8 @@
         "common": {
             "name": "Wind Speed day 4",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind.forecast.4",
             "unit": "km/h"
         },
@@ -690,8 +690,8 @@
         "common": {
             "name": "Wind Direction day 4",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind.forecast.4",
             "unit": "°"
         },
@@ -702,8 +702,8 @@
         "common": {
             "name": "Wind Direction day 4",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.direction.wind.forecast.4",
             "unit": ""
         },
@@ -714,8 +714,8 @@
         "common": {
             "name": "Day of week day 4",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "dayofweek.forecast.4",
             "unit":""
         },
@@ -726,8 +726,8 @@
         "common": {
             "name": "Precipitation Probability day 4",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.4",
             "unit":"%"
         },
@@ -738,8 +738,8 @@
         "common": {
             "name": "Total Precipitation Amount day 4",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.4",
             "unit":"mm"
         },
@@ -756,8 +756,8 @@
         "common": {
             "name": "Forecast date day 5",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.forecast.5"
         },
         "native": {}
@@ -767,8 +767,8 @@
         "common": {
             "name": "Weather Icon day 5",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.forecast.5"
         },
         "native": {}
@@ -778,8 +778,8 @@
         "common": {
             "name": "SVG Weather Icon URL day 5",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon.url.forecast.5"
         },
         "native": {}
@@ -789,8 +789,8 @@
         "common": {
             "name": "Weather Description day 5",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state.forecast.5"
         },
         "native": {}
@@ -800,8 +800,8 @@
         "common": {
             "name": "Min Temperature day 5",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.min.forecast.5",
             "unit": "°C"
         },
@@ -813,8 +813,8 @@
         "common": {
             "name": "Max Temperature day 5",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.max.forecast.5",
             "unit": "°C"
         },
@@ -825,8 +825,8 @@
         "common": {
             "name": "Wind Speed day 5",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind.forecast.5",
             "unit": "km/h"
         },
@@ -837,8 +837,8 @@
         "common": {
             "name": "Wind Direction day 5",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind.forecast.5",
             "unit": "°"
         },
@@ -849,8 +849,8 @@
         "common": {
             "name": "Wind Direction day 5",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.direction.wind.forecast.5",
             "unit": ""
         },
@@ -861,8 +861,8 @@
         "common": {
             "name": "Day of week day 5",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "dayofweek.forecast.5",
             "unit":""
         },
@@ -873,8 +873,8 @@
         "common": {
             "name": "Precipitation Probability day 5",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.5",
             "unit":"%"
         },
@@ -885,8 +885,8 @@
         "common": {
             "name": "Total Precipitation Amount day 5",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation.forecast.5",
             "unit":"mm"
         },

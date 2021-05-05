@@ -1,8 +1,20 @@
 {
 	"common": {
 		"name": "accuweather",
-		"version": "1.1.5",
+		"version": "1.1.6",
 		"news": {
+                        "1.1.6": {
+                                "en": "Minor bug fixes in Objects.common section",
+                                "de": "Kleinere Fehlerbehebungen im Abschnitt Objects.common",
+                                "ru": "Незначительные исправления ошибок в разделе Objects.common",
+                                "pt": "Pequenas correções de bugs na seção Objects.common",
+                                "nl": "Kleine bugfixes in de sectie Objects.common",
+                                "fr": "Corrections de bogues mineurs dans la section Objects.common",
+                                "it": "Correzioni di bug minori nella sezione Objects.common",
+                                "es": "Correcciones de errores menores en la sección Objects.common",
+                                "pl": "Drobne poprawki błędów w sekcji Objects.common",
+                                "zh-cn": "Objects.common部分中的小错误修复"
+                         },
 			"1.1.5": {
 			        "en": "Disable strict object check. Resolve warning with js-controller 3.2",
 			        "de": "Deaktivieren Sie die strikte Objektprüfung. Warnung mit js-controller beheben 3.2",

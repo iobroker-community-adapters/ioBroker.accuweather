@@ -5,6 +5,9 @@
 	## __WORK IN PROGRESS__
 	(at the beginning of a new line )
 -->
+## v1.1.6 (2021-05-05)
+ Minor bug fixes to Object.common section
+
 ## v1.1.5 (2021-01-25)
  Resolve log warning for js-controller 3.2
  
