@@ -4,8 +4,8 @@
         "common": {
             "name": "Forecast date",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date"
         },
         "native": {}
@@ -15,8 +15,8 @@
         "common": {
             "name": "Sunrise datetime",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.sunrise"
         },
         "native": {}
@@ -26,8 +26,8 @@
         "common": {
             "name": "Sunset datetime",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date.sunset"
         },
         "native": {}
@@ -37,8 +37,8 @@
         "common": {
             "name": "Temperature Min",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.min",
             "unit": "°C"
         },
@@ -49,8 +49,8 @@
         "common": {
             "name": "Temperature Max",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.max",
             "unit": "°C"
         },
@@ -61,8 +61,8 @@
         "common": {
             "name": "Feels Like Temperature Min",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.feelslike.min",
             "unit": "°C"
         },
@@ -73,8 +73,8 @@
         "common": {
             "name": "Feels Like Temperature Max",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.feelslike.max",
             "unit": "°C"
         },
@@ -85,8 +85,8 @@
         "common": {
             "name": "Weather Icon",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -96,8 +96,8 @@
         "common": {
             "name": "Weather Icon URL",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "media.url"
         },
         "native": {}
@@ -107,8 +107,8 @@
         "common": {
             "name": "SVG Weather Icon URL",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon"
         },
         "native": {}
@@ -118,8 +118,8 @@
         "common": {
             "name": "Weather Description",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state"
         },
         "native": {}
@@ -129,8 +129,8 @@
         "common": {
             "name": "Precipitation",
             "type": "boolean",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -140,8 +140,8 @@
         "common": {
             "name": "Weather Description",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state.description"
         },
         "native": {}
@@ -151,8 +151,8 @@
         "common": {
             "name": "Weather Description",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -162,8 +162,8 @@
         "common": {
             "name": "Precipitation Probability",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation",
             "unit":"%"
         },
@@ -174,8 +174,8 @@
         "common": {
             "name": "Thunderstorm Probability",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"%"
         },
@@ -186,8 +186,8 @@
         "common": {
             "name": "Rain Probability",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"%"
         },
@@ -198,8 +198,8 @@
         "common": {
             "name": "Snow Probability",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"%"
         },
@@ -210,8 +210,8 @@
         "common": {
             "name": "Ice Probability",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"%"
         },
@@ -222,8 +222,8 @@
         "common": {
             "name": "Wind Speed",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind",
             "unit": "km/h"
         },
@@ -234,8 +234,8 @@
         "common": {
             "name": "Wind Direction",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind",
             "unit": "°"
         },
@@ -246,8 +246,8 @@
         "common": {
             "name": "Wind Gust",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit": "km/h"
         },
@@ -258,8 +258,8 @@
         "common": {
             "name": "Rain Amount",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"mm"
         },
@@ -270,8 +270,8 @@
         "common": {
             "name": "Snow Amount",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"mm"
         },
@@ -282,8 +282,8 @@
         "common": {
             "name": "Ice Amount",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit":"mm"
         },
@@ -294,8 +294,8 @@
         "common": {
             "name": "Total Precipitation Amount",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.precipitation",
             "unit":"mm"
         },

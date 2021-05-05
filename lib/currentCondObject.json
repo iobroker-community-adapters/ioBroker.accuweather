@@ -4,8 +4,8 @@
         "common": {
             "name": "Forecast date",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "date"
         },
         "native": {}
@@ -15,8 +15,8 @@
         "common": {
             "name": "Weather Icon",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -26,8 +26,8 @@
         "common": {
             "name": "Weather Icon URL",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "media.url"
         },
         "native": {}
@@ -37,8 +37,8 @@
         "common": {
             "name": "SVG Weather Icon URL",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.icon"
         },
         "native": {}
@@ -48,8 +48,8 @@
         "common": {
             "name": "Weather Description",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "weather.state"
         },
         "native": {}
@@ -59,8 +59,8 @@
         "common": {
             "name": "Precipitation",
             "type": "boolean",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -70,8 +70,8 @@
         "common": {
             "name": "Precipitation Description",
             "type": "boolean",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -81,8 +81,8 @@
         "common": {
             "name": "Temperature",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature",
             "unit": "°C"
         },
@@ -93,8 +93,8 @@
         "common": {
             "name": "Feels Like Temperature",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature.feelslike",
             "unit": "°C"
         },
@@ -105,8 +105,8 @@
         "common": {
             "name": "Shadow Temperature",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.temperature",
             "unit": "°C"
         },
@@ -117,8 +117,8 @@
         "common": {
             "name": "Dew Point",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit": "°C"
         },
@@ -129,8 +129,8 @@
         "common": {
             "name": "Wind Speed",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.speed.wind",
             "unit": "km/h"
         },
@@ -141,8 +141,8 @@
         "common": {
             "name": "Wind Direction",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.direction.wind",
             "unit": "°"
         },
@@ -153,8 +153,8 @@
         "common": {
             "name": "Wind Gust",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value",
             "unit": "km/h"
         },
@@ -165,8 +165,8 @@
         "common": {
             "name": "Humidity",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.humidity",
             "unit": "%"
         },
@@ -177,8 +177,8 @@
         "common": {
             "name": "UV Index",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -188,8 +188,8 @@
         "common": {
             "name": "UV Index Description",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
@@ -199,8 +199,8 @@
         "common": {
             "name": "Pressure",
             "type": "number",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value.pressure",
             "unit":"mb"
         },
@@ -211,8 +211,8 @@
         "common": {
             "name": "Ptressure Tendency",
             "type": "string",
-            "read": "true",
-            "write": "false",
+            "read": true,
+            "write": false,
             "role": "value"
         },
         "native": {}
