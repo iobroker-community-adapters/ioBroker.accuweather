@@ -37,7 +37,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-### __WORK IN PROGRESS__
+### 1.1.7 (2021-06-24)
 * (bluefox) Create device for device-detector 
 
 ## v1.1.6 (2021-05-05)

@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "accuweather",
-        "version": "1.1.6",
+        "version": "1.1.7",
         "news": {
+            "1.1.7": {
+                "en": "* Create device for device-detector \n\n## v1.1.6 (2021-05-05)\nMinor bug fixes to `Object.common` section",
+                "de": "* Gerät für Gerätedetektor erstellen\n\n## v1.1.6 (2021-05-05)\nKleinere Fehlerbehebungen im Abschnitt \"Object.common\"`",
+                "ru": "* Создать устройство для устройства-детектора\n\n## v1.1.6 (05.05.2021)\nНезначительные исправления ошибок в разделе `Object.common`",
+                "pt": "* Criar dispositivo para detector de dispositivo\n\n## v1.1.6 (2021-05-05)\nPequenas correções de bugs na seção `Object.common`",
+                "nl": "* Maak een apparaat voor apparaatdetector\n\n## v1.1.6 (2021-05-05)\nKleine bugfixes in de sectie 'Object.common'",
+                "fr": "* Créer un appareil pour le détecteur d'appareil\n\n## v1.1.6 (2021-05-05)\nCorrections de bugs mineurs dans la section `Object.common`",
+                "it": "* Crea dispositivo per rilevatore di dispositivi\n\n## v1.1.6 (2021-05-05)\nCorrezioni di bug minori nella sezione \"Object.common\"",
+                "es": "* Crear dispositivo para detector de dispositivos\n\n## v1.1.6 (05/05/2021)\nCorrecciones de errores menores en la sección `Object.common`",
+                "pl": "* Utwórz urządzenie dla detektora urządzeń\n\n## v1.1.6 (2021-05-05)\nDrobne poprawki błędów w sekcji `Object.common`",
+                "zh-cn": "* 为设备检测器创建设备\n\n## v1.1.6 (2021-05-05)\n“Object.common”部分的小错误修复"
+            },
             "1.1.6": {
                 "en": "Minor bug fixes in Objects.common section",
                 "de": "Kleinere Fehlerbehebungen im Abschnitt Objects.common",
@@ -144,9 +156,9 @@
         "type": "weather",
         "compact": true,
         "materialize": true,
-		"adminUI": {
-			"config": "materialize"
-		},
+        "adminUI": {
+            "config": "materialize"
+        },
         "connectionType": "cloud",
         "dataSource": "poll",
         "dependencies": [
