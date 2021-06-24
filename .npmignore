@@ -4,7 +4,7 @@ gulpfile.js
 !/admin/**/*
 !/admin/*
 /admin/*.ts
-/admin/tsconfig.ts
+/admin/tsconfig.json
 !/lib/**/*
 !/lib/*
 /lib/*.ts
