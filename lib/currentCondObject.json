@@ -209,7 +209,7 @@
     "nextHour.PressureTendency": {
         "type": "state",
         "common": {
-            "name": "Ptressure Tendency",
+            "name": "Pressure Tendency",
             "type": "string",
             "read": true,
             "write": false,
