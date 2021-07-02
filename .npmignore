@@ -14,3 +14,4 @@ gulpfile.js
 !/LICENSE
 !/main.js
 !/README.md
+.dev-server

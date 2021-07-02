@@ -6,7 +6,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "date"
+            "role": "date.forecast.0"
         },
         "native": {}
     },
@@ -17,7 +17,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon"
+            "role": "weather.icon.name.forecast.0"
         },
         "native": {}
     },
@@ -28,7 +28,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.url"
+            "role": "weather.icon.forecast.0"
         },
         "native": {}
     },
@@ -39,7 +39,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.state"
+            "role": "weather.state.forecast.0"
         },
         "native": {}
     },
@@ -50,7 +50,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.current",
+            "role": "value.temperature.forecast.0",
             "unit": "°C"
         },
         "native": {}
@@ -62,7 +62,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.feelslike",
+            "role": "value.temperature.feelslike.forecast.0",
             "unit": "°C"
         },
         "native": {}
@@ -74,7 +74,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.speed.wind",
+            "role": "value.speed.wind.forecast.0",
             "unit": "km/h"
         },
         "native": {}
@@ -86,7 +86,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.direction.wind",
+            "role": "value.direction.wind.forecast.0",
             "unit": "°"
         },
         "native": {}
@@ -98,7 +98,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.direction.wind",
+            "role": "weather.direction.wind.forecast.0",
             "unit": ""
         },
         "native": {}
@@ -110,7 +110,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.humidity",
+            "role": "value.humidity.forecast.0",
             "unit": "%"
         },
         "native": {}
@@ -134,7 +134,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "dayofweek",
+            "role": "dayofweek.forecast.0",
             "unit":""
         },
         "native": {}
@@ -174,7 +174,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "date.forecast.1"
+            "role": "date.forecast.0"
         },
         "native": {}
     },
@@ -185,7 +185,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.forecast.1"
+            "role": "weather.icon.name.forecast.0"
         },
         "native": {}
     },
@@ -196,7 +196,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.url.forecast.1"
+            "role": "weather.icon.forecast.0"
         },
         "native": {}
     },
@@ -207,7 +207,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.state.forecast.1"
+            "role": "weather.state.forecast.0"
         },
         "native": {}
     },
@@ -218,7 +218,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.min.forecast.1",
+            "role": "value.temperature.min.forecast.0",
             "unit": "°C"
         },
         "native": {}
@@ -231,7 +231,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.max.forecast.1",
+            "role": "value.temperature.max.forecast.0",
             "unit": "°C"
         },
         "native": {}
@@ -243,7 +243,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.speed.wind.forecast.1",
+            "role": "value.speed.wind.forecast.0",
             "unit": "km/h"
         },
         "native": {}
@@ -255,7 +255,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.direction.wind.forecast.1",
+            "role": "value.direction.wind.forecast.0",
             "unit": "°"
         },
         "native": {}
@@ -267,7 +267,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.direction.wind.forecast.1",
+            "role": "weather.direction.wind.forecast.0",
             "unit": ""
         },
         "native": {}
@@ -279,7 +279,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "dayofweek.forecast.1",
+            "role": "dayofweek.forecast.0",
             "unit":""
         },
         "native": {}
@@ -291,7 +291,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.1",
+            "role": "value.precipitation.forecast.0",
             "unit":"%"
         },
         "native": {}
@@ -303,7 +303,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.1",
+            "role": "value.precipitation.forecast.0",
             "unit":"mm"
         },
         "native": {}
@@ -318,7 +318,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "date.forecast.2"
+            "role": "date.forecast.1"
         },
         "native": {}
     },
@@ -329,7 +329,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.forecast.2"
+            "role": "weather.icon.name.forecast.1"
         },
         "native": {}
     },
@@ -340,7 +340,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.url.forecast.2"
+            "role": "weather.icon.forecast.1"
         },
         "native": {}
     },
@@ -351,7 +351,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.state.forecast.2"
+            "role": "weather.state.forecast.1"
         },
         "native": {}
     },
@@ -362,7 +362,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.min.forecast.2",
+            "role": "value.temperature.min.forecast.1",
             "unit": "°C"
         },
         "native": {}
@@ -375,7 +375,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.max.forecast.2",
+            "role": "value.temperature.max.forecast.1",
             "unit": "°C"
         },
         "native": {}
@@ -387,7 +387,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.speed.wind.forecast.2",
+            "role": "value.speed.wind.forecast.1",
             "unit": "km/h"
         },
         "native": {}
@@ -399,7 +399,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.direction.wind.forecast.2",
+            "role": "value.direction.wind.forecast.1",
             "unit": "°"
         },
         "native": {}
@@ -411,7 +411,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.direction.wind.forecast.2",
+            "role": "weather.direction.wind.forecast.1",
             "unit": ""
         },
         "native": {}
@@ -423,7 +423,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "dayofweek.forecast.2",
+            "role": "dayofweek.forecast.1",
             "unit":""
         },
         "native": {}
@@ -435,7 +435,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.2",
+            "role": "value.precipitation.forecast.1",
             "unit":"%"
         },
         "native": {}
@@ -447,7 +447,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.2",
+            "role": "value.precipitation.forecast.1",
             "unit":"mm"
         },
         "native": {}
@@ -456,7 +456,7 @@
 
 
 
-    
+
     "Summary.DateTime_d3": {
         "type": "state",
         "common": {
@@ -464,7 +464,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "date.forecast.3"
+            "role": "date.forecast.2"
         },
         "native": {}
     },
@@ -475,7 +475,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.forecast.3"
+            "role": "weather.icon.name.forecast.2"
         },
         "native": {}
     },
@@ -486,7 +486,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.url.forecast.3"
+            "role": "weather.icon.forecast.2"
         },
         "native": {}
     },
@@ -497,7 +497,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.state.forecast.3"
+            "role": "weather.state.forecast.2"
         },
         "native": {}
     },
@@ -508,7 +508,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.min.forecast.3",
+            "role": "value.temperature.min.forecast.2",
             "unit": "°C"
         },
         "native": {}
@@ -521,7 +521,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.max.forecast.3",
+            "role": "value.temperature.max.forecast.2",
             "unit": "°C"
         },
         "native": {}
@@ -533,7 +533,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.speed.wind.forecast.3",
+            "role": "value.speed.wind.forecast.2",
             "unit": "km/h"
         },
         "native": {}
@@ -545,7 +545,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.direction.wind.forecast.3",
+            "role": "value.direction.wind.forecast.2",
             "unit": "°"
         },
         "native": {}
@@ -557,7 +557,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.direction.wind.forecast.3",
+            "role": "weather.direction.wind.forecast.2",
             "unit": ""
         },
         "native": {}
@@ -569,7 +569,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "dayofweek.forecast.3",
+            "role": "dayofweek.forecast.2",
             "unit":""
         },
         "native": {}
@@ -581,7 +581,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.3",
+            "role": "value.precipitation.forecast.2",
             "unit":"%"
         },
         "native": {}
@@ -593,7 +593,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.3",
+            "role": "value.precipitation.forecast.2",
             "unit":"mm"
         },
         "native": {}
@@ -602,8 +602,8 @@
 
 
 
-    
-    
+
+
     "Summary.DateTime_d4": {
         "type": "state",
         "common": {
@@ -611,7 +611,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "date.forecast.4"
+            "role": "date.forecast.3"
         },
         "native": {}
     },
@@ -622,7 +622,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.forecast.4"
+            "role": "weather.icon.name.forecast.3"
         },
         "native": {}
     },
@@ -633,7 +633,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.url.forecast.4"
+            "role": "weather.icon.forecast.3"
         },
         "native": {}
     },
@@ -644,7 +644,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.state.forecast.4"
+            "role": "weather.state.forecast.3"
         },
         "native": {}
     },
@@ -655,7 +655,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.min.forecast.4",
+            "role": "value.temperature.min.forecast.3",
             "unit": "°C"
         },
         "native": {}
@@ -668,7 +668,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.max.forecast.4",
+            "role": "value.temperature.max.forecast.3",
             "unit": "°C"
         },
         "native": {}
@@ -680,7 +680,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.speed.wind.forecast.4",
+            "role": "value.speed.wind.forecast.3",
             "unit": "km/h"
         },
         "native": {}
@@ -692,7 +692,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.direction.wind.forecast.4",
+            "role": "value.direction.wind.forecast.3",
             "unit": "°"
         },
         "native": {}
@@ -704,7 +704,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.direction.wind.forecast.4",
+            "role": "weather.direction.wind.forecast.3",
             "unit": ""
         },
         "native": {}
@@ -716,7 +716,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "dayofweek.forecast.4",
+            "role": "dayofweek.forecast.3",
             "unit":""
         },
         "native": {}
@@ -728,7 +728,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.4",
+            "role": "value.precipitation.forecast.3",
             "unit":"%"
         },
         "native": {}
@@ -740,7 +740,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.4",
+            "role": "value.precipitation.forecast.3",
             "unit":"mm"
         },
         "native": {}
@@ -749,8 +749,8 @@
 
 
 
-    
-    
+
+
     "Summary.DateTime_d5": {
         "type": "state",
         "common": {
@@ -758,7 +758,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "date.forecast.5"
+            "role": "date.forecast.4"
         },
         "native": {}
     },
@@ -769,7 +769,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.forecast.5"
+            "role": "weather.icon.name.forecast.4"
         },
         "native": {}
     },
@@ -780,7 +780,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.icon.url.forecast.5"
+            "role": "weather.icon.forecast.4"
         },
         "native": {}
     },
@@ -791,7 +791,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.state.forecast.5"
+            "role": "weather.state.forecast.4"
         },
         "native": {}
     },
@@ -802,7 +802,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.min.forecast.5",
+            "role": "value.temperature.min.forecast.4",
             "unit": "°C"
         },
         "native": {}
@@ -815,7 +815,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.temperature.max.forecast.5",
+            "role": "value.temperature.max.forecast.4",
             "unit": "°C"
         },
         "native": {}
@@ -827,7 +827,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.speed.wind.forecast.5",
+            "role": "value.speed.wind.forecast.4",
             "unit": "km/h"
         },
         "native": {}
@@ -839,7 +839,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.direction.wind.forecast.5",
+            "role": "value.direction.wind.forecast.4",
             "unit": "°"
         },
         "native": {}
@@ -851,7 +851,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "weather.direction.wind.forecast.5",
+            "role": "weather.direction.wind.forecast.4",
             "unit": ""
         },
         "native": {}
@@ -863,7 +863,7 @@
             "type": "string",
             "read": true,
             "write": false,
-            "role": "dayofweek.forecast.5",
+            "role": "dayofweek.forecast.4",
             "unit":""
         },
         "native": {}
@@ -875,7 +875,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.5",
+            "role": "value.precipitation.forecast.4",
             "unit":"%"
         },
         "native": {}
@@ -887,7 +887,7 @@
             "type": "number",
             "read": true,
             "write": false,
-            "role": "value.precipitation.forecast.5",
+            "role": "value.precipitation.forecast.4",
             "unit":"mm"
         },
         "native": {}

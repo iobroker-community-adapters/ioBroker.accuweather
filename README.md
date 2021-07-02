@@ -34,8 +34,11 @@ For better view a custom lovelace card is created - see https://github.com/algar
 
 <!--
 	Placeholder for the next version (at the beginning of the line):
-	### __WORK IN PROGRESS__
+	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (Garfonso) adjust roles to properly detect weather forecast in Summary folder.
+
 ## Changelog
 ### 1.1.7 (2021-06-24)
 * (bluefox) Create device for device-detector 
