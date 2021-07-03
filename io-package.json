@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "accuweather",
-        "version": "1.1.7",
+        "version": "1.2.0",
         "news": {
+            "1.2.0": {
+                "en": "adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)",
+                "de": "Passen Sie die Rollen an, um die Wettervorhersage im Ordner \"Zusammenfassung\" richtig zu erkennen. (Zusammenfassungsobjekte müssen danach gelöscht und der Adapter neu gestartet werden)",
+                "ru": "Изменены роли для правильного определения устройства Погода. (Объекты Summary необходимо удалить и после этого перезапустить адаптер)",
+                "pt": "ajuste as funções para detectar adequadamente a previsão do tempo na pasta Resumo. (Objetos de resumo precisam ser excluídos e o adaptador reiniciado depois disso)",
+                "nl": "pas rollen aan om de weersvoorspelling correct te detecteren in de map Samenvatting. (Samenvattingsobjecten moeten daarna worden verwijderd en de adapter moet opnieuw worden opgestart)",
+                "fr": "ajustez les rôles pour détecter correctement les prévisions météorologiques dans le dossier Résumé. (Les objets de résumé doivent être supprimés et l'adaptateur redémarré après cela)",
+                "it": "regolare i ruoli per rilevare correttamente le previsioni del tempo nella cartella Riepilogo. (Gli oggetti di riepilogo devono essere eliminati e l'adattatore riavviato successivamente)",
+                "es": "ajuste los roles para detectar correctamente el pronóstico del tiempo en la carpeta Resumen. (Los objetos de resumen deben eliminarse y el adaptador debe reiniciarse después de eso)",
+                "pl": "dostosuj role, aby poprawnie wykryć prognozę pogody w folderze Podsumowanie. (Obiekty podsumowania należy usunąć, a następnie ponownie uruchomić adapter)",
+                "zh-cn": "调整角色以正确检测摘要文件夹中的天气预报。 （之后需要删除摘要对象并重新启动适配器）"
+            },
             "1.1.7": {
                 "en": "* Create device for device-detector \n\n## v1.1.6 (2021-05-05)\nMinor bug fixes to `Object.common` section",
                 "de": "* Gerät für Gerätedetektor erstellen\n\n## v1.1.6 (2021-05-05)\nKleinere Fehlerbehebungen im Abschnitt \"Object.common\"`",
