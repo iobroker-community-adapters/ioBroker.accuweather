@@ -41,7 +41,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 -->
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.2.1 (2021-07-22)
 * (bluefox) Updated logo
 
 ### 1.2.0 (2021-07-03)

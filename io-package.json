@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "accuweather",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "news": {
+            "1.2.1": {
+                "en": "Updated logo",
+                "de": "Aktualisiertes Logo",
+                "ru": "Обновленный логотип",
+                "pt": "Logotipo atualizado",
+                "nl": "Bijgewerkt logo",
+                "fr": "Logo mis à jour",
+                "it": "Logo aggiornato",
+                "es": "Logotipo actualizado",
+                "pl": "Zaktualizowane logo",
+                "zh-cn": "更新标志"
+            },
             "1.2.0": {
                 "en": "adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)",
                 "de": "Passen Sie die Rollen an, um die Wettervorhersage im Ordner \"Zusammenfassung\" richtig zu erkennen. (Zusammenfassungsobjekte müssen danach gelöscht und der Adapter neu gestartet werden)",
