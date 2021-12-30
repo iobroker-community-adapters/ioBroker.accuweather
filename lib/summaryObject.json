@@ -55,6 +55,17 @@
         },
         "native": {}
     },
+    "Summary.HoursOfSun": {
+        "type": "state",
+        "common": {
+            "name": "Hours of Sun",
+            "type": "number",
+            "read": true,
+            "write": false,
+            "role": "value.HoursOfSun"
+        },
+        "native": {}
+    },
     "Summary.RealFeelTemperature": {
         "type": "state",
         "common": {
