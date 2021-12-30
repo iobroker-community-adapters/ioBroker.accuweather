@@ -32,6 +32,17 @@
         },
         "native": {}
     },
+    "Daily.dayn.HoursOfSun": {
+        "type": "state",
+        "common": {
+            "name": "Hours of Sun",
+            "type": "number",
+            "read": true,
+            "write": false,
+            "role": "value"
+        },
+        "native": {}
+    },
     "Daily.dayn.Temperature.Minimum": {
         "type": "state",
         "common": {
