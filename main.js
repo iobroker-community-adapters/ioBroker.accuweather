@@ -70,6 +70,12 @@ class Accuweather extends utils.Adapter {
 								this.setState("Summary.Sunset", { val: json[key]["Set"], ack: true });
 							}
 							break;
+						case "HoursOfSun":
+							this.setState("Daily.Day" + day + ".HoursOfSun", { val: json[key], ack: true });
+							if (day === 1) {
+								this.setState("Summary.HoursOfSun", { val: json[key], ack: true });
+							}
+							break;	
 						case "Temperature":
 							this.setState("Daily.Day" + day + ".Temperature.Minimum", { val: json[key]["Minimum"].Value, ack: true });
 							this.setState("Daily.Day" + day + ".Temperature.Maximum", { val: json[key]["Maximum"].Value, ack: true });
