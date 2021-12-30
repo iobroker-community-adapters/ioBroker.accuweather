@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "accuweather",
-        "version": "1.2.1",
+        "version": "1.2.2",
         "news": {
+            "1.2.2": {
+                "en": "HoursOfSun parameter added to Daily forecast",
+                "de": "HoursOfSun-Parameter zur täglichen Vorhersage hinzugefügt",
+                "ru": "В суточный прогноз добавлен параметр HoursOfSun",
+                "pt": "Parâmetro HoursOfSun adicionado à previsão diária",
+                "nl": "HoursOfSun-parameter toegevoegd aan dagelijkse voorspelling",
+                "fr": "Paramètre HoursOfSun ajouté aux prévisions quotidiennes",
+                "it": "Parametro HoursOfSun aggiunto alla previsione giornaliera",
+                "es": "Parámetro HoursOfSun agregado al pronóstico diario",
+                "pl": "Dodano parametr HoursOfSun do prognozy dziennej",
+                "zh-cn": "每日预测中添加了 hoursOfSun 参数"
+            },
             "1.2.1": {
                 "en": "Updated logo",
                 "de": "Aktualisiertes Logo",
