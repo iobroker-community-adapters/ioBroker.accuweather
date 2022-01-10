@@ -1,9 +1,9 @@
 {
     "common": {
         "name": "accuweather",
-        "version": "1.2.2",
+        "version": "1.2.3",
         "news": {
-            "1.2.2": {
+            "1.2.3": {
                 "en": "HoursOfSun parameter added to Daily forecast",
                 "de": "HoursOfSun-Parameter zur täglichen Vorhersage hinzugefügt",
                 "ru": "В суточный прогноз добавлен параметр HoursOfSun",
