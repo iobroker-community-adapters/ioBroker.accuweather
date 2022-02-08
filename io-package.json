@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "accuweather",
-        "version": "1.2.3",
+        "version": "1.2.4",
         "news": {
+            "1.2.4": {
+                "en": "dependencies update",
+                "de": "Abhängigkeiten aktualisieren",
+                "ru": "обновление зависимостей",
+                "pt": "atualização de dependências",
+                "nl": "afhankelijkheden bijwerken",
+                "fr": "mise à jour des dépendances",
+                "it": "aggiornamento delle dipendenze",
+                "es": "actualización de dependencias",
+                "pl": "aktualizacja zależności",
+                "zh-cn": "依赖更新"
+            },
             "1.2.3": {
                 "en": "HoursOfSun parameter added to Daily forecast",
                 "de": "HoursOfSun-Parameter zur täglichen Vorhersage hinzugefügt",
@@ -199,7 +211,7 @@
         "dataSource": "poll",
         "dependencies": [
             {
-                "js-controller": ">=1.4.2"
+                "js-controller": ">=2.0.0"
             }
         ]
     },
