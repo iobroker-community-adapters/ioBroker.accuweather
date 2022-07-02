@@ -169,6 +169,7 @@ class Accuweather extends utils.Adapter {
 					if (key === "Wind") {
 						this.setState("Hourly.h" + hour + ".WindSpeed", { val: json[key].Speed.Value, ack: true });
 						this.setState("Hourly.h" + hour + ".WindDirection", { val: json[key].Direction.Degrees, ack: true });
+						this.setState("Hourly.h" + hour + ".WindDirectionText", { val: json[key].Direction.Localized , ack: true });
 					} else
 					if (key === "WindGust") {
 						this.setState("Hourly.h" + hour + ".WindGust", { val: json[key].Speed.Value, ack: true });
@@ -215,6 +216,7 @@ class Accuweather extends utils.Adapter {
 						this.setState("Current.WindSpeed", { val: json[key].Speed.Metric.Value, ack: true });
 						this.setState("Summary.WindSpeed", { val: json[key].Speed.Metric.Value, ack: true });
 						this.setState("Current.WindDirection", { val: json[key].Direction.Degrees, ack: true });
+						this.setState("Current.WindDirectionText", { val: json[key].Direction.Localized, ack: true });
 						this.setState("Summary.WindDirection", { val: json[key].Direction.Degrees, ack: true });
 						this.setState("Summary.WindDirectionStr", { val: this.getCardinalDirection(json[key].Direction.Degrees), ack: true });
 					} else
