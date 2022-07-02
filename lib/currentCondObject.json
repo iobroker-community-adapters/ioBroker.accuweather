@@ -69,7 +69,7 @@
         "type": "state",
         "common": {
             "name": "Precipitation Description",
-            "type": "boolean",
+            "type": "string",
             "read": true,
             "write": false,
             "role": "value"
@@ -140,11 +140,22 @@
         "type": "state",
         "common": {
             "name": "Wind Direction",
-            "type": "string",
+            "type": "number",
             "read": true,
             "write": false,
             "role": "value.direction.wind",
             "unit": "°"
+        },
+        "native": {}
+    },
+    "nextHour.WindDirectionText": {
+        "type": "state",
+        "common": {
+            "name": "Wind Direction Text",
+            "type": "string",
+            "read": true,
+            "write": false,
+            "role": "value.direction.wind"
         },
         "native": {}
     },
@@ -168,6 +179,18 @@
             "read": true,
             "write": false,
             "role": "value.humidity",
+            "unit": "%"
+        },
+        "native": {}
+    },
+    "nextHour.CloudCover": {
+        "type": "state",
+        "common": {
+            "name": "Cloud Cover",
+            "type": "number",
+            "read": true,
+            "write": false,
+            "role": "value",
             "unit": "%"
         },
         "native": {}
