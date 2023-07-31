@@ -18,7 +18,7 @@
     "url": "https://github.com/iobroker-community-adapters/ioBroker.accuweather"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.5.0",
+    "@iobroker/adapter-core": "^3.0.3",
     "query-string": "^8.1.0",
     "request": "^2.88.2"
   },
