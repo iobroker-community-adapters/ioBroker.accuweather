@@ -37,7 +37,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 -->
 
 ## Changelog
-### 1.3.0 (2023-08-15)
+### **WORK IN PROGRESS**
 * (isi07) added the Wind Direction Text und Cloud Cover
 * (bluefox) Added json config
 

@@ -3,19 +3,6 @@
     "name": "accuweather",
     "version": "1.3.0",
     "news": {
-      "1.3.0": {
-        "en": "added the Wind Direction Text und Cloud Cover\nAdded json config",
-        "de": "windrichtung Text und Cloud Cover\nHinzugefügt json config",
-        "ru": "добавлено направление ветра Текст und Облачная крышка\nДобавлено json config",
-        "pt": "adicionou o texto de direção do vento und Cloud Cover\nAdicionado json config",
-        "nl": "voegde de Wind Direction Text und Cloud Cover toe\n_",
-        "fr": "ajouté la fenêtre de direction du vent Text und Cloud Cover\nAjouté json config",
-        "it": "aggiunto la direzione del vento Testo und Cloud Cover\nAggiunto json config",
-        "es": "añadido el texto dirección del viento und cubierta de nube\nAñadido json config",
-        "pl": "wprowadzono dyrekcję Wind Direction Text i Cloud Cover\nAdded json configig",
-        "uk": "додана хмарна кришка вітру\nДодано json config",
-        "zh-cn": "添加了Wind Direction案文 und Cloud Cover\n增编"
-      },
       "1.2.4": {
         "en": "dependencies update",
         "de": "Abhängigkeiten aktualisieren",
