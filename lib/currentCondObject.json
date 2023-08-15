@@ -1,243 +1,243 @@
 {
-    "nextHour.LocalObservationDateTime": {
-        "type": "state",
-        "common": {
-            "name": "Forecast date",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "date"
-        },
-        "native": {}
+  "nextHour.LocalObservationDateTime": {
+    "type": "state",
+    "common": {
+      "name": "Forecast date",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "date"
     },
-    "nextHour.WeatherIcon": {
-        "type": "state",
-        "common": {
-            "name": "Weather Icon",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherIcon": {
+    "type": "state",
+    "common": {
+      "name": "Weather Icon",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.WeatherIconURL": {
-        "type": "state",
-        "common": {
-            "name": "Weather Icon URL",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "media.url"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherIconURL": {
+    "type": "state",
+    "common": {
+      "name": "Weather Icon URL",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "media.url"
     },
-    "nextHour.WeatherIconURLS": {
-        "type": "state",
-        "common": {
-            "name": "SVG Weather Icon URL",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.icon"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherIconURLS": {
+    "type": "state",
+    "common": {
+      "name": "SVG Weather Icon URL",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.icon"
     },
-    "nextHour.WeatherText": {
-        "type": "state",
-        "common": {
-            "name": "Weather Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.state"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherText": {
+    "type": "state",
+    "common": {
+      "name": "Weather Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.state"
     },
-    "nextHour.HasPrecipitation": {
-        "type": "state",
-        "common": {
-            "name": "Precipitation",
-            "type": "boolean",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.HasPrecipitation": {
+    "type": "state",
+    "common": {
+      "name": "Precipitation",
+      "type": "boolean",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.PrecipitationType": {
-        "type": "state",
-        "common": {
-            "name": "Precipitation Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.PrecipitationType": {
+    "type": "state",
+    "common": {
+      "name": "Precipitation Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.Temperature": {
-        "type": "state",
-        "common": {
-            "name": "Temperature",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.Temperature": {
+    "type": "state",
+    "common": {
+      "name": "Temperature",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature",
+      "unit": "°C"
     },
-    "nextHour.RealFeelTemperature": {
-        "type": "state",
-        "common": {
-            "name": "Feels Like Temperature",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature.feelslike",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RealFeelTemperature": {
+    "type": "state",
+    "common": {
+      "name": "Feels Like Temperature",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature.feelslike",
+      "unit": "°C"
     },
-    "nextHour.RealFeelTemperatureShade": {
-        "type": "state",
-        "common": {
-            "name": "Shadow Temperature",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RealFeelTemperatureShade": {
+    "type": "state",
+    "common": {
+      "name": "Shadow Temperature",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature",
+      "unit": "°C"
     },
-    "nextHour.DewPoint": {
-        "type": "state",
-        "common": {
-            "name": "Dew Point",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.DewPoint": {
+    "type": "state",
+    "common": {
+      "name": "Dew Point",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "°C"
     },
-    "nextHour.WindSpeed":{
-        "type": "state",
-        "common": {
-            "name": "Wind Speed",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.speed.wind",
-            "unit": "km/h"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindSpeed": {
+    "type": "state",
+    "common": {
+      "name": "Wind Speed",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.speed.wind",
+      "unit": "km/h"
     },
-    "nextHour.WindDirection": {
-        "type": "state",
-        "common": {
-            "name": "Wind Direction",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.direction.wind",
-            "unit": "°"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindDirection": {
+    "type": "state",
+    "common": {
+      "name": "Wind Direction",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.direction.wind",
+      "unit": "°"
     },
-    "nextHour.WindDirectionText": {
-        "type": "state",
-        "common": {
-            "name": "Wind Direction Text",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value.direction.wind"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindDirectionText": {
+    "type": "state",
+    "common": {
+      "name": "Wind Direction Text",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value.direction.wind"
     },
-    "nextHour.WindGust": {
-        "type": "state",
-        "common": {
-            "name": "Wind Gust",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit": "km/h"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindGust": {
+    "type": "state",
+    "common": {
+      "name": "Wind Gust",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "km/h"
     },
-    "nextHour.RelativeHumidity": {
-        "type": "state",
-        "common": {
-            "name": "Humidity",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.humidity",
-            "unit": "%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RelativeHumidity": {
+    "type": "state",
+    "common": {
+      "name": "Humidity",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.humidity",
+      "unit": "%"
     },
-    "nextHour.CloudCover": {
-        "type": "state",
-        "common": {
-            "name": "Cloud Cover",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit": "%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.CloudCover": {
+    "type": "state",
+    "common": {
+      "name": "Cloud Cover",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "nextHour.UVIndex": {
-        "type": "state",
-        "common": {
-            "name": "UV Index",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.UVIndex": {
+    "type": "state",
+    "common": {
+      "name": "UV Index",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.UVIndexText": {
-        "type": "state",
-        "common": {
-            "name": "UV Index Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.UVIndexText": {
+    "type": "state",
+    "common": {
+      "name": "UV Index Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.Pressure": {
-        "type": "state",
-        "common": {
-            "name": "Pressure",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.pressure",
-            "unit":"mb"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.Pressure": {
+    "type": "state",
+    "common": {
+      "name": "Pressure",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.pressure",
+      "unit": "mb"
     },
-    "nextHour.PressureTendency": {
-        "type": "state",
-        "common": {
-            "name": "Pressure Tendency",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
-    }
+    "native": {}
+  },
+  "nextHour.PressureTendency": {
+    "type": "state",
+    "common": {
+      "name": "Pressure Tendency",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value"
+    },
+    "native": {}
   }
+}

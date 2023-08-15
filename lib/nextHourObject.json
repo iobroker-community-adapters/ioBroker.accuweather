@@ -1,270 +1,270 @@
 {
-    "nextHour.DateTime": {
-        "type": "state",
-        "common": {
-            "name": "Forecast date",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "date"
-        },
-        "native": {}
+  "nextHour.DateTime": {
+    "type": "state",
+    "common": {
+      "name": "Forecast date",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "date"
     },
-    "nextHour.WeatherIcon": {
-        "type": "state",
-        "common": {
-            "name": "Weather Icon",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherIcon": {
+    "type": "state",
+    "common": {
+      "name": "Weather Icon",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.WeatherIconURL": {
-        "type": "state",
-        "common": {
-            "name": "Weather Icon URL",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "media.url"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherIconURL": {
+    "type": "state",
+    "common": {
+      "name": "Weather Icon URL",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "media.url"
     },
-    "nextHour.WeatherIconURLS": {
-        "type": "state",
-        "common": {
-            "name": "SVG Weather Icon URL",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.icon"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WeatherIconURLS": {
+    "type": "state",
+    "common": {
+      "name": "SVG Weather Icon URL",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.icon"
     },
-    "nextHour.IconPhrase": {
-        "type": "state",
-        "common": {
-            "name": "Weather Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.state"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.IconPhrase": {
+    "type": "state",
+    "common": {
+      "name": "Weather Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.state"
     },
-    "nextHour.HasPrecipitation": {
-        "type": "state",
-        "common": {
-            "name": "Precipitation",
-            "type": "boolean",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.HasPrecipitation": {
+    "type": "state",
+    "common": {
+      "name": "Precipitation",
+      "type": "boolean",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.Temperature": {
-        "type": "state",
-        "common": {
-            "name": "Temperature",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.Temperature": {
+    "type": "state",
+    "common": {
+      "name": "Temperature",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature",
+      "unit": "°C"
     },
-    "nextHour.RealFeelTemperature": {
-        "type": "state",
-        "common": {
-            "name": "Feels Like Temperature",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature.feelslike",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RealFeelTemperature": {
+    "type": "state",
+    "common": {
+      "name": "Feels Like Temperature",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature.feelslike",
+      "unit": "°C"
     },
-    "nextHour.DewPoint": {
-        "type": "state",
-        "common": {
-            "name": "Dew Point",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.DewPoint": {
+    "type": "state",
+    "common": {
+      "name": "Dew Point",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "°C"
     },
-    "nextHour.WindSpeed":{
-        "type": "state",
-        "common": {
-            "name": "Wind Speed",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.speed.wind",
-            "unit": "km/h"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindSpeed": {
+    "type": "state",
+    "common": {
+      "name": "Wind Speed",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.speed.wind",
+      "unit": "km/h"
     },
-    "nextHour.WindDirection": {
-        "type": "state",
-        "common": {
-            "name": "Wind Direction",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value.direction.wind",
-            "unit": "°"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindDirection": {
+    "type": "state",
+    "common": {
+      "name": "Wind Direction",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value.direction.wind",
+      "unit": "°"
     },
-    "nextHour.WindGust": {
-        "type": "state",
-        "common": {
-            "name": "Wind Gust",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit": "km/h"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.WindGust": {
+    "type": "state",
+    "common": {
+      "name": "Wind Gust",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "km/h"
     },
-    "nextHour.RelativeHumidity": {
-        "type": "state",
-        "common": {
-            "name": "Humidity",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.humidity",
-            "unit": "%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RelativeHumidity": {
+    "type": "state",
+    "common": {
+      "name": "Humidity",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.humidity",
+      "unit": "%"
     },
-    "nextHour.UVIndex": {
-        "type": "state",
-        "common": {
-            "name": "UV Index",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.UVIndex": {
+    "type": "state",
+    "common": {
+      "name": "UV Index",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.UVIndexText": {
-        "type": "state",
-        "common": {
-            "name": "UV Index Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.UVIndexText": {
+    "type": "state",
+    "common": {
+      "name": "UV Index Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "nextHour.PrecipitationProbability": {
-        "type": "state",
-        "common": {
-            "name": "Precipitation Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.precipitation",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.PrecipitationProbability": {
+    "type": "state",
+    "common": {
+      "name": "Precipitation Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.precipitation",
+      "unit": "%"
     },
-    "nextHour.RainProbability": {
-        "type": "state",
-        "common": {
-            "name": "Rain Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RainProbability": {
+    "type": "state",
+    "common": {
+      "name": "Rain Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "nextHour.SnowProbability": {
-        "type": "state",
-        "common": {
-            "name": "Snow Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.SnowProbability": {
+    "type": "state",
+    "common": {
+      "name": "Snow Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "nextHour.IceProbability": {
-        "type": "state",
-        "common": {
-            "name": "Ice Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.IceProbability": {
+    "type": "state",
+    "common": {
+      "name": "Ice Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "nextHour.RainVolume":{
-        "type": "state",
-        "common": {
-            "name": "Rain Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"mm"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.RainVolume": {
+    "type": "state",
+    "common": {
+      "name": "Rain Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "mm"
     },
-    "nextHour.SnowVolume":{
-        "type": "state",
-        "common": {
-            "name": "Snow Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"mm"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.SnowVolume": {
+    "type": "state",
+    "common": {
+      "name": "Snow Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "mm"
     },
-    "nextHour.IceVolume":{
-        "type": "state",
-        "common": {
-            "name": "Ice Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"mm"
-        },
-        "native": {}
+    "native": {}
+  },
+  "nextHour.IceVolume": {
+    "type": "state",
+    "common": {
+      "name": "Ice Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "mm"
     },
-    "nextHour.TotalLiquidVolume": {
-        "type": "state",
-        "common": {
-            "name": "Total Precipitation Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.precipitation",
-            "unit":"mm"
-        },
-        "native": {}
-    }
+    "native": {}
+  },
+  "nextHour.TotalLiquidVolume": {
+    "type": "state",
+    "common": {
+      "name": "Total Precipitation Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.precipitation",
+      "unit": "mm"
+    },
+    "native": {}
   }
+}

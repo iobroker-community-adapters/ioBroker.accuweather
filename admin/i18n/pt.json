@@ -1,0 +1,9 @@
+{
+  "API Key": "Chave API",
+  "Location Key": "Chave de localização",
+  "api_help": "Para obter a API Key, registre-se em https://developer.accuweather.com/ e crie um aplicativo no menu \"Meus aplicativos\"",
+  "lo_help": "Para obter a chave de localização, acesse https://www.accuweather.com/ e digite o nome da sua cidade ou tente inserir suas coordenadas (latitude, longitude). Sua chave de localização será o número no final do URL.",
+  "Language": "Linguagem",
+  "REGISTER": "REGISTRO",
+  "GO": "Visite o site"
+}

@@ -1,0 +1,9 @@
+{
+  "API Key": "API密钥",
+  "Location Key": "位置键",
+  "api_help": "要获取 API 密钥，请在 https://developer.accuweather.com/ 上注册并在“我的应用程序”菜单中创建应用程序",
+  "lo_help": "为了获取位置密钥，请访问 https://www.accuweather.com/ 并输入您的城市名称，或尝试输入您的坐标（纬度、经度）。您的位置键将是 URL 末尾的数字。",
+  "Language": "语言",
+  "REGISTER": "登记",
+  "GO": "访问网站"
+}

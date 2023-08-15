@@ -42,8 +42,8 @@ jobs:
       #        run: npm run check:ts
       #        env:
       #          CI: true
-      # - name: Lint TypeScript code
-      #   run: npm run lint
+      - name: Lint TypeScript code
+        run: npm run lint
   #      - name: Test package files
   #        run: npm run test:package
 
@@ -136,7 +136,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release v${{ steps.extract_release.outputs.VERSION }}
           draft: false
-          # Prerelease versions create pre-releases on Github
+          # Prerelease versions create pre-releases on GitHub
           prerelease: ${{ contains(steps.extract_release.outputs.VERSION, '-') }}
           body: ${{ steps.extract_release.outputs.BODY }}
 

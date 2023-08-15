@@ -1,315 +1,315 @@
 {
-    "Daily.dayn.Date": {
-        "type": "state",
-        "common": {
-            "name": "Forecast date",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "date"
-        },
-        "native": {}
+  "Daily.dayn.Date": {
+    "type": "state",
+    "common": {
+      "name": "Forecast date",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "date"
     },
-    "Daily.dayn.Sunrise": {
-        "type": "state",
-        "common": {
-            "name": "Sunrise datetime",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "date.sunrise"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.Sunrise": {
+    "type": "state",
+    "common": {
+      "name": "Sunrise datetime",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "date.sunrise"
     },
-    "Daily.dayn.Sunset": {
-        "type": "state",
-        "common": {
-            "name": "Sunset datetime",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "date.sunset"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.Sunset": {
+    "type": "state",
+    "common": {
+      "name": "Sunset datetime",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "date.sunset"
     },
-    "Daily.dayn.HoursOfSun": {
-        "type": "state",
-        "common": {
-            "name": "Hours of Sun",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.HoursOfSun": {
+    "type": "state",
+    "common": {
+      "name": "Hours of Sun",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "Daily.dayn.Temperature.Minimum": {
-        "type": "state",
-        "common": {
-            "name": "Temperature Min",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature.min",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.Temperature.Minimum": {
+    "type": "state",
+    "common": {
+      "name": "Temperature Min",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature.min",
+      "unit": "°C"
     },
-    "Daily.dayn.Temperature.Maximum": {
-        "type": "state",
-        "common": {
-            "name": "Temperature Max",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature.max",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.Temperature.Maximum": {
+    "type": "state",
+    "common": {
+      "name": "Temperature Max",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature.max",
+      "unit": "°C"
     },
-    "Daily.dayn.RealFeelTemperature.Minimum": {
-        "type": "state",
-        "common": {
-            "name": "Feels Like Temperature Min",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature.feelslike.min",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.RealFeelTemperature.Minimum": {
+    "type": "state",
+    "common": {
+      "name": "Feels Like Temperature Min",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature.feelslike.min",
+      "unit": "°C"
     },
-    "Daily.dayn.RealFeelTemperature.Maximum": {
-        "type": "state",
-        "common": {
-            "name": "Feels Like Temperature Max",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.temperature.feelslike.max",
-            "unit": "°C"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.RealFeelTemperature.Maximum": {
+    "type": "state",
+    "common": {
+      "name": "Feels Like Temperature Max",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.temperature.feelslike.max",
+      "unit": "°C"
     },
-    "Daily.dayn.dayPart.Icon": {
-        "type": "state",
-        "common": {
-            "name": "Weather Icon",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.Icon": {
+    "type": "state",
+    "common": {
+      "name": "Weather Icon",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "Daily.dayn.dayPart.IconURL": {
-        "type": "state",
-        "common": {
-            "name": "Weather Icon URL",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "media.url"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.IconURL": {
+    "type": "state",
+    "common": {
+      "name": "Weather Icon URL",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "media.url"
     },
-    "Daily.dayn.dayPart.IconURLS": {
-        "type": "state",
-        "common": {
-            "name": "SVG Weather Icon URL",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.icon"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.IconURLS": {
+    "type": "state",
+    "common": {
+      "name": "SVG Weather Icon URL",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.icon"
     },
-    "Daily.dayn.dayPart.IconPhrase": {
-        "type": "state",
-        "common": {
-            "name": "Weather Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.state"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.IconPhrase": {
+    "type": "state",
+    "common": {
+      "name": "Weather Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.state"
     },
-    "Daily.dayn.dayPart.HasPrecipitation": {
-        "type": "state",
-        "common": {
-            "name": "Precipitation",
-            "type": "boolean",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.HasPrecipitation": {
+    "type": "state",
+    "common": {
+      "name": "Precipitation",
+      "type": "boolean",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "Daily.dayn.dayPart.ShortPhrase": {
-        "type": "state",
-        "common": {
-            "name": "Weather Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "weather.state.description"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.ShortPhrase": {
+    "type": "state",
+    "common": {
+      "name": "Weather Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "weather.state.description"
     },
-    "Daily.dayn.dayPart.LongPhrase": {
-        "type": "state",
-        "common": {
-            "name": "Weather Description",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.LongPhrase": {
+    "type": "state",
+    "common": {
+      "name": "Weather Description",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value"
     },
-    "Daily.dayn.dayPart.PrecipitationProbability": {
-        "type": "state",
-        "common": {
-            "name": "Precipitation Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.precipitation",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.PrecipitationProbability": {
+    "type": "state",
+    "common": {
+      "name": "Precipitation Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.precipitation",
+      "unit": "%"
     },
-    "Daily.dayn.dayPart.ThunderstormProbability": {
-        "type": "state",
-        "common": {
-            "name": "Thunderstorm Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.ThunderstormProbability": {
+    "type": "state",
+    "common": {
+      "name": "Thunderstorm Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "Daily.dayn.dayPart.RainProbability": {
-        "type": "state",
-        "common": {
-            "name": "Rain Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.RainProbability": {
+    "type": "state",
+    "common": {
+      "name": "Rain Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "Daily.dayn.dayPart.SnowProbability": {
-        "type": "state",
-        "common": {
-            "name": "Snow Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.SnowProbability": {
+    "type": "state",
+    "common": {
+      "name": "Snow Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "Daily.dayn.dayPart.IceProbability": {
-        "type": "state",
-        "common": {
-            "name": "Ice Probability",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"%"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.IceProbability": {
+    "type": "state",
+    "common": {
+      "name": "Ice Probability",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "%"
     },
-    "Daily.dayn.dayPart.WindSpeed":{
-        "type": "state",
-        "common": {
-            "name": "Wind Speed",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.speed.wind",
-            "unit": "km/h"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.WindSpeed": {
+    "type": "state",
+    "common": {
+      "name": "Wind Speed",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.speed.wind",
+      "unit": "km/h"
     },
-    "Daily.dayn.dayPart.WindDirection": {
-        "type": "state",
-        "common": {
-            "name": "Wind Direction",
-            "type": "string",
-            "read": true,
-            "write": false,
-            "role": "value.direction.wind",
-            "unit": "°"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.WindDirection": {
+    "type": "state",
+    "common": {
+      "name": "Wind Direction",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "value.direction.wind",
+      "unit": "°"
     },
-    "Daily.dayn.dayPart.WindGust": {
-        "type": "state",
-        "common": {
-            "name": "Wind Gust",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit": "km/h"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.WindGust": {
+    "type": "state",
+    "common": {
+      "name": "Wind Gust",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "km/h"
     },
-    "Daily.dayn.dayPart.RainVolume":{
-        "type": "state",
-        "common": {
-            "name": "Rain Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"mm"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.RainVolume": {
+    "type": "state",
+    "common": {
+      "name": "Rain Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "mm"
     },
-    "Daily.dayn.dayPart.SnowVolume":{
-        "type": "state",
-        "common": {
-            "name": "Snow Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"mm"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.SnowVolume": {
+    "type": "state",
+    "common": {
+      "name": "Snow Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "mm"
     },
-    "Daily.dayn.dayPart.IceVolume":{
-        "type": "state",
-        "common": {
-            "name": "Ice Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value",
-            "unit":"mm"
-        },
-        "native": {}
+    "native": {}
+  },
+  "Daily.dayn.dayPart.IceVolume": {
+    "type": "state",
+    "common": {
+      "name": "Ice Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value",
+      "unit": "mm"
     },
-    "Daily.dayn.dayPart.TotalLiquidVolume": {
-        "type": "state",
-        "common": {
-            "name": "Total Precipitation Amount",
-            "type": "number",
-            "read": true,
-            "write": false,
-            "role": "value.precipitation",
-            "unit":"mm"
-        },
-        "native": {}
-    }
+    "native": {}
+  },
+  "Daily.dayn.dayPart.TotalLiquidVolume": {
+    "type": "state",
+    "common": {
+      "name": "Total Precipitation Amount",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value.precipitation",
+      "unit": "mm"
+    },
+    "native": {}
   }
+}
