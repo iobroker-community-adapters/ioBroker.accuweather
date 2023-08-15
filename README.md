@@ -37,7 +37,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 -->
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.3.0 (2023-08-15)
 * (isi07) added the Wind Direction Text und Cloud Cover
 * (bluefox) Added json config
 
@@ -54,7 +54,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 * (Garfonso) adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)
 
 ### 1.1.7 (2021-06-24)
-* (bluefox) Create device for device-detector 
+* (bluefox) Create device for device-detector
 
 ### v1.1.6 (2021-05-05)
 Minor bug fixes to `Object.common` section

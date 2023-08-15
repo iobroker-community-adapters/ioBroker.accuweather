@@ -1,225 +1,154 @@
 {
-    "common": {
-        "name": "accuweather",
-        "version": "1.2.4",
-        "news": {
-            "1.2.4": {
-                "en": "dependencies update",
-                "de": "Abhängigkeiten aktualisieren",
-                "ru": "обновление зависимостей",
-                "pt": "atualização de dependências",
-                "nl": "afhankelijkheden bijwerken",
-                "fr": "mise à jour des dépendances",
-                "it": "aggiornamento delle dipendenze",
-                "es": "actualización de dependencias",
-                "pl": "aktualizacja zależności",
-                "zh-cn": "依赖更新"
-            },
-            "1.2.3": {
-                "en": "HoursOfSun parameter added to Daily forecast",
-                "de": "HoursOfSun-Parameter zur täglichen Vorhersage hinzugefügt",
-                "ru": "В суточный прогноз добавлен параметр HoursOfSun",
-                "pt": "Parâmetro HoursOfSun adicionado à previsão diária",
-                "nl": "HoursOfSun-parameter toegevoegd aan dagelijkse voorspelling",
-                "fr": "Paramètre HoursOfSun ajouté aux prévisions quotidiennes",
-                "it": "Parametro HoursOfSun aggiunto alla previsione giornaliera",
-                "es": "Parámetro HoursOfSun agregado al pronóstico diario",
-                "pl": "Dodano parametr HoursOfSun do prognozy dziennej",
-                "zh-cn": "每日预测中添加了 hoursOfSun 参数"
-            },
-            "1.2.1": {
-                "en": "Updated logo",
-                "de": "Aktualisiertes Logo",
-                "ru": "Обновленный логотип",
-                "pt": "Logotipo atualizado",
-                "nl": "Bijgewerkt logo",
-                "fr": "Logo mis à jour",
-                "it": "Logo aggiornato",
-                "es": "Logotipo actualizado",
-                "pl": "Zaktualizowane logo",
-                "zh-cn": "更新标志"
-            },
-            "1.2.0": {
-                "en": "adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)",
-                "de": "Passen Sie die Rollen an, um die Wettervorhersage im Ordner \"Zusammenfassung\" richtig zu erkennen. (Zusammenfassungsobjekte müssen danach gelöscht und der Adapter neu gestartet werden)",
-                "ru": "Изменены роли для правильного определения устройства Погода. (Объекты Summary необходимо удалить и после этого перезапустить адаптер)",
-                "pt": "ajuste as funções para detectar adequadamente a previsão do tempo na pasta Resumo. (Objetos de resumo precisam ser excluídos e o adaptador reiniciado depois disso)",
-                "nl": "pas rollen aan om de weersvoorspelling correct te detecteren in de map Samenvatting. (Samenvattingsobjecten moeten daarna worden verwijderd en de adapter moet opnieuw worden opgestart)",
-                "fr": "ajustez les rôles pour détecter correctement les prévisions météorologiques dans le dossier Résumé. (Les objets de résumé doivent être supprimés et l'adaptateur redémarré après cela)",
-                "it": "regolare i ruoli per rilevare correttamente le previsioni del tempo nella cartella Riepilogo. (Gli oggetti di riepilogo devono essere eliminati e l'adattatore riavviato successivamente)",
-                "es": "ajuste los roles para detectar correctamente el pronóstico del tiempo en la carpeta Resumen. (Los objetos de resumen deben eliminarse y el adaptador debe reiniciarse después de eso)",
-                "pl": "dostosuj role, aby poprawnie wykryć prognozę pogody w folderze Podsumowanie. (Obiekty podsumowania należy usunąć, a następnie ponownie uruchomić adapter)",
-                "zh-cn": "调整角色以正确检测摘要文件夹中的天气预报。 （之后需要删除摘要对象并重新启动适配器）"
-            },
-            "1.1.7": {
-                "en": "* Create device for device-detector \n\n## v1.1.6 (2021-05-05)\nMinor bug fixes to `Object.common` section",
-                "de": "* Gerät für Gerätedetektor erstellen\n\n## v1.1.6 (2021-05-05)\nKleinere Fehlerbehebungen im Abschnitt \"Object.common\"`",
-                "ru": "* Создать устройство для устройства-детектора\n\n## v1.1.6 (05.05.2021)\nНезначительные исправления ошибок в разделе `Object.common`",
-                "pt": "* Criar dispositivo para detector de dispositivo\n\n## v1.1.6 (2021-05-05)\nPequenas correções de bugs na seção `Object.common`",
-                "nl": "* Maak een apparaat voor apparaatdetector\n\n## v1.1.6 (2021-05-05)\nKleine bugfixes in de sectie 'Object.common'",
-                "fr": "* Créer un appareil pour le détecteur d'appareil\n\n## v1.1.6 (2021-05-05)\nCorrections de bugs mineurs dans la section `Object.common`",
-                "it": "* Crea dispositivo per rilevatore di dispositivi\n\n## v1.1.6 (2021-05-05)\nCorrezioni di bug minori nella sezione \"Object.common\"",
-                "es": "* Crear dispositivo para detector de dispositivos\n\n## v1.1.6 (05/05/2021)\nCorrecciones de errores menores en la sección `Object.common`",
-                "pl": "* Utwórz urządzenie dla detektora urządzeń\n\n## v1.1.6 (2021-05-05)\nDrobne poprawki błędów w sekcji `Object.common`",
-                "zh-cn": "* 为设备检测器创建设备\n\n## v1.1.6 (2021-05-05)\n“Object.common”部分的小错误修复"
-            },
-            "1.1.6": {
-                "en": "Minor bug fixes in Objects.common section",
-                "de": "Kleinere Fehlerbehebungen im Abschnitt Objects.common",
-                "ru": "Незначительные исправления ошибок в разделе Objects.common",
-                "pt": "Pequenas correções de bugs na seção Objects.common",
-                "nl": "Kleine bugfixes in de sectie Objects.common",
-                "fr": "Corrections de bogues mineurs dans la section Objects.common",
-                "it": "Correzioni di bug minori nella sezione Objects.common",
-                "es": "Correcciones de errores menores en la sección Objects.common",
-                "pl": "Drobne poprawki błędów w sekcji Objects.common",
-                "zh-cn": "Objects.common部分中的小错误修复"
-            },
-            "1.1.5": {
-                "en": "Disable strict object check. Resolve warning with js-controller 3.2",
-                "de": "Deaktivieren Sie die strikte Objektprüfung. Warnung mit js-controller beheben 3.2",
-                "ru": "Отключена строгая проверка объекта. Устранение warning на js-controller 3.2",
-                "pt": "Desative a verificação estrita de objeto. Resolva o aviso com js-controller 3.2",
-                "nl": "Schakel strikte objectcontrole uit. Los de waarschuwing op met js-controller 3.2",
-                "fr": "Désactivez la vérification d'objet stricte. Résoudre l'avertissement avec js-controller 3.2",
-                "it": "Disabilita il controllo degli oggetti rigoroso. Risolvere gli avvisi con js-controller 3.2",
-                "es": "Desactive la comprobación estricta de objetos. Resolver advertencia con js-controller 3.2",
-                "pl": "Wyłącz ścisłe sprawdzanie obiektów. Rozwiązanie ostrzeżenia za pomocą kontrolera js 3.2",
-                "zh-cn": "禁用严格对象检查。使用js-controller 3.2解决警告"
-            },
-            "1.1.4": {
-                "en": "Small bug-fixes to check intervals",
-                "de": "Kleine Fehlerbehebungen zur Überprüfung der Intervalle",
-                "ru": "Небольшие исправления ошибок для проверки интервалов",
-                "pt": "Pequenas correções de erros para verificar intervalos",
-                "nl": "Kleine bugfixes om intervallen te controleren",
-                "fr": "Petites corrections de bugs pour vérifier les intervalles",
-                "it": "Piccole correzioni di bug per controllare gli intervalli",
-                "es": "Pequeñas correcciones de errores para verificar intervalos",
-                "pl": "Małe poprawki błędów sprawdzające interwały",
-                "zh-cn": "小错误修复，以检查间隔"
-            },
-            "1.1.3": {
-                "en": "Minor updates for compact mode",
-                "de": "Kleinere Updates für den Kompaktmodus",
-                "ru": "Незначительные обновления для компактного режима",
-                "pt": "Pequenas atualizações para o modo compacto",
-                "nl": "Kleine updates voor compacte modus",
-                "fr": "Mises à jour mineures pour le mode compact",
-                "it": "Piccoli aggiornamenti per la modalità compatta",
-                "es": "Actualizaciones menores para el modo compacto",
-                "pl": "Niewielkie aktualizacje trybu kompaktowego",
-                "zh-cn": "压缩模式的次要更新"
-            },
-            "1.1.1": {
-                "en": "Summary channel added to support automatic weather device detection by type-detector",
-                "de": "Zusammenfassungskanal hinzugefügt, um die automatische Erkennung von Wettergeräten durch den Typdetektor zu unterstützen",
-                "ru": "Добавлен Summary Channel для поддержки автоматического определения погодных устройств с помощью type-detector",
-                "pt": "Canal de resumo adicionado para oferecer suporte à detecção automática de dispositivos climáticos por detector de tipo",
-                "nl": "Overzichtskanaal toegevoegd om automatische weerapparaatdetectie door typedetector te ondersteunen",
-                "fr": "Chaîne récapitulative ajoutée pour permettre la détection automatique du dispositif météorologique par type",
-                "it": "Aggiunto il canale di riepilogo per supportare il rilevamento automatico dei dispositivi meteorologici mediante rilevatore di tipo",
-                "es": "Resumen del canal agregado para admitir la detección automática de dispositivos meteorológicos por detector de tipo",
-                "pl": "Dodano kanał podsumowania w celu obsługi automatycznego wykrywania urządzenia pogodowego według detektora typu",
-                "zh-cn": "添加了摘要通道以支持类型检测器自动检测天气设备"
-            },
-            "1.0.2": {
-                "en": "Production release",
-                "de": "Produktionsfreigabe",
-                "ru": "Первая Версия",
-                "pt": "Lançamento de produção",
-                "nl": "Productie release",
-                "fr": "Production",
-                "it": "Rilascio di produzione",
-                "es": "Lanzamiento de la producción",
-                "pl": "Dopuszczenie do produkcji",
-                "zh-cn": "生产发布"
-            },
-            "0.1.0": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            },
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            }
-        },
-        "title": "AccuWeather",
-        "titleLang": {
-            "en": "AccuWeather",
-            "de": "AccuWeather",
-            "ru": "AccuWeather",
-            "pt": "AccuWeather",
-            "nl": "AccuWeather",
-            "fr": "AccuWeather",
-            "it": "AccuWeather",
-            "es": "AccuWeather",
-            "pl": "AccuWeather",
-            "zh-cn": "机构AccuWeather"
-        },
-        "desc": {
-            "en": "Weather forecast using AccuWeather API",
-            "de": "Wettervorhersage mit AccuWeather API",
-            "ru": "Прогноз погоды с использованием AccuWeather API",
-            "pt": "Previsão do tempo usando a API AccuWeather",
-            "nl": "Weersverwachting met AccuWeather API",
-            "fr": "Prévisions météorologiques à l'aide de l'API AccuWeather",
-            "it": "Previsioni del tempo utilizzando l'API AccuWeather",
-            "es": "Pronóstico del tiempo usando AccuWeather API",
-            "pl": "Prognoza pogody za pomocą interfejsu API AccuWeather",
-            "zh-cn": "使用AccuWeather API的天气预报"
-        },
-        "authors": [
-            "algar42 <igor.aleschenkov@gmail.com>"
-        ],
-        "keywords": [
-            "Weather",
-            "AccuWeather",
-            "Forecast"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "icon": "accuweather.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.accuweather/master/admin/accuweather.png",
-        "readme": "https://github.com/iobroker-community-adapters/ioBroker.accuweather/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "weather",
-        "compact": true,
-        "materialize": true,
-        "adminUI": {
-            "config": "json"
-        },
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ]
+  "common": {
+    "name": "accuweather",
+    "version": "1.3.0",
+    "news": {
+      "1.3.0": {
+        "en": "added the Wind Direction Text und Cloud Cover\nAdded json config",
+        "de": "windrichtung Text und Cloud Cover\nHinzugefügt json config",
+        "ru": "добавлено направление ветра Текст und Облачная крышка\nДобавлено json config",
+        "pt": "adicionou o texto de direção do vento und Cloud Cover\nAdicionado json config",
+        "nl": "voegde de Wind Direction Text und Cloud Cover toe\n_",
+        "fr": "ajouté la fenêtre de direction du vent Text und Cloud Cover\nAjouté json config",
+        "it": "aggiunto la direzione del vento Testo und Cloud Cover\nAggiunto json config",
+        "es": "añadido el texto dirección del viento und cubierta de nube\nAñadido json config",
+        "pl": "wprowadzono dyrekcję Wind Direction Text i Cloud Cover\nAdded json configig",
+        "uk": "додана хмарна кришка вітру\nДодано json config",
+        "zh-cn": "添加了Wind Direction案文 und Cloud Cover\n增编"
+      },
+      "1.2.4": {
+        "en": "dependencies update",
+        "de": "Abhängigkeiten aktualisieren",
+        "ru": "обновление зависимостей",
+        "pt": "atualização de dependências",
+        "nl": "afhankelijkheden bijwerken",
+        "fr": "mise à jour des dépendances",
+        "it": "aggiornamento delle dipendenze",
+        "es": "actualización de dependencias",
+        "pl": "aktualizacja zależności",
+        "zh-cn": "依赖更新"
+      },
+      "1.2.3": {
+        "en": "HoursOfSun parameter added to Daily forecast",
+        "de": "HoursOfSun-Parameter zur täglichen Vorhersage hinzugefügt",
+        "ru": "В суточный прогноз добавлен параметр HoursOfSun",
+        "pt": "Parâmetro HoursOfSun adicionado à previsão diária",
+        "nl": "HoursOfSun-parameter toegevoegd aan dagelijkse voorspelling",
+        "fr": "Paramètre HoursOfSun ajouté aux prévisions quotidiennes",
+        "it": "Parametro HoursOfSun aggiunto alla previsione giornaliera",
+        "es": "Parámetro HoursOfSun agregado al pronóstico diario",
+        "pl": "Dodano parametr HoursOfSun do prognozy dziennej",
+        "zh-cn": "每日预测中添加了 hoursOfSun 参数"
+      },
+      "1.2.1": {
+        "en": "Updated logo",
+        "de": "Aktualisiertes Logo",
+        "ru": "Обновленный логотип",
+        "pt": "Logotipo atualizado",
+        "nl": "Bijgewerkt logo",
+        "fr": "Logo mis à jour",
+        "it": "Logo aggiornato",
+        "es": "Logotipo actualizado",
+        "pl": "Zaktualizowane logo",
+        "zh-cn": "更新标志"
+      },
+      "1.2.0": {
+        "en": "adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)",
+        "de": "Passen Sie die Rollen an, um die Wettervorhersage im Ordner \"Zusammenfassung\" richtig zu erkennen. (Zusammenfassungsobjekte müssen danach gelöscht und der Adapter neu gestartet werden)",
+        "ru": "Изменены роли для правильного определения устройства Погода. (Объекты Summary необходимо удалить и после этого перезапустить адаптер)",
+        "pt": "ajuste as funções para detectar adequadamente a previsão do tempo na pasta Resumo. (Objetos de resumo precisam ser excluídos e o adaptador reiniciado depois disso)",
+        "nl": "pas rollen aan om de weersvoorspelling correct te detecteren in de map Samenvatting. (Samenvattingsobjecten moeten daarna worden verwijderd en de adapter moet opnieuw worden opgestart)",
+        "fr": "ajustez les rôles pour détecter correctement les prévisions météorologiques dans le dossier Résumé. (Les objets de résumé doivent être supprimés et l'adaptateur redémarré après cela)",
+        "it": "regolare i ruoli per rilevare correttamente le previsioni del tempo nella cartella Riepilogo. (Gli oggetti di riepilogo devono essere eliminati e l'adattatore riavviato successivamente)",
+        "es": "ajuste los roles para detectar correctamente el pronóstico del tiempo en la carpeta Resumen. (Los objetos de resumen deben eliminarse y el adaptador debe reiniciarse después de eso)",
+        "pl": "dostosuj role, aby poprawnie wykryć prognozę pogody w folderze Podsumowanie. (Obiekty podsumowania należy usunąć, a następnie ponownie uruchomić adapter)",
+        "zh-cn": "调整角色以正确检测摘要文件夹中的天气预报。 （之后需要删除摘要对象并重新启动适配器）"
+      },
+      "1.1.7": {
+        "en": "* Create device for device-detector \n\n## v1.1.6 (2021-05-05)\nMinor bug fixes to `Object.common` section",
+        "de": "* Gerät für Gerätedetektor erstellen\n\n## v1.1.6 (2021-05-05)\nKleinere Fehlerbehebungen im Abschnitt \"Object.common\"`",
+        "ru": "* Создать устройство для устройства-детектора\n\n## v1.1.6 (05.05.2021)\nНезначительные исправления ошибок в разделе `Object.common`",
+        "pt": "* Criar dispositivo para detector de dispositivo\n\n## v1.1.6 (2021-05-05)\nPequenas correções de bugs na seção `Object.common`",
+        "nl": "* Maak een apparaat voor apparaatdetector\n\n## v1.1.6 (2021-05-05)\nKleine bugfixes in de sectie 'Object.common'",
+        "fr": "* Créer un appareil pour le détecteur d'appareil\n\n## v1.1.6 (2021-05-05)\nCorrections de bugs mineurs dans la section `Object.common`",
+        "it": "* Crea dispositivo per rilevatore di dispositivi\n\n## v1.1.6 (2021-05-05)\nCorrezioni di bug minori nella sezione \"Object.common\"",
+        "es": "* Crear dispositivo para detector de dispositivos\n\n## v1.1.6 (05/05/2021)\nCorrecciones de errores menores en la sección `Object.common`",
+        "pl": "* Utwórz urządzenie dla detektora urządzeń\n\n## v1.1.6 (2021-05-05)\nDrobne poprawki błędów w sekcji `Object.common`",
+        "zh-cn": "* 为设备检测器创建设备\n\n## v1.1.6 (2021-05-05)\n“Object.common”部分的小错误修复"
+      },
+      "1.1.6": {
+        "en": "Minor bug fixes in Objects.common section",
+        "de": "Kleinere Fehlerbehebungen im Abschnitt Objects.common",
+        "ru": "Незначительные исправления ошибок в разделе Objects.common",
+        "pt": "Pequenas correções de bugs na seção Objects.common",
+        "nl": "Kleine bugfixes in de sectie Objects.common",
+        "fr": "Corrections de bogues mineurs dans la section Objects.common",
+        "it": "Correzioni di bug minori nella sezione Objects.common",
+        "es": "Correcciones de errores menores en la sección Objects.common",
+        "pl": "Drobne poprawki błędów w sekcji Objects.common",
+        "zh-cn": "Objects.common部分中的小错误修复"
+      }
     },
-    "native": {
-        "apiKey": "",
-        "loKey": "",
-        "language": ""
+    "title": "AccuWeather",
+    "titleLang": {
+      "en": "AccuWeather",
+      "de": "AccuWeather",
+      "ru": "AccuWeather",
+      "pt": "AccuWeather",
+      "nl": "AccuWeather",
+      "fr": "AccuWeather",
+      "it": "AccuWeather",
+      "es": "AccuWeather",
+      "pl": "AccuWeather",
+      "zh-cn": "机构AccuWeather"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "Weather forecast using AccuWeather API",
+      "de": "Wettervorhersage mit AccuWeather API",
+      "ru": "Прогноз погоды с использованием AccuWeather API",
+      "pt": "Previsão do tempo usando a API AccuWeather",
+      "nl": "Weersverwachting met AccuWeather API",
+      "fr": "Prévisions météorologiques à l'aide de l'API AccuWeather",
+      "it": "Previsioni del tempo utilizzando l'API AccuWeather",
+      "es": "Pronóstico del tiempo usando AccuWeather API",
+      "pl": "Prognoza pogody za pomocą interfejsu API AccuWeather",
+      "zh-cn": "使用AccuWeather API的天气预报"
+    },
+    "authors": [
+      "algar42 <igor.aleschenkov@gmail.com>"
+    ],
+    "keywords": [
+      "Weather",
+      "AccuWeather",
+      "Forecast"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "icon": "accuweather.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.accuweather/master/admin/accuweather.png",
+    "readme": "https://github.com/iobroker-community-adapters/ioBroker.accuweather/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "weather",
+    "compact": true,
+    "materialize": true,
+    "adminUI": {
+      "config": "json"
+    },
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ]
+  },
+  "native": {
+    "apiKey": "",
+    "loKey": "",
+    "language": ""
+  },
+  "objects": [],
+  "instanceObjects": []
 }
