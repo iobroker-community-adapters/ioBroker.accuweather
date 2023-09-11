@@ -13,12 +13,12 @@
     "AccuWeather",
     "Forecast"
   ],
-  "engines": {
-    "node": ">=16"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/iobroker-community-adapters/ioBroker.accuweather"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.0.3",
