@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "accuweather",
-    "version": "1.3.1",
+    "version": "1.3.2",
     "news": {
+      "1.3.2": {
+        "en": "fixed: dependencies\nfixed: error message [object Object]",
+        "de": "fest: abhängigkeiten\nbehoben: Fehlermeldung [objekt]",
+        "ru": "фиксированный: зависимости\nисправлено: сообщение об ошибке [object Object]",
+        "pt": "corrigido: dependências\ncorrigido: mensagem de erro [objeto]",
+        "nl": "afhankelijkheid\nvergissing",
+        "fr": "fixes: dépendances\ncorrigé: message d'erreur [objet]",
+        "it": "fisso: dipendenze\nfisso: messaggio di errore [oggetto oggetto]",
+        "es": "fija: dependencias\nfijo: mensaje de error [objeto objeto]",
+        "pl": "zależność\nuruchomione: błędy wiadomości (pol.)",
+        "uk": "фіксована: залежності\nвиправлено: повідомлення про помилку [об'єкт]",
+        "zh-cn": "固定:取决于\n固定:错误信息[目标]"
+      },
       "1.3.1": {
         "en": "added the Wind Direction Text und Cloud Cover\nAdded json config",
         "de": "windrichtung Text und Cloud Cover\nHinzugefügt json config",
@@ -75,18 +88,6 @@
         "es": "* Crear dispositivo para detector de dispositivos\n\n## v1.1.6 (05/05/2021)\nCorrecciones de errores menores en la sección `Object.common`",
         "pl": "* Utwórz urządzenie dla detektora urządzeń\n\n## v1.1.6 (2021-05-05)\nDrobne poprawki błędów w sekcji `Object.common`",
         "zh-cn": "* 为设备检测器创建设备\n\n## v1.1.6 (2021-05-05)\n“Object.common”部分的小错误修复"
-      },
-      "1.1.6": {
-        "en": "Minor bug fixes in Objects.common section",
-        "de": "Kleinere Fehlerbehebungen im Abschnitt Objects.common",
-        "ru": "Незначительные исправления ошибок в разделе Objects.common",
-        "pt": "Pequenas correções de bugs na seção Objects.common",
-        "nl": "Kleine bugfixes in de sectie Objects.common",
-        "fr": "Corrections de bogues mineurs dans la section Objects.common",
-        "it": "Correzioni di bug minori nella sezione Objects.common",
-        "es": "Correcciones de errores menores en la sección Objects.common",
-        "pl": "Drobne poprawki błędów w sekcji Objects.common",
-        "zh-cn": "Objects.common部分中的小错误修复"
       }
     },
     "title": "AccuWeather",
@@ -139,14 +140,14 @@
     "connectionType": "cloud",
     "dataSource": "poll",
     "dependencies": [
-        {
-            "js-controller": ">=3.3.22"
-        }
+      {
+        "js-controller": ">=3.3.22"
+      }
     ],
     "globalDependencies": [
-        {
-            "admin": ">=5.1.13"
-        }
+      {
+        "admin": ">=5.1.13"
+      }
     ]
   },
   "native": {

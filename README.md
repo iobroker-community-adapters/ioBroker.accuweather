@@ -36,9 +36,9 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.3.2 (2023-12-04)
 * (ticaki) fixed: dependencies
-* (ticaki) fixed: error message  
+* (ticaki) fixed: error message [object Object]
 
 ### 1.3.1 (2023-08-15)
 * (isi07) added the Wind Direction Text und Cloud Cover
