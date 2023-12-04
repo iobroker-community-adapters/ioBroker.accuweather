@@ -15,9 +15,9 @@ let timeout2 = null;
 
 class Accuweather extends utils.Adapter {
 	/**
-	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
+	 * @param {Partial<utils.AdapterOptions>} [options={}]
 	 */
-	constructor(options) {
+	constructor(options = {}) {
 		super({
 			...options,
 			name: "accuweather",
@@ -136,7 +136,7 @@ class Accuweather extends utils.Adapter {
 					}
 				}
 			}
-		} catch (err) {
+		} catch (/** @type any */ err) {
 			this.log.error(err);
 		}
 	}
@@ -167,7 +167,7 @@ class Accuweather extends utils.Adapter {
 					}
 				}
 			}
-		} catch (err) {
+		} catch (/** @type any */err) {
 			this.log.error(err);
 		}
 	}
@@ -213,7 +213,7 @@ class Accuweather extends utils.Adapter {
 					}
 				}
 			}
-		} catch (err) {
+		} catch (/** @type any */err) {
 			this.log.error(err);
 		}
 	}
@@ -284,6 +284,7 @@ class Accuweather extends utils.Adapter {
 			// ignore
 		}
 		if (!obj) {
+			//@ts-ignore
 			await this.setForeignObjectAsync(this.namespace, { type: "device", common: { name: "Accuweather device" }, native: {} });
 		}
 
@@ -444,7 +445,7 @@ class Accuweather extends utils.Adapter {
 if (module.parent) {
 	// Export the constructor in compact mode
 	/**
-	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
+	 * @param {Partial<utils.AdapterOptions>} [options={}]
 	 */
 	module.exports = (options) => new Accuweather(options);
 } else {
