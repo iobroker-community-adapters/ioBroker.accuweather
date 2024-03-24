@@ -36,6 +36,10 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (mcm1957) Adapter requires node.js 18 now
+* (mcm1957) Dependencies have been updated
+
 ### 1.3.2 (2023-12-04)
 * (ticaki) fixed: dependencies
 * (ticaki) fixed: error message [object Object]
@@ -80,6 +84,7 @@ Minor bug fixes to `Object.common` section
 ## License
 MIT License
 
+Copyright (c) 2024 iobroker-community-adapters
 Copyright (c) 2021-2023 algar42 <igor.aleschenkov@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
