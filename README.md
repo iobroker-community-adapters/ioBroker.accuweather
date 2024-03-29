@@ -37,7 +37,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (mcm1957) Adapter requires node.js 18 now
+* (mcm1957) Adapter requires node.js 18 and js-controller >= 5 now
 * (mcm1957) Dependencies have been updated
 
 ### 1.3.2 (2023-12-04)

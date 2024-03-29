@@ -90,7 +90,6 @@
         "zh-cn": "* 为设备检测器创建设备\n\n## v1.1.6 (2021-05-05)\n“Object.common”部分的小错误修复"
       }
     },
-    "title": "AccuWeather",
     "titleLang": {
       "en": "AccuWeather",
       "de": "AccuWeather",
@@ -141,7 +140,7 @@
     "dataSource": "poll",
     "dependencies": [
       {
-        "js-controller": ">=3.3.22"
+        "js-controller": ">=5.0.0"
       }
     ],
     "globalDependencies": [
