@@ -122,7 +122,10 @@
       "AccuWeather",
       "Forecast"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
     "icon": "accuweather.png",
     "enabled": true,
