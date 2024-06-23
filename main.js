@@ -322,7 +322,7 @@ class Accuweather extends utils.Adapter {
 					this.requestCurrent();
 				}, Math.random() * 10000 + 1);
 			}
-			if ((now.getHours() === 6 || now.getHours() === 12 || now.getHours() === 18 || now.getHours() === 0) && now.getMinutes() <= 5) {
+			if ((now.getHours() === 6 || now.getHours() === 12 || now.getHours() === 18 || now.getHours() === 0) && now.getMinutes() < 5) {
 				timeout1 = setTimeout(() => {
 					timeout1 = null;
 					this.request12Hours();
