@@ -316,7 +316,7 @@ class Accuweather extends utils.Adapter {
 					this.request5Days();
 				}, Math.random() * 10000 + 1);
 			}
-			if (now.getMinutes() <= 5) {
+			if (now.getMinutes() < 5) {
 				timeout2 = setTimeout(() => {
 					timeout2 = null;
 					this.requestCurrent();
