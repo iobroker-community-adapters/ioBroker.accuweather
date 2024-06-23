@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "accuweather",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "news": {
+      "1.5.0": {
+        "en": "limit updates to once an hour, this fixes part of issue #273.\nAdapter requires js-controller >= 5 and admin >= 6 now\nNode 22 support has been added to testing\nDependencies have been updated",
+        "de": "Updates auf einmal pro Stunde limitiert, dies repariert einen Teil der Fehlermeldung #273.\nAdapter benötigt js-controller >= 5 und admin >= 6 jetzt\nNode 22 Unterstützung wurde zur Prüfung hinzugefügt\nAbhängigkeiten wurden aktualisiert",
+        "ru": "ограничить обновления раз в час, это исправляет часть выпуска #273.\nАдаптер требует js-контроллер >= 5 и admin >= 6 сейчас\nПоддержка Node 22 была добавлена к тестированию\nЗависимость обновлена",
+        "pt": "limite atualizações para uma vez por hora, isso corrige parte do problema #273.\nAdapter requer js-controller >= 5 e admin >= 6 agora\nNode 22 suporte foi adicionado ao teste\nAs dependências foram atualizadas",
+        "nl": "limiet updates tot eenmaal per uur, dit lost deel van probleem #273.\nJs-controller vereist 5 en admin 6 nu\nNode 22 ondersteuning is toegevoegd aan het testen\nAfhankelijkheden zijn bijgewerkt",
+        "fr": "limiter les mises à jour à une fois par heure, cela corrige une partie du numéro 273.\nAdaptateur nécessite js-controller >= 5 et administrateur >= 6 maintenant\nLe support Node 22 a été ajouté au test\nLes dépendances ont été actualisées",
+        "it": "limitare gli aggiornamenti di una volta all'ora, questo risolve parte del problema #273.\nAdattatore richiede js-controller >= 5 e admin >= 6 ora\nIl supporto Node 22 è stato aggiunto ai test\nLe dipendenze sono state aggiornate",
+        "es": "limitar las actualizaciones una vez por hora, esto fija parte del número #273.\nAdaptador requiere js-controller 5 y admin= 6 ahora\nSe ha añadido apoyo Nodo 22 a las pruebas\nSe han actualizado las dependencias",
+        "pl": "limit aktualizacje raz na godzinę, to naprawia część wydania # 273.\nAdapter wymaga sterownika js- > = 5 i admin > = 6 teraz\nDo testowania dodano wsparcie węzła 22\nZaktualizowano zależności",
+        "uk": "обмежити оновлення один раз на годину, це фіксує частину випуску #273.\nАдаптер вимагає js-controller >= 5 і admin >= 6 тепер\nДодано підтримку Node 22 для тестування\nЗалежність було оновлено",
+        "zh-cn": "将更新限制在每小时一次,这可以修复第273期的部分内容.\n适配器需要js控制器 QQ 第5条 行政 现在6个\n测试中增加了22号节点支持\n依赖关系已更新"
+      },
       "1.4.0": {
         "en": "Adapter requires node.js 18 and js-controller >= 5 now\nDependencies have been updated",
         "de": "Adapter benötigt node.js 18 und js-controller >= 5 jetzt\nAbhängigkeiten wurden aktualisiert",
@@ -80,19 +93,6 @@
         "pl": "Zaktualizowane logo",
         "zh-cn": "更新标志",
         "uk": "Оновлений логотип"
-      },
-      "1.2.0": {
-        "en": "adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)",
-        "de": "Passen Sie die Rollen an, um die Wettervorhersage im Ordner \"Zusammenfassung\" richtig zu erkennen. (Zusammenfassungsobjekte müssen danach gelöscht und der Adapter neu gestartet werden)",
-        "ru": "Изменены роли для правильного определения устройства Погода. (Объекты Summary необходимо удалить и после этого перезапустить адаптер)",
-        "pt": "ajuste as funções para detectar adequadamente a previsão do tempo na pasta Resumo. (Objetos de resumo precisam ser excluídos e o adaptador reiniciado depois disso)",
-        "nl": "pas rollen aan om de weersvoorspelling correct te detecteren in de map Samenvatting. (Samenvattingsobjecten moeten daarna worden verwijderd en de adapter moet opnieuw worden opgestart)",
-        "fr": "ajustez les rôles pour détecter correctement les prévisions météorologiques dans le dossier Résumé. (Les objets de résumé doivent être supprimés et l'adaptateur redémarré après cela)",
-        "it": "regolare i ruoli per rilevare correttamente le previsioni del tempo nella cartella Riepilogo. (Gli oggetti di riepilogo devono essere eliminati e l'adattatore riavviato successivamente)",
-        "es": "ajuste los roles para detectar correctamente el pronóstico del tiempo en la carpeta Resumen. (Los objetos de resumen deben eliminarse y el adaptador debe reiniciarse después de eso)",
-        "pl": "dostosuj role, aby poprawnie wykryć prognozę pogody w folderze Podsumowanie. (Obiekty podsumowania należy usunąć, a następnie ponownie uruchomić adapter)",
-        "zh-cn": "调整角色以正确检测摘要文件夹中的天气预报。 （之后需要删除摘要对象并重新启动适配器）",
-        "uk": "налаштуйте ролі для правильного визначення прогнозу погоди в папці «Зведення». (Після цього потрібно видалити підсумкові об’єкти та перезапустити адаптер)"
       }
     },
     "titleLang": {
