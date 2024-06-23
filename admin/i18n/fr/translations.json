@@ -1,0 +1,9 @@
+{
+    "REGISTER": "REGISTRE",
+    "accuweather adapter settings": "Paramètres d'adaptateur pour accuweather",
+    "apiKey": "clé API",
+    "api_help": "Pour obtenir la clé API, inscrivez-vous sur https://developer.accuweather.com/ et créez une application dans le menu \"Mes applications\".",
+    "language": "La langue",
+    "loKey": "Clé de localisation",
+    "lo_help": "Pour obtenir la clé de localisation, accédez à la page https://www.accuweather.com/ et entrez le nom de votre ville ou essayez d'entrer vos coordonnées (latitude, longitude). Votre clé de localisation sera le numéro à la fin de l'URL."
+}

@@ -1,0 +1,9 @@
+{
+    "REGISTER": "REGISTRIEREN",
+    "accuweather adapter settings": "Adaptereinstellungen für accuweather",
+    "apiKey": "API-Schlüssel",
+    "api_help": "Um einen API-Schlüssel zu erhalten, registrieren Sie sich unter https://developer.accuweather.com/ und erstellen Sie eine Anwendung im Menü \"Meine Apps\"",
+    "language": "Sprache",
+    "loKey": "Standortschlüssel",
+    "lo_help": "Um den Standortschlüssel zu erhalten, gehen Sie zu https://www.accuweather.com/ und geben Sie Ihren Städtenamen ein oder versuchen Sie, Ihre Koordinaten (Breitengrad, Längengrad) einzugeben. Ihr Standortschlüssel ist die Nummer am Ende der URL."
+}

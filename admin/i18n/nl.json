@@ -1,9 +1,0 @@
-{
-  "API Key": "API sleutel",
-  "Location Key": "Locatie sleutel",
-  "api_help": "Om de API-sleutel te krijgen, registreert u zich op https://developer.accuweather.com/ en maakt u een applicatie in het menu \"Mijn apps\"",
-  "lo_help": "Om de locatiesleutel te krijgen, gaat u naar https://www.accuweather.com/ en voert u uw stadsnaam in, of probeert u uw coördinaten (breedtegraad, lengtegraad) in te voeren. Uw locatiesleutel is het nummer aan het einde van de URL.",
-  "Language": "Taal",
-  "REGISTER": "REGISTER",
-  "GO": "Bezoek website"
-}

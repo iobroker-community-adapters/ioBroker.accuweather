@@ -1,9 +1,0 @@
-{
-  "API Key": "API-Schlüssel",
-  "Location Key": "Standortschlüssel",
-  "api_help": "Um den API-Schlüssel zu erhalten, registrieren Sie sich auf https://developer.accuweather.com/ und erstellen Sie eine Anwendung im Menü „Meine Apps“.",
-  "lo_help": "Um den Standortschlüssel zu erhalten, gehen Sie zu https://www.accuweather.com/ und geben Sie den Namen Ihrer Stadt ein oder versuchen Sie, Ihre Koordinaten (Breitengrad, Längengrad) einzugeben. Ihr Standortschlüssel ist die Zahl am Ende der URL.",
-  "Language": "Sprache",
-  "REGISTER": "REGISTRIEREN",
-  "GO": "Website besuchen"
-}

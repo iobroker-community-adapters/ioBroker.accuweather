@@ -1,0 +1,9 @@
+{
+    "REGISTER": "REGISTO",
+    "accuweather adapter settings": "Configurações do adaptador para accuweather",
+    "apiKey": "Chave API",
+    "api_help": "Para obter a chave da API, registre-se em https://developer.accuweather.com/ e crie um aplicativo no menu \"Meus aplicativos\"",
+    "language": "Língua",
+    "loKey": "Chave de localização",
+    "lo_help": "Para obter a chave de localização, vá para https://www.accuweather.com/ e insira o nome da sua cidade ou tente inserir suas coordenadas (latitude, longitude). A sua chave de localização será o número no final do URL."
+}

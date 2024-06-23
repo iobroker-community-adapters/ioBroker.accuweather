@@ -52,7 +52,8 @@
         "it": "aggiornamento delle dipendenze",
         "es": "actualización de dependencias",
         "pl": "aktualizacja zależności",
-        "zh-cn": "依赖更新"
+        "zh-cn": "依赖更新",
+        "uk": "оновлення залежностей"
       },
       "1.2.3": {
         "en": "HoursOfSun parameter added to Daily forecast",
@@ -64,7 +65,8 @@
         "it": "Parametro HoursOfSun aggiunto alla previsione giornaliera",
         "es": "Parámetro HoursOfSun agregado al pronóstico diario",
         "pl": "Dodano parametr HoursOfSun do prognozy dziennej",
-        "zh-cn": "每日预测中添加了 hoursOfSun 参数"
+        "zh-cn": "每日预测中添加了 hoursOfSun 参数",
+        "uk": "До щоденного прогнозу додано параметр HoursOfSun"
       },
       "1.2.1": {
         "en": "Updated logo",
@@ -76,7 +78,8 @@
         "it": "Logo aggiornato",
         "es": "Logotipo actualizado",
         "pl": "Zaktualizowane logo",
-        "zh-cn": "更新标志"
+        "zh-cn": "更新标志",
+        "uk": "Оновлений логотип"
       },
       "1.2.0": {
         "en": "adjust roles to properly detect weather forecast in Summary folder. (Summary objects need to be deleted and adapter restarted after that)",
@@ -88,7 +91,8 @@
         "it": "regolare i ruoli per rilevare correttamente le previsioni del tempo nella cartella Riepilogo. (Gli oggetti di riepilogo devono essere eliminati e l'adattatore riavviato successivamente)",
         "es": "ajuste los roles para detectar correctamente el pronóstico del tiempo en la carpeta Resumen. (Los objetos de resumen deben eliminarse y el adaptador debe reiniciarse después de eso)",
         "pl": "dostosuj role, aby poprawnie wykryć prognozę pogody w folderze Podsumowanie. (Obiekty podsumowania należy usunąć, a następnie ponownie uruchomić adapter)",
-        "zh-cn": "调整角色以正确检测摘要文件夹中的天气预报。 （之后需要删除摘要对象并重新启动适配器）"
+        "zh-cn": "调整角色以正确检测摘要文件夹中的天气预报。 （之后需要删除摘要对象并重新启动适配器）",
+        "uk": "налаштуйте ролі для правильного визначення прогнозу погоди в папці «Зведення». (Після цього потрібно видалити підсумкові об’єкти та перезапустити адаптер)"
       }
     },
     "titleLang": {
@@ -101,7 +105,8 @@
       "it": "AccuWeather",
       "es": "AccuWeather",
       "pl": "AccuWeather",
-      "zh-cn": "机构AccuWeather"
+      "zh-cn": "机构AccuWeather",
+      "uk": "AccuWeather"
     },
     "desc": {
       "en": "Weather forecast using AccuWeather API",
@@ -113,7 +118,8 @@
       "it": "Previsioni del tempo utilizzando l'API AccuWeather",
       "es": "Pronóstico del tiempo usando AccuWeather API",
       "pl": "Prognoza pogody za pomocą interfejsu API AccuWeather",
-      "zh-cn": "使用AccuWeather API的天气预报"
+      "zh-cn": "使用AccuWeather API的天气预报",
+      "uk": "Прогноз погоди за допомогою AccuWeather API"
     },
     "authors": [
       "algar42 <igor.aleschenkov@gmail.com>"
