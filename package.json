@@ -9,6 +9,7 @@
   "homepage": "https://github.com/iobroker-community-adapters/ioBroker.accuweather",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "Weather",
     "AccuWeather",
     "Forecast"
