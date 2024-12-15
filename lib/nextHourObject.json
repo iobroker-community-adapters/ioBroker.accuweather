@@ -21,6 +21,17 @@
     },
     "native": {}
   },
+  "nextHour.CloudCover": {
+    "type": "state",
+    "common": {
+      "name": "CloudCover",
+      "type": "number",
+      "read": true,
+      "write": false,
+      "role": "value"
+    },
+    "native": {}
+  },
   "nextHour.WeatherIconURL": {
     "type": "state",
     "common": {
