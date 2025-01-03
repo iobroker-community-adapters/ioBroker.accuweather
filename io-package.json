@@ -151,12 +151,12 @@
     "dataSource": "poll",
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.13.16"
+        "admin": ">=7.1.4"
       }
     ]
   },
@@ -165,6 +165,9 @@
     "loKey": "",
     "language": ""
   },
+  "protectedNative": ["apiKey"],
+  "encryptedNative": ["apiKey"],
+
   "objects": [],
   "instanceObjects": []
 }
