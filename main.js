@@ -545,35 +545,35 @@ class Accuweather extends utils.Adapter {
     Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
     */
 
-    await this.setObjectNotExistsAsync("updateCurrent", {
+    await this.extendObject("updateCurrent", {
       type: "state",
       common: {
         name: "Update Current Weather",
         type: "boolean",
         role: "button",
-        read: true,
+        read: false,
         write: true,
       },
       native: {},
     });
-    await this.setObjectNotExistsAsync("updateHourly", {
+    await this.extendObject("updateHourly", {
       type: "state",
       common: {
         name: "Update 12 Hours Forecast",
         type: "boolean",
         role: "button",
-        read: true,
+        read: false,
         write: true,
       },
       native: {},
     });
-    await this.setObjectNotExistsAsync("updateDaily", {
+    await this.extendObject("updateDaily", {
       type: "state",
       common: {
         name: "Update 5 Days Forecast",
         type: "boolean",
         role: "button",
-        read: true,
+        read: false,
         write: true,
       },
       native: {},

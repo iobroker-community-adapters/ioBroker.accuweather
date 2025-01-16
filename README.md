@@ -36,6 +36,11 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+- (ticaki) command states as buttons
+- (ticaki) apikey renamed and encrypted
+- (ticaki) Dependencies and eslint updated
+
 ### 1.5.0 (2024-06-23)
 * (xdaamg) limit updates to once an hour, this fixes part of issue #273.
 * (mcm1957) Adapter requires js-controller >= 5 and admin >= 6 now
