@@ -161,12 +161,13 @@
     ]
   },
   "native": {
+    "apiKeyEncrypted": "",
     "apiKey": "",
     "loKey": "",
     "language": ""
   },
-  "protectedNative": ["apiKey"],
-  "encryptedNative": ["apiKey"],
+  "protectedNative": ["apiKeyEncrypted"],
+  "encryptedNative": ["apiKeyEncrypted"],
 
   "objects": [],
   "instanceObjects": []

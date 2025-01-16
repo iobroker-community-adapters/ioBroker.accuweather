@@ -133,20 +133,14 @@ class Accuweather extends utils.Adapter {
               });
               break;
             case "RealFeelTemperature":
-              await this.setState(
-                `Daily.Day${day}.RealFeelTemperature.Minimum`,
-                {
-                  val: json[key]["Minimum"].Value,
-                  ack: true,
-                },
-              );
-              await this.setState(
-                `Daily.Day${day}.RealFeelTemperature.Maximum`,
-                {
-                  val: json[key]["Maximum"].Value,
-                  ack: true,
-                },
-              );
+              await this.setState(`Daily.Day${day}.RealFeelTemperature.Minimum`, {
+                val: json[key]["Minimum"].Value,
+                ack: true,
+              });
+              await this.setState(`Daily.Day${day}.RealFeelTemperature.Maximum`, {
+                val: json[key]["Maximum"].Value,
+                ack: true,
+              });
               break;
             case "Day":
             case "Night":
@@ -192,24 +186,16 @@ class Accuweather extends utils.Adapter {
                     }
                   } else if (typeof json1[key1] == "object") {
                     if (json1[key1]["Value"] !== undefined) {
-                      if (
-                        ["TotalLiquid", "Rain", "Snow", "Ice"].includes(key1)
-                      ) {
-                        await this.setState(
-                          `Daily.Day${day}.${key}.${key1}Volume`,
-                          {
+                      if (["TotalLiquid", "Rain", "Snow", "Ice"].includes(key1)) {
+                        await this.setState(`Daily.Day${day}.${key}.${key1}Volume`, {
+                          val: json1[key1].Value,
+                          ack: true,
+                        });
+                        if (key === "Day" && key1 === "TotalLiquid") {
+                          await this.setState(`Summary.TotalLiquidVolume_d${day}`, {
                             val: json1[key1].Value,
                             ack: true,
-                          },
-                        );
-                        if (key === "Day" && key1 === "TotalLiquid") {
-                          await this.setState(
-                            `Summary.TotalLiquidVolume_d${day}`,
-                            {
-                              val: json1[key1].Value,
-                              ack: true,
-                            },
-                          );
+                          });
                         }
                       } else {
                         await this.setState(`Daily.Day${day}.${key}.${key1}`, {
@@ -222,13 +208,10 @@ class Accuweather extends utils.Adapter {
                         val: json1[key1].Speed.Value,
                         ack: true,
                       });
-                      await this.setState(
-                        `Daily.Day${day}.${key}.WindDirection`,
-                        {
-                          val: json1[key1].Direction.Degrees,
-                          ack: true,
-                        },
-                      );
+                      await this.setState(`Daily.Day${day}.${key}.WindDirection`, {
+                        val: json1[key1].Direction.Degrees,
+                        ack: true,
+                      });
                       if (key === "Day") {
                         await this.setState(`Summary.WindSpeed_d${day}`, {
                           val: json1[key1].Speed.Value,
@@ -238,15 +221,10 @@ class Accuweather extends utils.Adapter {
                           val: json1[key1].Direction.Degrees,
                           ack: true,
                         });
-                        await this.setState(
-                          `Summary.WindDirectionStr_d${day}`,
-                          {
-                            val: this.getCardinalDirection(
-                              json1[key1].Direction.Degrees,
-                            ),
-                            ack: true,
-                          },
-                        );
+                        await this.setState(`Summary.WindDirectionStr_d${day}`, {
+                          val: this.getCardinalDirection(json1[key1].Direction.Degrees),
+                          ack: true,
+                        });
                       }
                     } else if (key1 === "WindGust") {
                       await this.setState(`Daily.Day${day}.${key}.WindGust`, {
@@ -361,9 +339,7 @@ class Accuweather extends utils.Adapter {
               ack: true,
             });
             await this.setState("Summary.DayOfWeek", { val: dow, ack: true });
-            this.log.debug(
-              `Date ${dt}, dow: ${dt.toLocaleString(this.config.language, { weekday: "short" })}`,
-            );
+            this.log.debug(`Date ${dt}, dow: ${dt.toLocaleString(this.config.language, { weekday: "short" })}`);
           } else {
             await this.setState(`Summary.${key}`, {
               val: json[key],
@@ -444,8 +420,8 @@ class Accuweather extends utils.Adapter {
         .metric(true)
         .details(true)
         .get()
-        .then((res) => this.setDailyStates(res))
-        .catch((err) => this.log.error(String(err)));
+        .then(res => this.setDailyStates(res))
+        .catch(err => this.log.error(String(err)));
     }
   }
 
@@ -460,8 +436,8 @@ class Accuweather extends utils.Adapter {
         .metric(true)
         .details(true)
         .get()
-        .then((res) => this.setHourlyStates(res))
-        .catch((err) => this.log.error(err));
+        .then(res => this.setHourlyStates(res))
+        .catch(err => this.log.error(err));
     }
   }
 
@@ -477,8 +453,8 @@ class Accuweather extends utils.Adapter {
         .metric(true)
         .details(true)
         .getCurrent()
-        .then((res) => this.setCurrentStates(res))
-        .catch((err) => this.log.error(err));
+        .then(res => this.setCurrentStates(res))
+        .catch(err => this.log.error(err));
     }
   }
 
@@ -496,6 +472,13 @@ class Accuweather extends utils.Adapter {
         native: {},
       });
     }
+    obj = await this.getForeignObjectAsync(`system.adapter.${this.namespace}`);
+    if (obj && obj.native && obj.native.apiKey) {
+      obj.native.apiKeyEncrypted = this.encrypt(obj.native.apiKey);
+      this.config.apiKeyEncrypted = obj.native.apiKey;
+      delete obj.native.apiKey;
+      await this.setForeignObject(`system.adapter.${this.namespace}`, obj);
+    }
 
     if (!this.config.language) {
       const systemConfig = await this.getForeignObjectAsync("system.config");
@@ -509,22 +492,18 @@ class Accuweather extends utils.Adapter {
     await nextHour.createDailyForecastObjects(this);
     await nextHour.createSummaryObjects(this);
 
-    this.log.debug(
-      `API: ${this.config.apiKey}; Loc: ${this.config.loKey} Lang: ${this.config.language}`,
-    );
+    //this.log.debug(`API: ${this.config.apiKey}; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
+    this.log.debug(`API: ********; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
 
-    if (this.config.apiKey) {
-      this.forecast = new AccuAPI(this.config.apiKey);
+    if (this.config.apiKeyEncrypted) {
+      this.forecast = new AccuAPI(this.config.apiKeyEncrypted);
     } else {
       this.log.error("API Key is missing. Please enter Accuweather API key");
     }
 
     updateInterval = setInterval(() => {
       const now = new Date();
-      if (
-        (now.getHours() === 7 || now.getHours() === 20) &&
-        now.getMinutes() < 5
-      ) {
+      if ((now.getHours() === 7 || now.getHours() === 20) && now.getMinutes() < 5) {
         timeout1 = setTimeout(
           () => {
             timeout1 = null;
@@ -543,10 +522,7 @@ class Accuweather extends utils.Adapter {
         );
       }
       if (
-        (now.getHours() === 6 ||
-          now.getHours() === 12 ||
-          now.getHours() === 18 ||
-          now.getHours() === 0) &&
+        (now.getHours() === 6 || now.getHours() === 12 || now.getHours() === 18 || now.getHours() === 0) &&
         now.getMinutes() < 5
       ) {
         timeout1 = setTimeout(
@@ -564,10 +540,10 @@ class Accuweather extends utils.Adapter {
     this.request5Days();
 
     /*
-		For every state in the system, there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-		*/
+    For every state in the system, there has to be also an object of type state
+    Here a simple template for a boolean variable named "testVariable"
+    Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
+    */
 
     await this.setObjectNotExistsAsync("updateCurrent", {
       type: "state",
@@ -678,7 +654,7 @@ if (module.parent) {
   /**
    * @param [options] - Optional settings for the adapter instance
    */
-  module.exports = (options) => new Accuweather(options);
+  module.exports = options => new Accuweather(options);
 } else {
   // otherwise start the instance directly
   new Accuweather();
