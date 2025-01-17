@@ -77,6 +77,17 @@
       "lg": 4,
       "xl": 3,
       "system": true
+    },
+    "apiCallProtection": {
+      "newLine": true,
+      "type": "checkbox",
+      "label": "apiCallProtection",
+      "help": "apiCallProtectionHint",
+      "xs": 12,
+      "sm": 12,
+      "md": 6,
+      "lg": 4,
+      "xl": 3
     }
   }
 }

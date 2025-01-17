@@ -5,5 +5,7 @@
     "api_help": "要获取API密钥，请在https://developer.accuweather.com/上注册，然后在“我的应用程序”菜单中创建应用程序",
     "language": "语言",
     "loKey": "位置键",
-    "lo_help": "要获取位置密钥，请访问https://www.accuweather.com/并输入您的城市名称，或尝试输入您的坐标（纬度，经度）。您的位置键将是URL末尾的数字。"
+    "lo_help": "要获取位置密钥，请访问https://www.accuweather.com/并输入您的城市名称，或尝试输入您的坐标（纬度，经度）。您的位置键将是URL末尾的数字。",
+    "apiCallProtection": "减少适配器启动时的更新",
+    "apiCallProtectionHint": "如果激活，如果上次重新启动时间不到 10 分钟，适配器将不会在启动时更新数据。"
 }

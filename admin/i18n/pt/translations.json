@@ -5,5 +5,7 @@
     "api_help": "Para obter a chave da API, registre-se em https://developer.accuweather.com/ e crie um aplicativo no menu \"Meus aplicativos\"",
     "language": "Língua",
     "loKey": "Chave de localização",
-    "lo_help": "Para obter a chave de localização, vá para https://www.accuweather.com/ e insira o nome da sua cidade ou tente inserir suas coordenadas (latitude, longitude). A sua chave de localização será o número no final do URL."
+    "lo_help": "Para obter a chave de localização, vá para https://www.accuweather.com/ e insira o nome da sua cidade ou tente inserir suas coordenadas (latitude, longitude). A sua chave de localização será o número no final do URL.",
+    "apiCallProtection": "Reduza as atualizações na inicialização do adaptador",
+    "apiCallProtectionHint": "Se ativado, o adaptador não atualizará os dados na inicialização se a última reinicialização tiver ocorrido há menos de 10 minutos."
 }
