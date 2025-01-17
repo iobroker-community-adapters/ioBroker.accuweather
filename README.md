@@ -32,15 +32,18 @@ New feature can be used in order to show weather forecast in Lovelace UI.
 For better view a custom lovelace card is created - see https://github.com/algar42/IoB.lovelace.accuweather-card
 
 ## Changelog
+
 <!--
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-- (ticaki) BREAKING: equires Nodejs 20 and higher
-- (ticaki) BREAKING: command states as buttons, only react on ack=false. 
-- (ticaki) apikey renamed and encrypted
-- (ticaki) Dependencies and eslint updated
+* (ticaki) BREAKING: equires Nodejs 20 and higher
+* (ticaki) BREAKING: command states as buttons, only react on ack=false. 
+* (ticaki) apikey renamed and encrypted
+* (ticaki) Dependencies and eslint updated
+* (devtronic) Add nextHour.CloudCover
+
 
 ### 1.5.0 (2024-06-23)
 * (xdaamg) limit updates to once an hour, this fixes part of issue #273.
