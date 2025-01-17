@@ -6,6 +6,5 @@
     "language": "Idioma",
     "loKey": "Clave de ubicación",
     "lo_help": "Para obtener la clave de ubicación, vaya a https://www.accuweather.com/ e ingrese el nombre de su ciudad, o intente ingresar sus coordenadas (latitud, longitud). Su clave de ubicación será el número al final de la URL.",
-    "apiCallProtection": "Reducir las actualizaciones al iniciar el adaptador",
-    "apiCallProtectionHint": "Si está activado, el adaptador no actualizará los datos al inicio si el último reinicio fue hace menos de 10 minutos."
+    "apiCallProtection": "No hay actualización de datos al reiniciar el adaptador. (recomendado)"
 }

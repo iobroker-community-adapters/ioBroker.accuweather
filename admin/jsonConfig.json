@@ -82,7 +82,6 @@
       "newLine": true,
       "type": "checkbox",
       "label": "apiCallProtection",
-      "help": "apiCallProtectionHint",
       "xs": 12,
       "sm": 12,
       "md": 6,
