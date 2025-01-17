@@ -9,9 +9,10 @@
 ## accuweather adapter for ioBroker
 Weather forecast using AccuWeather API.
 
-Adapter receives Current Conditions (updated every hour), (24 requests)
-5 Days daily forecast (update daily at approximately 7am and 8pm), (2 requests)
-and 12 hours forecast (updated every six hours at 12am, 6am, 12pm and 6pm). (4 requests)
+Adapter receives 
+- Current Conditions (updated every hour), (24 requests)
+- 5 Days daily forecast (update daily at approximately 7am and 8pm), (2 requests)
+- and 12 hours forecast (updated every six hours at 12am, 6am, 12pm and 6pm). (4 requests)
 
 By default, the adapter does not update any data when restarting.
 Please adjust this in the configuration. 50 requests per day are allowed, each restart would require 3 requests to update all data. 
