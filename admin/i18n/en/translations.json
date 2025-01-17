@@ -5,5 +5,7 @@
     "api_help": "To get API Key, register on https://developer.accuweather.com/ and create application in \"My Apps\" menu",
     "language": "Language",
     "loKey": "Location Key",
-    "lo_help": "In order to get location key, go to https://www.accuweather.com/ and enter your city name, or try to enter your coordinates (latitude, longitude). Your location key wil be the number at the end of URL."
+    "lo_help": "In order to get location key, go to https://www.accuweather.com/ and enter your city name, or try to enter your coordinates (latitude, longitude). Your location key wil be the number at the end of URL.",
+    "apiCallProtection": "Reduce updates at adapter start ",
+    "apiCallProtectionHint": "If activated, the adapter will not update the data at startup if the last restart was less than 10 minutes ago."
 }

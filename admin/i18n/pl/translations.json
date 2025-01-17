@@ -5,5 +5,7 @@
     "api_help": "Aby uzyskać klucz API, zarejestruj się na https://developer.accuweather.com/ i utwórz aplikację w menu „Moje aplikacje”",
     "language": "Język",
     "loKey": "Klucz lokalizacji",
-    "lo_help": "Aby uzyskać klucz lokalizacji, przejdź na stronę https://www.accuweather.com/ i wprowadź nazwę swojego miasta lub spróbuj wpisać współrzędne (szerokość, długość). Twój klucz lokalizacji będzie liczbą na końcu adresu URL."
+    "lo_help": "Aby uzyskać klucz lokalizacji, przejdź na stronę https://www.accuweather.com/ i wprowadź nazwę swojego miasta lub spróbuj wpisać współrzędne (szerokość, długość). Twój klucz lokalizacji będzie liczbą na końcu adresu URL.",
+    "apiCallProtection": "Zmniejsz liczbę aktualizacji przy uruchomieniu adaptera",
+    "apiCallProtectionHint": "Jeśli jest aktywowany, adapter nie będzie aktualizował danych przy uruchomieniu, jeśli ostatnie ponowne uruchomienie miało miejsce mniej niż 10 minut temu."
 }

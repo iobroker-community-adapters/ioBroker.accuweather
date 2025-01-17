@@ -460,20 +460,17 @@ class Accuweather extends utils.Adapter {
     }
 
     async onReady() {
-        let obj;
-        try {
-            obj = await this.getForeignObjectAsync(this.namespace);
-        } catch {
-            // ignore
-        }
-        if (!obj) {
-            await this.setForeignObject(this.namespace, {
+        let nameSpaceObj = await this.getForeignObjectAsync(this.namespace);
+        if (!nameSpaceObj) {
+            nameSpaceObj = {
+                _id: this.namespace,
                 type: 'meta',
                 common: { name: 'Accuweather device', type: 'meta.folder' },
-                native: {},
-            });
+                // use lastRestart to store the last restart time
+                native: { lastRestart: 1 },
+            };
         }
-        obj = await this.getForeignObjectAsync(`system.adapter.${this.namespace}`);
+        const obj = await this.getForeignObjectAsync(`system.adapter.${this.namespace}`);
         if (obj && obj.native && obj.native.apiKey) {
             obj.native.apiKeyEncrypted = this.encrypt(obj.native.apiKey);
             this.config.apiKeyEncrypted = obj.native.apiKey;
@@ -496,8 +493,17 @@ class Accuweather extends utils.Adapter {
         //this.log.debug(`API: ${this.config.apiKey}; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
         this.log.debug(`API: ********; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
 
+        let dontUpdateData = false;
         if (this.config.apiKeyEncrypted) {
             this.forecast = new AccuAPI(this.config.apiKeyEncrypted);
+
+            // check if we have a last restart time and if it is less than 10 minutes ago
+            dontUpdateData =
+                nameSpaceObj.native &&
+                nameSpaceObj.native.lastRestart &&
+                Date.now() - nameSpaceObj.native.lastRestart < 600000;
+            nameSpaceObj.native.lastRestart = Date.now();
+            await this.setForeignObject(this.namespace, nameSpaceObj);
         } else {
             this.log.error('API Key is missing. Please enter Accuweather API key');
         }
@@ -535,10 +541,13 @@ class Accuweather extends utils.Adapter {
                 );
             }
         }, 300000); // 5 minutes
-
-        this.request12Hours();
-        this.requestCurrent();
-        this.request5Days();
+        if (!dontUpdateData || !this.config.apiCallProtection) {
+            this.request12Hours();
+            this.requestCurrent();
+            this.request5Days();
+        } else {
+            this.log.info('Data will not be updated because of adapter restart');
+        }
 
         /*
             For every state in the system, there has to be also an object of type state

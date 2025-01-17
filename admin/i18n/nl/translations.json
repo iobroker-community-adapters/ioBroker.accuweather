@@ -5,5 +5,7 @@
     "api_help": "Registreer de API Key op https://developer.accuweather.com/ en maak een applicatie in het menu \"Mijn apps\"",
     "language": "Taal",
     "loKey": "Locatiesleutel",
-    "lo_help": "Om de locatiesleutel te krijgen, ga naar https://www.accuweather.com/ en voer je plaatsnaam in, of probeer je coördinaten in te voeren (lengte- en breedtegraad). Uw locatiesleutel is het nummer aan het einde van de URL."
+    "lo_help": "Om de locatiesleutel te krijgen, ga naar https://www.accuweather.com/ en voer je plaatsnaam in, of probeer je coördinaten in te voeren (lengte- en breedtegraad). Uw locatiesleutel is het nummer aan het einde van de URL.",
+    "apiCallProtection": "Verminder updates bij het starten van de adapter",
+    "apiCallProtectionHint": "Indien geactiveerd, zal de adapter de gegevens bij het opstarten niet bijwerken als de laatste herstart minder dan 10 minuten geleden was."
 }
