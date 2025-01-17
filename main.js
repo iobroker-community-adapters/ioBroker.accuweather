@@ -24,7 +24,6 @@ class Accuweather extends utils.Adapter {
             strictObjectChecks: false,
         });
         this.on('ready', this.onReady.bind(this));
-        this.on('objectChange', this.onObjectChange.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
         this.on('unload', this.onUnload.bind(this));
     }
@@ -612,21 +611,6 @@ class Accuweather extends utils.Adapter {
     }
 
     /**
-     * Is called if a subscribed object changes
-     *
-     * @param id - The id of the object that changed
-     * @param obj - The object that changed
-     */
-    onObjectChange(id, obj) {
-        if (obj) {
-            this.log.debug(`object ${id} changed: ${JSON.stringify(obj)}`);
-        } else {
-            // The object was deleted
-            this.log.debug(`object ${id} deleted`);
-        }
-    }
-
-    /**
      * Is called if a subscribed state changes
      *
      * @param id - The id of the state that changed
@@ -634,15 +618,17 @@ class Accuweather extends utils.Adapter {
      */
     onStateChange(id, state) {
         if (state) {
-            // The state was changed
-            if (id === `${this.namespace}.updateCurrent`) {
-                this.requestCurrent();
-            } else if (id === `${this.namespace}.updateHourly`) {
-                this.request12Hours();
-            } else if (id === `${this.namespace}.updateDaily`) {
-                this.request5Days();
+            if (!state.ack) {
+                // The state was changed
+                if (id === `${this.namespace}.updateCurrent`) {
+                    this.requestCurrent();
+                } else if (id === `${this.namespace}.updateHourly`) {
+                    this.request12Hours();
+                } else if (id === `${this.namespace}.updateDaily`) {
+                    this.request5Days();
+                }
+                this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             }
-            this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
         } else {
             // The state was deleted
             this.log.debug(`state ${id} deleted`);

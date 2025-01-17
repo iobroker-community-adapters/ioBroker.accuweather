@@ -37,7 +37,8 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-- (ticaki) command states as buttons
+- (ticaki) BREAKING: equires Nodejs 20 and higher
+- (ticaki) BREAKING: command states as buttons, only react on ack=false. 
 - (ticaki) apikey renamed and encrypted
 - (ticaki) Dependencies and eslint updated
 
