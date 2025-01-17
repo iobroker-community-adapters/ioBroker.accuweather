@@ -36,6 +36,12 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+- (ticaki) BREAKING: equires Nodejs 20 and higher
+- (ticaki) BREAKING: command states as buttons, only react on ack=false. 
+- (ticaki) apikey renamed and encrypted
+- (ticaki) Dependencies and eslint updated
+
 ### 1.5.0 (2024-06-23)
 * (xdaamg) limit updates to once an hour, this fixes part of issue #273.
 * (mcm1957) Adapter requires js-controller >= 5 and admin >= 6 now
@@ -90,7 +96,7 @@ Minor bug fixes to `Object.common` section
 ## License
 MIT License
 
-Copyright (c) 2024 iobroker-community-adapters <iobroker-community-adapters@gmx.de>
+Copyright (c) 2024-2025 iobroker-community-adapters <iobroker-community-adapters@gmx.de>
 Copyright (c) 2021-2023 algar42 <igor.aleschenkov@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

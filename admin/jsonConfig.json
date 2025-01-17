@@ -2,18 +2,24 @@
   "type": "panel",
   "i18n": true,
   "items": {
-    "apiKey": {
-      "type": "text",
+    "apiKeyEncrypted": {
+      "type": "password",
       "label": "API Key",
+      "xs": 12,
       "sm": 12,
       "md": 6,
-      "lg": 4
+      "lg": 4,
+      "xl": 3
     },
     "_api_help": {
       "newLine": true,
       "type": "staticText",
       "text": "api_help",
-      "sm": 12
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
     },
     "_api_help_button": {
       "newLine": true,
@@ -21,21 +27,32 @@
       "type": "staticLink",
       "label": "REGISTER",
       "href": "https://developer.accuweather.com/",
-      "variant": "outlined"
+      "variant": "outlined",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
     },
     "loKey": {
       "type": "text",
       "newLine": true,
       "label": "Location Key",
+      "xs": 12,
       "sm": 12,
       "md": 6,
-      "lg": 4
+      "lg": 4,
+      "xl": 3
     },
     "_lo_help": {
       "newLine": true,
       "type": "staticText",
       "text": "lo_help",
-      "sm": 12
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
     },
     "_lo_help_button": {
       "newLine": true,
@@ -43,15 +60,22 @@
       "type": "staticLink",
       "label": "GO",
       "href": "https://accuweather.com/",
-      "variant": "outlined"
+      "variant": "outlined",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
     },
     "language": {
       "newLine": true,
       "type": "language",
       "label": "Language",
+      "xs": 12,
       "sm": 12,
       "md": 6,
       "lg": 4,
+      "xl": 3,
       "system": true
     }
   }
