@@ -9,9 +9,12 @@
 ## accuweather adapter for ioBroker
 Weather forecast using AccuWeather API.
 
-Adapter receives Current Conditions (updated every hour), 
-5 Days daily forecast (update once daily at approximately 7am), 
-and 12 hours forecast (updated every six hours at 12am, 6am, 12pm and 6pm). 
+Adapter receives Current Conditions (updated every hour), (24 requests)
+5 Days daily forecast (update daily at approximately 7am and 8pm), (2 requests)
+and 12 hours forecast (updated every six hours at 12am, 6am, 12pm and 6pm). (4 requests)
+
+By default, the adapter does not update any data when restarting.
+Please adjust this in the configuration. 50 requests per day are allowed, each restart would require 3 requests to update all data. 
 
 ## Getting started
 
@@ -40,7 +43,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 ### **WORK IN PROGRESS**
 * (ticaki) BREAKING: equires Nodejs 20 and higher
 * (ticaki) BREAKING: command states as buttons, only react on ack=false. 
-* (ticaki) No data is retrieved if the adapter is restarted within 10 minutes. 
+* (ticaki) admin option: No data is updated at startup (default true). 
 * (ticaki) apikey renamed and encrypted
 * (ticaki) Dependencies and eslint updated
 * (devtronic) Add nextHour.CloudCover
