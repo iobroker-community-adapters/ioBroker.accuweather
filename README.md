@@ -40,6 +40,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 ### **WORK IN PROGRESS**
 * (ticaki) BREAKING: equires Nodejs 20 and higher
 * (ticaki) BREAKING: command states as buttons, only react on ack=false. 
+* (ticaki) No data is retrieved if the adapter is restarted within 10 minutes. 
 * (ticaki) apikey renamed and encrypted
 * (ticaki) Dependencies and eslint updated
 * (devtronic) Add nextHour.CloudCover
