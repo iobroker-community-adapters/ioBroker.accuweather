@@ -41,16 +41,13 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
-* (ticaki) BREAKING: Requires Nodejs 20 or higher
-* (ticaki) BREAKING: Requires Nodejs 20 or higher
+### 2.0.0 (2025-01-18)
 * (ticaki) BREAKING: Requires Nodejs 20 or higher
 * (ticaki) BREAKING: Command states are now buttons and only respond to ack=false. 
 * (ticaki) admin option: No data is updated on adapter startup (default: true). 
 * (ticaki) apikey renamed and encrypted
 * (ticaki) Dependencies and eslint updated
 * (devtronic) Add nextHour.CloudCover
-
 
 ### 1.5.0 (2024-06-23)
 * (xdaamg) limit updates to once an hour, this fixes part of issue #273.

@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "accuweather",
-    "version": "1.5.0",
+    "version": "2.0.0",
     "news": {
+      "2.0.0": {
+        "en": "BREAKING: Requires Nodejs 20 or higher\nBREAKING: Command states are now buttons and only respond to ack=false. \nadmin option: No data is updated on adapter startup (default: true). \napikey renamed and encrypted\nDependencies and eslint updated\nAdd nextHour.CloudCover",
+        "de": "BREAKING: Erfordert Nodejs 20 oder höher\nBREAKING: Befehlszustände sind jetzt Tasten und reagieren nur auf ack=false.\nadmin-Option: Beim Adapter-Startup werden keine Daten aktualisiert (Standard: true).\napikey umbenannt und verschlüsselt\nAbhängigkeiten und eslint aktualisiert\nNextHour.CloudCover hinzufügen",
+        "ru": "20 или более\n20 или более\n20 или более\nВЫВОДЫ: Командные состояния теперь являются кнопками и отвечают только на ack=false.\nadmin опция: Данные не обновляются о запуске адаптера (по умолчанию: True).\napikey переименован и зашифрован\nЗависимость и уклонение\nДобавить следующийHour.CloudCover",
+        "pt": "BREAKING: Requer Nodejs 20 ou superior\nBREAKING: Requer Nodejs 20 ou superior\nBREAKING: Requer Nodejs 20 ou superior\nBREAKING: Os estados de comando agora são botões e só respondem ao ack=false.\nopção admin: Nenhum dado é atualizado na inicialização do adaptador (padrão: verdadeiro).\napikey renomeado e criptografado\nDependências e eslint atualizado\nAdicionar nextHour.CloudCover",
+        "nl": "Breaking: Vereist Nodejs 20 of hoger\nBreaking: Vereist Nodejs 20 of hoger\nBreaking: Vereist Nodejs 20 of hoger\nOpdrachtstaten zijn nu knoppen en reageren alleen op ack=false.\nadmin optie: Er worden geen gegevens bijgewerkt bij het opstarten van de adapter (standaard: waar).\napikey hernoemd en gecodeerd\nAfhankelijkheden en eslint bijgewerkt\nVoeg volgende uur toe.CloudCover",
+        "fr": "BREAKING: Nécessite Nodejs 20 ou plus\nBREAKING: Nécessite Nodejs 20 ou plus\nBREAKING: Nécessite Nodejs 20 ou plus\nLes états de commande sont maintenant des boutons et ne répondent qu'à ack=false.\noption administrateur & #160;: Aucune donnée n'est mise à jour au démarrage de l'adaptateur (par défaut: true).\napikey renommé et chiffré\nDépendances et essence mises à jour\nAjouter heure suivante.CloudCover",
+        "it": "BREAKING: Richiede Nodejs 20 o più\nBREAKING: Richiede Nodejs 20 o più\nBREAKING: Richiede Nodejs 20 o più\nBREAKING: Gli stati di comando sono ora pulsanti e rispondono solo a ack=false.\nopzione admin: Nessun dato viene aggiornato sull'avvio dell'adattatore (default: true).\napikey rinominato e crittografato\nDipendenze ed eslint aggiornati\nAggiungi il prossimo.CloudCover",
+        "es": "Requiere Nodejs 20 o superior\nRequiere Nodejs 20 o superior\nRequiere Nodejs 20 o superior\nLos estados de mando son ahora botones y sólo responden a ack=false.\nopción de administración: No se actualizan datos sobre el arranque del adaptador (por defecto: verdadero).\napikey renombrado y cifrado\nDependencias y datos actualizados\nAñade siguienteHour.CloudCover",
+        "pl": "BREAKING: wymaga Nodejs 20 lub wyższy\nBREAKING: wymaga Nodejs 20 lub wyższy\nBREAKING: wymaga Nodejs 20 lub wyższy\nBREAKING: stany poleceń są teraz przyciskami i tylko odpowiadają na ack = false.\nopcja admin: Brak aktualizacji danych przy starcie adaptera (domyślnie: true).\napikey przemianowany i zaszyfrowany\nZaktualizowane zależności i eslint\nDodaj nextHour.CloudCover",
+        "uk": "BREAKING: Вимагає Nodejs 20 або вище\nBREAKING: Вимагає Nodejs 20 або вище\nBREAKING: Вимагає Nodejs 20 або вище\nBREAKING: Командні стани тепер кнопки і тільки відповідають ack=false.\nопція адміністратора: Немає даних оновлюється на запуску адаптера (за замовчуванням: true).\napikey перейменований і зашифрований\nЗалежність і eslint оновлено\nДодати наступнеHour.CloudCover",
+        "zh-cn": "需要20个或以上的节点\n需要20个或以上的节点\n需要20个或以上的节点\n命令状态现在是按键,只回应阿克=虚构.\n管理选项 : 没有更新适配器启动数据( 默认: true) .\napikey 重命名并加密\n依赖和Eslint 更新\n添加下一个 Hour. CloudCover"
+      },
       "1.5.0": {
         "en": "limit updates to once an hour, this fixes part of issue #273.\nAdapter requires js-controller >= 5 and admin >= 6 now\nNode 22 support has been added to testing\nDependencies have been updated",
         "de": "Updates auf einmal pro Stunde limitiert, dies repariert einen Teil der Fehlermeldung #273.\nAdapter benötigt js-controller >= 5 und admin >= 6 jetzt\nNode 22 Unterstützung wurde zur Prüfung hinzugefügt\nAbhängigkeiten wurden aktualisiert",
@@ -80,19 +93,6 @@
         "pl": "Dodano parametr HoursOfSun do prognozy dziennej",
         "zh-cn": "每日预测中添加了 hoursOfSun 参数",
         "uk": "До щоденного прогнозу додано параметр HoursOfSun"
-      },
-      "1.2.1": {
-        "en": "Updated logo",
-        "de": "Aktualisiertes Logo",
-        "ru": "Обновленный логотип",
-        "pt": "Logotipo atualizado",
-        "nl": "Bijgewerkt logo",
-        "fr": "Logo mis à jour",
-        "it": "Logo aggiornato",
-        "es": "Logotipo actualizado",
-        "pl": "Zaktualizowane logo",
-        "zh-cn": "更新标志",
-        "uk": "Оновлений логотип"
       }
     },
     "titleLang": {
