@@ -42,9 +42,11 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (ticaki) BREAKING: Requires Nodejs 20 and higher
-* (ticaki) BREAKING: command states as buttons, only react on ack=false. 
-* (ticaki) admin option: No data is updated at startup (default: true). 
+* (ticaki) BREAKING: Requires Nodejs 20 or higher
+* (ticaki) BREAKING: Requires Nodejs 20 or higher
+* (ticaki) BREAKING: Requires Nodejs 20 or higher
+* (ticaki) BREAKING: Command states are now buttons and only respond to ack=false. 
+* (ticaki) admin option: No data is updated on adapter startup (default: true). 
 * (ticaki) apikey renamed and encrypted
 * (ticaki) Dependencies and eslint updated
 * (devtronic) Add nextHour.CloudCover
