@@ -41,7 +41,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 2.0.0 (2025-01-18)
+### 2.0.1 (2025-01-18)
 * (ticaki) BREAKING: Requires Nodejs 20 or higher
 * (ticaki) BREAKING: Command states are now buttons and only respond to ack=false. 
 * (ticaki) admin option: No data is updated on adapter startup (default: true). 
