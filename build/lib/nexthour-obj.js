@@ -67,6 +67,9 @@ async function createNextHourForecatObjects(hour, adapter) {
   for (const k in _obj) {
     const key = k;
     const measure = {};
+    if (!String(key).startsWith("nextHour")) {
+      continue;
+    }
     const nkey = String(key).replace("nextHour", `Hourly.h${hour}`);
     const role = _obj[key].common.role;
     _obj[key].common.unit = metric2Imperial(adapter, _obj[key].common.unit);

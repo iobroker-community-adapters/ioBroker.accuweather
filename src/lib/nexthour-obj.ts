@@ -41,6 +41,11 @@ export async function createNextHourForecatObjects(hour: string, adapter: Accuwe
     for (const k in _obj) {
         const key = k as keyof typeof _obj;
         const measure: any = {};
+
+        // only use nextHour definitions
+        if (!String(key).startsWith('nextHour')) {
+            continue;
+        }
         const nkey = String(key).replace('nextHour', `Hourly.h${hour}`);
         const role = _obj[key].common.role;
         _obj[key].common.unit = metric2Imperial(adapter, _obj[key].common.unit);
@@ -74,7 +79,6 @@ export async function createCurrentConditionObjects(adapter: Accuweather): Promi
         if (stateObj && stateObj.common && stateObj.common.unit) {
             stateObj.common.unit = metric2Imperial(adapter, stateObj.common.unit);
         }
-
         await adapter.extendObject(key.replace('nextHour', 'Current'), stateObj);
     }
 }
