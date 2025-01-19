@@ -500,6 +500,7 @@ class Accuweather extends utils.Adapter {
                 await this.request5Days();
               } catch (error) {
                 this.log.error(error);
+                this.log.info(`Retry in 10 Minutes`);
                 timeout1 = this.setTimeout(_get5DaysTimeout, 6e5);
               }
             },
@@ -518,6 +519,7 @@ class Accuweather extends utils.Adapter {
                 await this.requestCurrent();
               } catch (error) {
                 this.log.error(error);
+                this.log.info(`Retry in 10 Minutes`);
                 timeout2 = this.setTimeout(_getMinutesTimeout, 6e5);
               }
             },
@@ -536,6 +538,7 @@ class Accuweather extends utils.Adapter {
                 await this.request12Hours();
               } catch (error) {
                 this.log.error(error);
+                this.log.info(`Retry in 10 Minutes`);
                 timeout3 = this.setTimeout(_get12HoursTimeout, 6e5);
               }
             },
