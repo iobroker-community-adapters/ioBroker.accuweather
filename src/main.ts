@@ -576,9 +576,13 @@ class Accuweather extends utils.Adapter {
                                 timeout1 = null;
                                 await this.request5Days();
                             } catch (error: any) {
-                                this.log.error(error);
-                                this.log.info(`Retry in 10 Minutes`);
-                                timeout1 = this.setTimeout(_get5DaysTimeout, 600000);
+                                if (error && error.cause && error.cause.status) {
+                                    this.log.error(error.message);
+                                } else {
+                                    this.log.error(error);
+                                    this.log.info(`Retry in 10 Minutes`);
+                                    timeout1 = this.setTimeout(_get5DaysTimeout, 600000);
+                                }
                             }
                         },
                         Math.random() * 10000 + 1,
@@ -595,9 +599,13 @@ class Accuweather extends utils.Adapter {
                                 timeout2 = null;
                                 await this.requestCurrent();
                             } catch (error: any) {
-                                this.log.error(error);
-                                this.log.info(`Retry in 10 Minutes`);
-                                timeout2 = this.setTimeout(_getMinutesTimeout, 600000);
+                                if (error && error.cause && error.cause.status) {
+                                    this.log.error(error.message);
+                                } else {
+                                    this.log.error(error);
+                                    this.log.info(`Retry in 10 Minutes`);
+                                    timeout2 = this.setTimeout(_getMinutesTimeout, 600000);
+                                }
                             }
                         },
                         Math.random() * 10000 + 1,
@@ -617,9 +625,13 @@ class Accuweather extends utils.Adapter {
                                 timeout3 = null;
                                 await this.request12Hours();
                             } catch (error: any) {
-                                this.log.error(error);
-                                this.log.info(`Retry in 10 Minutes`);
-                                timeout3 = this.setTimeout(_get12HoursTimeout, 600000);
+                                if (error && error.cause && error.cause.status) {
+                                    this.log.error(error.message);
+                                } else {
+                                    this.log.error(error);
+                                    this.log.info(`Retry in 10 Minutes`);
+                                    timeout3 = this.setTimeout(_get12HoursTimeout, 600000);
+                                }
                             }
                         },
                         Math.random() * 10000 + 1,

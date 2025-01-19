@@ -132,16 +132,26 @@ export class Accuapi {
      */
     async get(): Promise<any> {
         this.generateReqUrl();
+        let response;
         try {
-            const response = await axios.get(this.url ? this.url : '');
+            response = await axios.get(this.url ? this.url : '');
             if (response && response.status !== 200) {
                 throw new Error(`Status: ${response.status} text: ${response.statusText}`);
             }
             return response.data;
         } catch (error: any) {
-            throw new Error(
-                `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
-            );
+            if (response && response.status !== 200) {
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+                    cause: {
+                        status: response.status,
+                        text: response.statusText,
+                    },
+                });
+            } else {
+                throw new Error(
+                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+                );
+            }
         }
     }
 
@@ -156,16 +166,26 @@ export class Accuapi {
         //const body = require("./test-data/currentCond.json");
         //
         this.generateReqUrl(true);
+        let response;
         try {
-            const response = await axios.get(this.url ? this.url : '');
+            response = await axios.get(this.url ? this.url : '');
             if (response && response.status !== 200) {
                 throw new Error(`Status: ${response.status} text: ${response.statusText}`);
             }
             return response.data;
         } catch (error: any) {
-            throw new Error(
-                `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
-            );
+            if (response && response.status !== 200) {
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+                    cause: {
+                        status: response.status,
+                        text: response.statusText,
+                    },
+                });
+            } else {
+                throw new Error(
+                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+                );
+            }
         }
     }
 }

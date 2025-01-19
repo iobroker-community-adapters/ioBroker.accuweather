@@ -134,16 +134,26 @@ class Accuapi {
    */
   async get() {
     this.generateReqUrl();
+    let response;
     try {
-      const response = await import_axios.default.get(this.url ? this.url : "");
+      response = await import_axios.default.get(this.url ? this.url : "");
       if (response && response.status !== 200) {
         throw new Error(`Status: ${response.status} text: ${response.statusText}`);
       }
       return response.data;
     } catch (error) {
-      throw new Error(
-        `Forecast cannot be retrieved. ERROR: ${error.response && JSON.stringify(error.response.data) || error.toString()}`
-      );
+      if (response && response.status !== 200) {
+        throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+          cause: {
+            status: response.status,
+            text: response.statusText
+          }
+        });
+      } else {
+        throw new Error(
+          `Forecast cannot be retrieved. ERROR: ${error.response && JSON.stringify(error.response.data) || error.toString()}`
+        );
+      }
     }
   }
   /**
@@ -154,16 +164,26 @@ class Accuapi {
    */
   async getCurrent() {
     this.generateReqUrl(true);
+    let response;
     try {
-      const response = await import_axios.default.get(this.url ? this.url : "");
+      response = await import_axios.default.get(this.url ? this.url : "");
       if (response && response.status !== 200) {
         throw new Error(`Status: ${response.status} text: ${response.statusText}`);
       }
       return response.data;
     } catch (error) {
-      throw new Error(
-        `Forecast cannot be retrieved. ERROR: ${error.response && JSON.stringify(error.response.data) || error.toString()}`
-      );
+      if (response && response.status !== 200) {
+        throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+          cause: {
+            status: response.status,
+            text: response.statusText
+          }
+        });
+      } else {
+        throw new Error(
+          `Forecast cannot be retrieved. ERROR: ${error.response && JSON.stringify(error.response.data) || error.toString()}`
+        );
+      }
     }
   }
 }
