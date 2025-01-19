@@ -41,8 +41,8 @@ For better view a custom lovelace card is created - see https://github.com/algar
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
-* (ticaki) Change: min. js-controller 7.0.6
+### 2.1.0-alpha.0 (2025-01-19)
+* (ticaki) Change: min. js-controller to 6.0.11
 * (ticaki) Change: Outdated data is updated at startup.
 * (ticaki) New: Photo link added in current weather
 * (ticaki) New: Metric and Imperial are available for selection - Will be taken into account with the next data update.

@@ -400,7 +400,7 @@ class Accuweather extends utils.Adapter {
                         });
                     } else if (key === 'Photos' && Array.isArray(json[key])) {
                         const l = json[key].length;
-                        const index = Math.round(Math.random() * l);
+                        const index = Math.round(Math.random() * (l - 1));
                         await this.setState('Current.LandscapeLink', json[key][index].LandscapeLink, true);
                         await this.setState('Current.PortraitLink', json[key][index].PortraitLink, true);
                     }

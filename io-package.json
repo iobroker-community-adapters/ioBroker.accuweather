@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "accuweather",
-    "version": "2.0.1",
+    "version": "2.1.0-alpha.0",
     "news": {
+      "2.1.0-alpha.0": {
+        "en": "Change: min. js-controller to 6.0.11\nChange: Outdated data is updated at startup.\nNew: Photo link added in current weather\nNew: Metric and Imperial are available for selection - Will be taken into account with the next data update.\nNew: In the event of a data retrieval error, an attempt is made again after 10 minute\nRemove admin option (restart blocking)\nRewritten in Typescript",
+        "de": "Änderung: min. js-controller auf 6.0.11\nÄnderung: Überholte Daten werden beim Start aktualisiert.\nNeu: Fotolink im aktuellen Wetter hinzugefügt\nNeu: Metric und Imperial stehen zur Auswahl - Wird mit dem nächsten Datenupdate berücksichtigt.\nNeu: Bei einem Datenabruffehler wird nach 10 Minuten erneut versucht\nAdmin-Option entfernen (Restart blockieren)\nNeu geschrieben in Typescript",
+        "ru": "Изменение: мин. js-контроллер до 6.0.11\nИзменение: устаревшие данные обновляются при запуске.\nНовый: Фотоссылка добавлена в текущую погоду\nНовый: Метрик и Империал доступны для выбора - будут приняты во внимание при следующем обновлении данных.\nНовое: В случае ошибки поиска данных, попытка повторяется через 10 минут\nУдалить параметр администратора (перезапуск блокировки)\nПереписанные в Typescript",
+        "pt": "Mudança: min. js-controller para 6.0.11\nChange: Os dados desatualizados são atualizados na inicialização.\nNovo: Foto link adicionado no tempo atual\nNovo: Metric e Imperial estão disponíveis para seleção - Será levado em conta com a próxima atualização de dados.\nNovo: Em caso de erro de recuperação de dados, uma tentativa é feita novamente após 10 minutos\nRemova a opção admin (reiniciar bloqueio)\nReescrito em Typescript",
+        "nl": "Wijziging: min. js-controller tot 6.0.11\nVerandering: Verouderde gegevens worden bijgewerkt bij het opstarten.\nNieuw: Foto link toegevoegd bij het huidige weer\nNieuw: Metric en Imperial zijn beschikbaar voor selectie - zal in aanmerking worden genomen bij de volgende gegevensupdate.\nNieuw: Bij een fout bij het ophalen van gegevens wordt na 10 minuten opnieuw een poging ondernomen\nAdmin optie verwijderen (opnieuw blokkeren)\nHerschreven in typescript",
+        "fr": "Changement : min. js-controller à 6.0.11\nChangement : Les données périmées sont mises à jour au démarrage.\nNouveau: Lien photo ajouté dans la météo actuelle\nNouveau: Metric et Imperial sont disponibles pour la sélection - sera pris en compte avec la prochaine mise à jour des données.\nNouveau: En cas d'erreur de récupération de données, une tentative est faite après 10 minutes\nSupprimer l'option admin (redémarrer le blocage)\nRéécrit dans Typescript",
+        "it": "Cambio: min. js-controller a 6.0.11\nModifica: i dati obsoleti vengono aggiornati all'avvio.\nNuovo: Collegamento foto aggiunto nel tempo corrente\nNovità: Metric e Imperial sono disponibili per la selezione - Sarà preso in considerazione con il prossimo aggiornamento dati.\nNuovo: In caso di errore di recupero dati, un tentativo viene fatto di nuovo dopo 10 minuti\nRimuovere l'opzione admin (blocco di riavvio)\nRescritto in Tipografia",
+        "es": "Cambio: min. js-controller a 6.0.11\nCambio: Los datos actualizados se actualizan al iniciarse.\nNuevo: Enlace fotográfico añadido en el tiempo actual\nNuevo: Métrico e Imperial están disponibles para la selección - Se tendrá en cuenta con la siguiente actualización de datos.\nNuevo: En caso de error de recuperación de datos, se vuelve a intentar después de 10 minutos\nEliminar la opción de administración (bloqueo de reinicio)\nReescrito en Tiposcript",
+        "pl": "Zmiana: min. js- controller do 6.0.11\nZmiana: Zaległe dane są aktualizowane przy starcie.\nNowy: link fotograficzny dodany w obecnej pogodzie\nNowy: Metric i Imperial są dostępne do wyboru - zostaną uwzględnione w następnej aktualizacji danych.\nNowy: W przypadku błędu w odzyskiwaniu danych, próba jest ponownie po 10 minutach\nUsuń opcję admin (ponowne uruchomienie blokady)\nPrzepisane na maszynie",
+        "uk": "Зміна: хв. js-controller до 6.0.11\nЗміна: Оновлення застарілих даних при запуску.\nНова: Фото посилання, додана в поточну погоду\nНовий: Metric і Imperial доступні для вибору - Буде враховано з наступним оновленням даних.\nНова: У разі перерозподілу даних спроба повторно виконана після 10 хвилин\nВидалити опцію адміністратора (блокування місця)\nПодати заявку",
+        "zh-cn": "更改:min.js控制器改为6.0.11\n更改:过期数据在启动时更新.\n新建: 在当前天气中添加图片链接\n新增:计量和帝国可供选择 -- -- 将在下一次数据更新时加以考虑.\n新建:如果出现数据检索错误,10分钟后再次尝试\n删除管理选项( 重新开始屏蔽)\n重写字体"
+      },
       "2.0.1": {
         "en": "BREAKING: Requires Nodejs 20 or higher\nBREAKING: Command states are now buttons and only respond to ack=false. \nadmin option: No data is updated on adapter startup (default: true). \napikey renamed and encrypted\nDependencies and eslint updated\nAdd nextHour.CloudCover",
         "de": "BREAKING: Erfordert Nodejs 20 oder höher\nBREAKING: Befehlszustände sind jetzt Tasten und reagieren nur auf ack=false.\nadmin-Option: Beim Adapter-Startup werden keine Daten aktualisiert (Standard: true).\napikey umbenannt und verschlüsselt\nAbhängigkeiten und eslint aktualisiert\nNextHour.CloudCover hinzufügen",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja zależności",
         "zh-cn": "依赖更新",
         "uk": "оновлення залежностей"
-      },
-      "1.2.3": {
-        "en": "HoursOfSun parameter added to Daily forecast",
-        "de": "HoursOfSun-Parameter zur täglichen Vorhersage hinzugefügt",
-        "ru": "В суточный прогноз добавлен параметр HoursOfSun",
-        "pt": "Parâmetro HoursOfSun adicionado à previsão diária",
-        "nl": "HoursOfSun-parameter toegevoegd aan dagelijkse voorspelling",
-        "fr": "Paramètre HoursOfSun ajouté aux prévisions quotidiennes",
-        "it": "Parametro HoursOfSun aggiunto alla previsione giornaliera",
-        "es": "Parámetro HoursOfSun agregado al pronóstico diario",
-        "pl": "Dodano parametr HoursOfSun do prognozy dziennej",
-        "zh-cn": "每日预测中添加了 hoursOfSun 参数",
-        "uk": "До щоденного прогнозу додано параметр HoursOfSun"
       }
     },
     "titleLang": {
@@ -150,7 +150,7 @@
     "dataSource": "poll",
     "dependencies": [
       {
-        "js-controller": ">=7.0.6"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
