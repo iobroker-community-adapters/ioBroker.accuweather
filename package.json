@@ -35,7 +35,6 @@
     "@iobroker/eslint-config": "^1.0.0",
     "@iobroker/testing": "^5.0.0",
     "@tsconfig/node20": "^20.1.4",
-    "@types/axios": "^0.14.4",
     "@types/chai": "^4.3.11",
     "@types/chai-as-promised": "^8.0.1",
     "@types/gulp": "^4.0.17",
