@@ -43,6 +43,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 -->
 ### **WORK IN PROGRESS**
 * (ticaki) Change: Outdated data is updated at startup.
+* (ticaki) New: Photo link added in current weather
 * (ticaki) New: Metric and Imperial are available for selection - Will be taken into account with the next data update.
 * (ticaki) New: In the event of a data retrieval error, an attempt is made again after 10 minute
 * (ticaki) Remove admin option (restart blocking)
