@@ -1,5 +1,6 @@
 'use strict';
 import axios from 'axios';
+axios.defaults.timeout = 10000;
 //const moment = require("moment");
 import queryString from 'qs';
 
@@ -82,6 +83,19 @@ export class Accuapi {
         return this;
     }
 
+    /**
+     * Set the getphotos flag
+     *
+     * @param bool Specifies whether or not to include photos.
+     * @returns The instance of Accuapi.
+     */
+    getphotos(bool: boolean): Accuapi {
+        // Boolean value (true or false) specifies whether or not to include the photos.
+        // Default value set to false.
+
+        !bool ? null : (this.query.getphotos = bool);
+        return this;
+    }
     /**
      * Set the metric flag.
      *

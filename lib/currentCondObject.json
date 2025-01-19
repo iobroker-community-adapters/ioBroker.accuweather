@@ -239,5 +239,27 @@
       "role": "value"
     },
     "native": {}
+  },
+  "Current.LandscapeLink": {
+    "type": "state",
+    "common": {
+      "name": "Landscape Link",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "text.url"
+    },
+    "native": {}
+  },
+  "Current.PortraitLink": {
+    "type": "state",
+    "common": {
+      "name": "Portrait Link",
+      "type": "string",
+      "read": true,
+      "write": false,
+      "role": "text.url"
+    },
+    "native": {}
   }
 }

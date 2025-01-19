@@ -33,6 +33,7 @@ __export(accuapi_exports, {
 module.exports = __toCommonJS(accuapi_exports);
 var import_axios = __toESM(require("axios"));
 var import_qs = __toESM(require("qs"));
+import_axios.default.defaults.timeout = 1e4;
 class Accuapi {
   apiKey;
   lokey;
@@ -89,6 +90,16 @@ class Accuapi {
    */
   details(bool) {
     !bool ? null : this.query.details = bool;
+    return this;
+  }
+  /**
+   * Set the getphotos flag
+   *
+   * @param bool Specifies whether or not to include photos.
+   * @returns The instance of Accuapi.
+   */
+  getphotos(bool) {
+    !bool ? null : this.query.getphotos = bool;
     return this;
   }
   /**

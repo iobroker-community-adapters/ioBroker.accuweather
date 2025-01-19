@@ -12,6 +12,7 @@ import * as nextHour from './lib/nexthour-obj';
 let updateInterval: ioBroker.Interval | undefined = undefined;
 let timeout1: ioBroker.Timeout | undefined = undefined;
 let timeout2: ioBroker.Timeout | undefined = undefined;
+let timeout3: ioBroker.Timeout | undefined = undefined;
 
 class Accuweather extends utils.Adapter {
     forecast: Accuapi | undefined;
@@ -397,6 +398,11 @@ class Accuweather extends utils.Adapter {
                             val: json[key].LocalizedText,
                             ack: true,
                         });
+                    } else if (key === 'Photos' && Array.isArray(json[key].Photos)) {
+                        const l = json[key].Photos.length;
+                        const index = Math.round(Math.random() * l);
+                        await this.setState('Current.LandscapeLink', json[key].Photos[index].LandscapeLink, true);
+                        await this.setState('Current.PortraitLink', json[key].Photos[index].PortraitLink, true);
                     }
                 }
             }
@@ -414,52 +420,50 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    request5Days(): void {
+    async request5Days(): Promise<void> {
         if (typeof this.forecast !== 'undefined') {
             const loc = this.config.loKey;
             const lang = this.config.language;
-            this.forecast
-                .localkey(loc)
-                .timeInt('daily/5day')
-                .language(lang)
-                .metric(true)
-                .details(true)
-                .get()
-                .then(res => this.setDailyStates(res))
-                .catch(err => this.log.error(String(err)));
+
+            this.forecast = this.forecast.localkey(loc).timeInt('daily/5day').language(lang).details(true).metric(true);
+
+            const res = await this.forecast.get();
+            await this.setDailyStates(res);
         }
     }
 
-    request12Hours(): void {
+    async request12Hours(): Promise<void> {
         if (typeof this.forecast !== 'undefined') {
             const loc = this.config.loKey;
             const lang = this.config.language;
-            this.forecast
+
+            this.forecast = this.forecast
                 .localkey(loc)
                 .timeInt('hourly/12hour')
                 .language(lang)
-                .metric(true)
                 .details(true)
-                .get()
-                .then(res => this.setHourlyStates(res))
-                .catch(err => this.log.error(err));
+                .metric(true);
+
+            const res = await this.forecast.get();
+            await this.setHourlyStates(res);
         }
     }
 
-    requestCurrent(): void {
+    async requestCurrent(): Promise<void> {
         if (typeof this.forecast !== 'undefined') {
             const loc = this.config.loKey;
             const lang = this.config.language;
 
-            this.forecast
+            this.forecast = this.forecast
                 .localkey(loc)
                 .timeInt()
                 .language(lang)
-                .metric(true)
                 .details(true)
-                .getCurrent()
-                .then(res => this.setCurrentStates(res))
-                .catch(err => this.log.error(err));
+                .metric(true)
+                .getphotos(true);
+
+            const res = await this.forecast.getCurrent();
+            await this.setCurrentStates(res);
         }
     }
 
@@ -509,40 +513,71 @@ class Accuweather extends utils.Adapter {
         updateInterval = this.setInterval(() => {
             const now = new Date();
             if ((now.getHours() === 7 || now.getHours() === 20) && now.getMinutes() < 5) {
-                timeout1 = this.setTimeout(
-                    () => {
-                        timeout1 = null;
-                        this.request5Days();
-                    },
-                    Math.random() * 10000 + 1,
-                );
+                const _get5DaysTimeout = (): void => {
+                    timeout1 && this.clearTimeout(timeout1);
+                    timeout1 = this.setTimeout(
+                        async () => {
+                            try {
+                                timeout1 = null;
+                                await this.request5Days();
+                            } catch (error: any) {
+                                this.log.error(error);
+                                timeout1 = this.setTimeout(_get5DaysTimeout, 600000);
+                            }
+                        },
+                        Math.random() * 10000 + 1,
+                    );
+                };
+                _get5DaysTimeout();
             }
             if (now.getMinutes() < 5) {
-                timeout2 = this.setTimeout(
-                    () => {
-                        timeout2 = null;
-                        this.requestCurrent();
-                    },
-                    Math.random() * 10000 + 1,
-                );
+                const _getMinutesTimeout = (): void => {
+                    timeout2 && this.clearTimeout(timeout2);
+                    timeout2 = this.setTimeout(
+                        async () => {
+                            try {
+                                timeout2 = null;
+                                await this.requestCurrent();
+                            } catch (error: any) {
+                                this.log.error(error);
+                                timeout2 = this.setTimeout(_getMinutesTimeout, 600000);
+                            }
+                        },
+                        Math.random() * 10000 + 1,
+                    );
+                };
+                _getMinutesTimeout();
             }
             if (
                 (now.getHours() === 6 || now.getHours() === 12 || now.getHours() === 18 || now.getHours() === 0) &&
                 now.getMinutes() < 5
             ) {
-                timeout1 = this.setTimeout(
-                    () => {
-                        timeout1 = null;
-                        this.request12Hours();
-                    },
-                    Math.random() * 10000 + 1,
-                );
+                const _get12HoursTimeout = (): void => {
+                    timeout3 && this.clearTimeout(timeout3);
+                    timeout3 = this.setTimeout(
+                        async () => {
+                            try {
+                                timeout3 = null;
+                                await this.request12Hours();
+                            } catch (error: any) {
+                                this.log.error(error);
+                                timeout3 = this.setTimeout(_get12HoursTimeout, 600000);
+                            }
+                        },
+                        Math.random() * 10000 + 1,
+                    );
+                };
+                _get12HoursTimeout();
             }
         }, 300000); // 5 minutes
         if (!this.config.apiCallProtection) {
-            this.request12Hours();
-            this.requestCurrent();
-            this.request5Days();
+            try {
+                await this.request12Hours();
+                await this.requestCurrent();
+                await this.request5Days();
+            } catch (error: any) {
+                this.log.error(error);
+            }
         } else {
             this.log.info('The data has not been updated. The normal update cycle is running.');
         }
@@ -610,6 +645,9 @@ class Accuweather extends utils.Adapter {
             timeout2 && this.clearTimeout(timeout2);
             timeout2 = null;
 
+            timeout3 && this.clearTimeout(timeout3);
+            timeout3 = null;
+
             callback();
         } catch {
             callback && callback();
@@ -622,18 +660,22 @@ class Accuweather extends utils.Adapter {
      * @param id - The id of the state that changed
      * @param state - The state object that changed
      */
-    onStateChange(id: string, state: ioBroker.State | null | undefined): void {
+    async onStateChange(id: string, state: ioBroker.State | null | undefined): Promise<void> {
         if (state) {
             if (!state.ack) {
-                // The state was changed
-                if (id === `${this.namespace}.updateCurrent`) {
-                    this.requestCurrent();
-                } else if (id === `${this.namespace}.updateHourly`) {
-                    this.request12Hours();
-                } else if (id === `${this.namespace}.updateDaily`) {
-                    this.request5Days();
+                try {
+                    // The state was changed
+                    if (id === `${this.namespace}.updateCurrent`) {
+                        await this.requestCurrent();
+                    } else if (id === `${this.namespace}.updateHourly`) {
+                        await this.request12Hours();
+                    } else if (id === `${this.namespace}.updateDaily`) {
+                        await this.request5Days();
+                    }
+                    this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+                } catch (error: any) {
+                    this.log.error(error);
                 }
-                this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             }
         } else {
             // The state was deleted
