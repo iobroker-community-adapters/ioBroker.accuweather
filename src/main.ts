@@ -398,11 +398,11 @@ class Accuweather extends utils.Adapter {
                             val: json[key].LocalizedText,
                             ack: true,
                         });
-                    } else if (key === 'Photos' && Array.isArray(json[key].Photos)) {
-                        const l = json[key].Photos.length;
+                    } else if (key === 'Photos' && Array.isArray(json[key])) {
+                        const l = json[key].length;
                         const index = Math.round(Math.random() * l);
-                        await this.setState('Current.LandscapeLink', json[key].Photos[index].LandscapeLink, true);
-                        await this.setState('Current.PortraitLink', json[key].Photos[index].PortraitLink, true);
+                        await this.setState('Current.LandscapeLink', json[key][index].LandscapeLink, true);
+                        await this.setState('Current.PortraitLink', json[key][index].PortraitLink, true);
                     }
                 }
             }
