@@ -6,5 +6,6 @@
     "language": "Sprache",
     "loKey": "Standortschlüssel",
     "lo_help": "Um den Standortschlüssel zu erhalten, gehen Sie zu https://www.accuweather.com/ und geben Sie Ihren Städtenamen ein oder versuchen Sie, Ihre Koordinaten (Breitengrad, Längengrad) einzugeben. Ihr Standortschlüssel ist die Nummer am Ende der URL.",
-    "apiCallProtection": "Keine Datenaktualisierung beim Neustart des Adapters. (empfohlen)"
+    "apiCallProtection": "Keine Datenaktualisierung beim Neustart des Adapters. (empfohlen)",
+    "metric": "Maßsystem"
 }

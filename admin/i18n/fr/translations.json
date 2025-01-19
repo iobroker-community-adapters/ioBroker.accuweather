@@ -6,5 +6,6 @@
     "language": "La langue",
     "loKey": "Clé de localisation",
     "lo_help": "Pour obtenir la clé de localisation, accédez à la page https://www.accuweather.com/ et entrez le nom de votre ville ou essayez d'entrer vos coordonnées (latitude, longitude). Votre clé de localisation sera le numéro à la fin de l'URL.",
-    "apiCallProtection": "Aucune mise à jour des données lors du redémarrage de l'adaptateur. (recommandé)"
+    "apiCallProtection": "Aucune mise à jour des données lors du redémarrage de l'adaptateur. (recommandé)",
+    "metric": "Système de mesure"
 }
