@@ -458,7 +458,7 @@ class Accuweather extends utils.Adapter {
   async onReady() {
     const nameSpaceObj = await this.getForeignObjectAsync(this.namespace);
     if (!nameSpaceObj) {
-      await this.setForeignObject(this.namespace, {
+      await this.setForeignObjectAsync(this.namespace, {
         _id: this.namespace,
         type: "meta",
         common: { name: "Accuweather device", type: "meta.folder" },
@@ -470,7 +470,7 @@ class Accuweather extends utils.Adapter {
       obj.native.apiKeyEncrypted = this.encrypt(obj.native.apiKey);
       this.config.apiKeyEncrypted = obj.native.apiKey;
       delete obj.native.apiKey;
-      await this.setForeignObject(`system.adapter.${this.namespace}`, obj);
+      await this.setForeignObjectAsync(`system.adapter.${this.namespace}`, obj);
     }
     if (this.config.metric !== "Metric" && this.config.metric !== "Imperial") {
       this.config.metric = "Metric";

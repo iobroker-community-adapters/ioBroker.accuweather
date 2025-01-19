@@ -138,6 +138,11 @@ export class Accuapi {
             if (response && response.status !== 200) {
                 throw new Error(`Status: ${response.status} text: ${response.statusText}`);
             }
+            if (typeof response.data !== 'object') {
+                response.status = 503;
+                response.statusText = 'Service Unavailable';
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
+            }
             return response.data;
         } catch (error: any) {
             if (response && response.status !== 200) {
@@ -170,6 +175,11 @@ export class Accuapi {
         try {
             response = await axios.get(this.url ? this.url : '');
             if (response && response.status !== 200) {
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
+            }
+            if (typeof response.data !== 'object') {
+                response.status = 503;
+                response.statusText = 'Service Unavailable';
                 throw new Error(`Status: ${response.status} text: ${response.statusText}`);
             }
             return response.data;
