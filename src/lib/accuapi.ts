@@ -1,18 +1,23 @@
 'use strict';
-const axios = require('axios');
+import axios from 'axios';
 //const moment = require("moment");
-const queryString = require('qs');
+import queryString from 'qs';
 
 /**
  * Class representing the AccuWeather API.
  */
-class Accuapi {
+export class Accuapi {
+    apiKey: string;
+    lokey: string | number;
+    query: any;
+    time: string = '';
+    url: string = '';
     /**
      * Create an instance of Accuapi.
      *
      * @param apiKey - The API key for accessing AccuWeather.
      */
-    constructor(apiKey) {
+    constructor(apiKey: any) {
         this.apiKey = apiKey;
         this.lokey = 335315;
         this.query = {};
@@ -25,7 +30,7 @@ class Accuapi {
      * @param lkey - The location key.
      * @returns The instance of Accuapi.
      */
-    localkey(lkey) {
+    localkey(lkey: string): Accuapi {
         // Unique ID that can be used to search for a specific location.
 
         !lkey ? null : (this.lokey = lkey);
@@ -38,7 +43,7 @@ class Accuapi {
      * @param val - The time interval value.
      * @returns Accuapi The instance of Accuapi.
      */
-    timeInt(val = '') {
+    timeInt(val = ''): Accuapi {
         // Unique ID that can be used to search for a specific location.
 
         !val ? (this.time = 'hourly/1hour') : (this.time = val);
@@ -53,7 +58,7 @@ class Accuapi {
      *                       If not provided, the default value is 'en-us'.
      * @returns The current instance of the API object to allow for method chaining.
      */
-    language(lan) {
+    language(lan: string): Accuapi {
         // http://apidev.accuweather.com/developers/languages
         // String indicating the language in which to return the resource.
         // Default value set to en-us.
@@ -68,7 +73,7 @@ class Accuapi {
      * @param bool - Specifies whether or not to include the full object.
      * @returns The instance of Accuapi.
      */
-    details(bool) {
+    details(bool: boolean): Accuapi {
         // Boolean value (true or false) specifies whether or not to include the full object.
         // Default value set to false.
         // (For location searches, details = true will return AccuWeather related details).
@@ -83,7 +88,7 @@ class Accuapi {
      * @param bool - Specifies whether to return the data in metric units.
      * @returns The instance of Accuapi.
      */
-    metric(bool) {
+    metric(bool: boolean): Accuapi {
         // Boolean value (true or false) that specifies to return the data in either metric (=true) or imperial units.
 
         !bool ? null : (this.query.metric = bool);
@@ -96,7 +101,7 @@ class Accuapi {
      * @param current - A boolean indicating whether to generate the URL for current conditions or forecasts.
      *                            If true, the URL for current conditions is generated.
      */
-    generateReqUrl(current = false) {
+    generateReqUrl(current = false): void {
         if (current) {
             this.url = `http://dataservice.accuweather.com/currentconditions/v1/${this.lokey}?apikey=${this.apiKey}`;
         } else {
@@ -111,16 +116,16 @@ class Accuapi {
      * @returns A promise that resolves to the weather data.
      * @throws {Error} Throws an error if the forecast cannot be retrieved.
      */
-    get() {
+    async get(): Promise<any> {
         this.generateReqUrl();
-        return axios
-            .get(this.url ? this.url : '')
-            .then(response => response.data)
-            .catch(error => {
-                throw new Error(
-                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
-                );
-            });
+        try {
+            const response = await axios.get(this.url ? this.url : '');
+            return response.data;
+        } catch (error: any) {
+            throw new Error(
+                `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+            );
+        }
     }
 
     /**
@@ -129,20 +134,18 @@ class Accuapi {
      * @returns A promise that resolves to the current weather data.
      * @throws {Error} Throws an error if the forecast cannot be retrieved.
      */
-    getCurrent() {
+    async getCurrent(): Promise<any> {
         //
         //const body = require("./test-data/currentCond.json");
         //
         this.generateReqUrl(true);
-        return axios
-            .get(this.url ? this.url : '')
-            .then(response => response.data)
-            .catch(error => {
-                throw new Error(
-                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
-                );
-            });
+        try {
+            const response = await axios.get(this.url ? this.url : '');
+            return response.data;
+        } catch (error: any) {
+            throw new Error(
+                `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+            );
+        }
     }
 }
-
-module.exports = Accuapi;

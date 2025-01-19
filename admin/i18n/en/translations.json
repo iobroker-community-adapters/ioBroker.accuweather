@@ -6,5 +6,6 @@
     "language": "Language",
     "loKey": "Location Key",
     "lo_help": "In order to get location key, go to https://www.accuweather.com/ and enter your city name, or try to enter your coordinates (latitude, longitude). Your location key wil be the number at the end of URL.",
-    "apiCallProtection": "No data update when restarting the adapter. (recommended)"
+    "apiCallProtection": "No data update when restarting the adapter. (recommended)",
+    "metric": "Measurement system"
 }

@@ -67,6 +67,22 @@
       "lg": 12,
       "xl": 12
     },
+    "metric": {
+      "newLine": true,
+      "type": "select",
+      "label": "metric",
+      "options": [
+        {"label": "Metric", "value": "Metric"},
+        {"label": "Imperial", "value": "Imperial"}
+      ],
+      "default": "Metric",
+      "xs": 12,
+      "sm": 12,
+      "md": 6,
+      "lg": 4,
+      "xl": 3,
+      "system": true
+    },
     "language": {
       "newLine": true,
       "type": "language",

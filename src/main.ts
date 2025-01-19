@@ -6,14 +6,15 @@
 
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
-const utils = require('@iobroker/adapter-core');
-const AccuAPI = require('./lib/accuapi');
-const nextHour = require('./lib/nexthour-obj');
-let updateInterval = null;
-let timeout1 = null;
-let timeout2 = null;
+import * as utils from '@iobroker/adapter-core';
+import { Accuapi } from './lib/accuapi';
+import * as nextHour from './lib/nexthour-obj';
+let updateInterval: ioBroker.Interval | undefined = undefined;
+let timeout1: ioBroker.Timeout | undefined = undefined;
+let timeout2: ioBroker.Timeout | undefined = undefined;
 
 class Accuweather extends utils.Adapter {
+    forecast: Accuapi | undefined;
     /**
      * @param [options] - Optional settings for the adapter
      */
@@ -28,14 +29,14 @@ class Accuweather extends utils.Adapter {
         this.on('unload', this.onUnload.bind(this));
     }
 
-    getCardinalDirection(angle) {
+    getCardinalDirection(angle: number): string {
         if (typeof angle === 'string') {
             angle = parseInt(angle);
         }
         if (angle <= 0 || angle > 360 || typeof angle === 'undefined') {
             return '☈';
         }
-        const arrows = {
+        const arrows: Record<string, string> = {
             north: '↑N',
             north_east: '↗NE',
             east: '→E',
@@ -53,10 +54,11 @@ class Accuweather extends utils.Adapter {
                 return arrows[directions[i]];
             }
         }
-        return arrows['north'];
+        return arrows.north;
     }
 
-    async setDailyStates(obj) {
+    async setDailyStates(obj: any): Promise<void> {
+        this.log.debug(`Daily: ${JSON.stringify(obj)}`);
         const days = obj.DailyForecasts;
         try {
             for (let day = 1; day <= 5; day++) {
@@ -83,20 +85,20 @@ class Accuweather extends utils.Adapter {
                             break;
                         case 'Sun':
                             await this.setState(`Daily.Day${day}.Sunrise`, {
-                                val: json[key]['Rise'],
+                                val: json[key].Rise,
                                 ack: true,
                             });
                             await this.setState(`Daily.Day${day}.Sunset`, {
-                                val: json[key]['Set'],
+                                val: json[key].Set,
                                 ack: true,
                             });
                             if (day === 1) {
                                 await this.setState('Summary.Sunrise', {
-                                    val: json[key]['Rise'],
+                                    val: json[key].Rise,
                                     ack: true,
                                 });
                                 await this.setState('Summary.Sunset', {
-                                    val: json[key]['Set'],
+                                    val: json[key].Set,
                                     ack: true,
                                 });
                             }
@@ -115,29 +117,29 @@ class Accuweather extends utils.Adapter {
                             break;
                         case 'Temperature':
                             await this.setState(`Daily.Day${day}.Temperature.Minimum`, {
-                                val: json[key]['Minimum'].Value,
+                                val: json[key].Minimum.Value,
                                 ack: true,
                             });
                             await this.setState(`Daily.Day${day}.Temperature.Maximum`, {
-                                val: json[key]['Maximum'].Value,
+                                val: json[key].Maximum.Value,
                                 ack: true,
                             });
                             await this.setState(`Summary.TempMin_d${day}`, {
-                                val: json[key]['Minimum'].Value,
+                                val: json[key].Minimum.Value,
                                 ack: true,
                             });
                             await this.setState(`Summary.TempMax_d${day}`, {
-                                val: json[key]['Maximum'].Value,
+                                val: json[key].Maximum.Value,
                                 ack: true,
                             });
                             break;
                         case 'RealFeelTemperature':
                             await this.setState(`Daily.Day${day}.RealFeelTemperature.Minimum`, {
-                                val: json[key]['Minimum'].Value,
+                                val: json[key].Minimum.Value,
                                 ack: true,
                             });
                             await this.setState(`Daily.Day${day}.RealFeelTemperature.Maximum`, {
-                                val: json[key]['Maximum'].Value,
+                                val: json[key].Maximum.Value,
                                 ack: true,
                             });
                             break;
@@ -184,7 +186,7 @@ class Accuweather extends utils.Adapter {
                                             }
                                         }
                                     } else if (typeof json1[key1] == 'object') {
-                                        if (json1[key1]['Value'] !== undefined) {
+                                        if (json1[key1].Value !== undefined) {
                                             if (['TotalLiquid', 'Rain', 'Snow', 'Ice'].includes(key1)) {
                                                 await this.setState(`Daily.Day${day}.${key}.${key1}Volume`, {
                                                     val: json1[key1].Value,
@@ -245,7 +247,8 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    async setNextHourStates(obj, item, hour) {
+    async setNextHourStates(obj: any, item: string, hour: string): Promise<void> {
+        this.log.debug(`Hours: ${JSON.stringify(obj)}`);
         const json = obj[item];
         try {
             for (const key in json) {
@@ -265,7 +268,7 @@ class Accuweather extends utils.Adapter {
                         });
                     }
                 } else if (typeof json[key] == 'object') {
-                    if (json[key]['Value'] !== undefined) {
+                    if (json[key].Value !== undefined) {
                         if (['TotalLiquid', 'Rain', 'Snow', 'Ice'].includes(key)) {
                             await this.setState(`Hourly.h${hour}.${key}Volume`, {
                                 val: json[key].Value,
@@ -303,7 +306,8 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    async setCurrentStates(obj) {
+    async setCurrentStates(obj: any): Promise<void> {
+        this.log.debug(`Current: ${JSON.stringify(obj)}`);
         const json = obj[0];
         try {
             for (const key in json) {
@@ -339,7 +343,7 @@ class Accuweather extends utils.Adapter {
                         });
                         await this.setState('Summary.DayOfWeek', { val: dow, ack: true });
                         this.log.debug(
-                            `Date ${dt}, dow: ${dt.toLocaleString(this.config.language, { weekday: 'short' })}`,
+                            `Date ${dt.getTime()}, dow: ${dt.toLocaleString(this.config.language, { weekday: 'short' })}`,
                         );
                     } else {
                         await this.setState(`Summary.${key}`, {
@@ -348,23 +352,23 @@ class Accuweather extends utils.Adapter {
                         });
                     }
                 } else if (json[key] !== null) {
-                    if (json[key].Metric !== undefined) {
-                        //this.log.debug(key + ": " + json[key].Metric.Value);
+                    if (json[key][this.config.metric] !== undefined) {
+                        //this.log.debug(key + ": " + json[key][this.config.metric].Value);
                         await this.setState(`Current.${key}`, {
-                            val: json[key].Metric.Value,
+                            val: json[key][this.config.metric].Value,
                             ack: true,
                         });
                         await this.setState(`Summary.${key}`, {
-                            val: json[key].Metric.Value,
+                            val: json[key][this.config.metric].Value,
                             ack: true,
                         });
                     } else if (key === 'Wind') {
                         await this.setState('Current.WindSpeed', {
-                            val: json[key].Speed.Metric.Value,
+                            val: json[key].Speed[this.config.metric].Value,
                             ack: true,
                         });
                         await this.setState('Summary.WindSpeed', {
-                            val: json[key].Speed.Metric.Value,
+                            val: json[key].Speed[this.config.metric].Value,
                             ack: true,
                         });
                         await this.setState('Current.WindDirection', {
@@ -385,7 +389,7 @@ class Accuweather extends utils.Adapter {
                         });
                     } else if (key === 'WindGust') {
                         await this.setState('Current.WindGust', {
-                            val: json[key].Speed.Metric.Value,
+                            val: json[key].Speed[this.config.metric].Value,
                             ack: true,
                         });
                     } else if (key === 'PressureTendency') {
@@ -401,16 +405,16 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    async setHourlyStates(obj) {
+    async setHourlyStates(obj: any): Promise<void> {
         for (const hr in obj) {
-            if (typeof obj[hr] === 'object' && obj[hr]['DateTime']) {
-                const d = new Date(obj[hr]['DateTime']);
-                await this.setNextHourStates(obj, hr, d.getHours());
+            if (typeof obj[hr] === 'object' && obj[hr].DateTime) {
+                const d = new Date(obj[hr].DateTime);
+                await this.setNextHourStates(obj, hr, String(d.getHours()));
             }
         }
     }
 
-    request5Days() {
+    request5Days(): void {
         if (typeof this.forecast !== 'undefined') {
             const loc = this.config.loKey;
             const lang = this.config.language;
@@ -426,7 +430,7 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    request12Hours() {
+    request12Hours(): void {
         if (typeof this.forecast !== 'undefined') {
             const loc = this.config.loKey;
             const lang = this.config.language;
@@ -442,7 +446,7 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    requestCurrent() {
+    requestCurrent(): void {
         if (typeof this.forecast !== 'undefined') {
             const loc = this.config.loKey;
             const lang = this.config.language;
@@ -459,7 +463,7 @@ class Accuweather extends utils.Adapter {
         }
     }
 
-    async onReady() {
+    async onReady(): Promise<void> {
         const nameSpaceObj = await this.getForeignObjectAsync(this.namespace);
         if (!nameSpaceObj) {
             await this.setForeignObject(this.namespace, {
@@ -478,6 +482,9 @@ class Accuweather extends utils.Adapter {
             await this.setForeignObject(`system.adapter.${this.namespace}`, obj);
         }
 
+        if (this.config.metric !== 'Metric' && this.config.metric !== 'Imperial') {
+            this.config.metric = 'Metric';
+        }
         if (!this.config.language) {
             const systemConfig = await this.getForeignObjectAsync('system.config');
             if (systemConfig && systemConfig.common && systemConfig.common.language) {
@@ -494,15 +501,15 @@ class Accuweather extends utils.Adapter {
         this.log.debug(`API: ********; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
 
         if (this.config.apiKeyEncrypted) {
-            this.forecast = new AccuAPI(this.config.apiKeyEncrypted);
+            this.forecast = new Accuapi(this.config.apiKeyEncrypted);
         } else {
             this.log.error('API Key is missing. Please enter Accuweather API key');
         }
 
-        updateInterval = setInterval(() => {
+        updateInterval = this.setInterval(() => {
             const now = new Date();
             if ((now.getHours() === 7 || now.getHours() === 20) && now.getMinutes() < 5) {
-                timeout1 = setTimeout(
+                timeout1 = this.setTimeout(
                     () => {
                         timeout1 = null;
                         this.request5Days();
@@ -511,7 +518,7 @@ class Accuweather extends utils.Adapter {
                 );
             }
             if (now.getMinutes() < 5) {
-                timeout2 = setTimeout(
+                timeout2 = this.setTimeout(
                     () => {
                         timeout2 = null;
                         this.requestCurrent();
@@ -523,7 +530,7 @@ class Accuweather extends utils.Adapter {
                 (now.getHours() === 6 || now.getHours() === 12 || now.getHours() === 18 || now.getHours() === 0) &&
                 now.getMinutes() < 5
             ) {
-                timeout1 = setTimeout(
+                timeout1 = this.setTimeout(
                     () => {
                         timeout1 = null;
                         this.request12Hours();
@@ -591,20 +598,19 @@ class Accuweather extends utils.Adapter {
      *
      * @param callback - The callback function to be called when the unload process is complete
      */
-    onUnload(callback) {
+    private onUnload(callback: () => void): void {
         try {
             this.log.info('cleaned everything up...');
-            updateInterval && clearInterval(updateInterval);
+            updateInterval && this.clearInterval(updateInterval);
             updateInterval = null;
 
-            timeout1 && clearTimeout(timeout1);
+            timeout1 && this.clearTimeout(timeout1);
             timeout1 = null;
 
-            timeout2 && clearTimeout(timeout2);
+            timeout2 && this.clearTimeout(timeout2);
             timeout2 = null;
 
             callback();
-            callback = null;
         } catch {
             callback && callback();
         }
@@ -616,7 +622,7 @@ class Accuweather extends utils.Adapter {
      * @param id - The id of the state that changed
      * @param state - The state object that changed
      */
-    onStateChange(id, state) {
+    onStateChange(id: string, state: ioBroker.State | null | undefined): void {
         if (state) {
             if (!state.ack) {
                 // The state was changed
@@ -636,14 +642,12 @@ class Accuweather extends utils.Adapter {
     }
 }
 
-// @ts-expect-error parent is a valid property on module
-if (module.parent) {
+if (require.main !== module) {
     // Export the constructor in compact mode
-    /**
-     * @param [options] - Optional settings for the adapter instance
-     */
-    module.exports = options => new Accuweather(options);
+    module.exports = (options: Partial<utils.AdapterOptions> | undefined) => new Accuweather(options);
 } else {
     // otherwise start the instance directly
-    new Accuweather();
+    (() => new Accuweather())();
 }
+
+export = Accuweather;
