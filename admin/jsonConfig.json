@@ -80,8 +80,7 @@
       "sm": 12,
       "md": 6,
       "lg": 4,
-      "xl": 3,
-      "system": true
+      "xl": 3
     },
     "language": {
       "newLine": true,
@@ -93,16 +92,6 @@
       "lg": 4,
       "xl": 3,
       "system": true
-    },
-    "apiCallProtection": {
-      "newLine": true,
-      "type": "checkbox",
-      "label": "apiCallProtection",
-      "xs": 12,
-      "sm": 12,
-      "md": 6,
-      "lg": 4,
-      "xl": 3
     }
   }
 }

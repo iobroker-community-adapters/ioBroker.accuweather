@@ -406,6 +406,7 @@ class Accuweather extends utils.Adapter {
                     }
                 }
             }
+            await this.setState('CurrentNextUpdate', Date.now(), true);
         } catch (err) {
             this.log.error(String(err));
         }
@@ -418,6 +419,7 @@ class Accuweather extends utils.Adapter {
                 await this.setNextHourStates(obj, hr, String(d.getHours()));
             }
         }
+        await this.setState('HourlyNextUpdate', Date.now(), true);
     }
 
     async request5Days(): Promise<void> {
@@ -430,6 +432,7 @@ class Accuweather extends utils.Adapter {
             const res = await this.forecast.get();
             await this.setDailyStates(res);
         }
+        await this.setState('DailyNextUpdate', Date.now(), true);
     }
 
     async request12Hours(): Promise<void> {
@@ -496,11 +499,6 @@ class Accuweather extends utils.Adapter {
             }
         }
 
-        await nextHour.createHourlyForecastObjects(this);
-        await nextHour.createCurrentConditionObjects(this);
-        await nextHour.createDailyForecastObjects(this);
-        await nextHour.createSummaryObjects(this);
-
         //this.log.debug(`API: ${this.config.apiKey}; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
         this.log.debug(`API: ********; Loc: ${this.config.loKey} Lang: ${this.config.language}`);
 
@@ -508,7 +506,64 @@ class Accuweather extends utils.Adapter {
             this.forecast = new Accuapi(this.config.apiKeyEncrypted);
         } else {
             this.log.error('API Key is missing. Please enter Accuweather API key');
+            return;
         }
+        await nextHour.createHourlyForecastObjects(this);
+        await nextHour.createCurrentConditionObjects(this);
+        await nextHour.createDailyForecastObjects(this);
+        await nextHour.createSummaryObjects(this);
+
+        await this.extendObject('CurrentNextUpdate', {
+            type: 'state',
+            common: {
+                name: 'Last Update of Current Weather',
+                type: 'number',
+                role: 'date',
+                read: true,
+                write: false,
+            },
+            native: {},
+        });
+        await this.extendObject('HourlyNextUpdate', {
+            type: 'state',
+            common: {
+                name: 'Last Update of Hourly Weather',
+                type: 'number',
+                role: 'date',
+                read: true,
+                write: false,
+            },
+            native: {},
+        });
+        await this.extendObject('DailyNextUpdate', {
+            type: 'state',
+            common: {
+                name: 'Last Update of Daily Weather',
+                type: 'number',
+                role: 'date',
+                read: true,
+                write: false,
+            },
+            native: {},
+        });
+        const startForbidden: { current?: boolean; hourly?: boolean; daily?: boolean } = {};
+
+        let state = await this.getStateAsync('CurrentNextUpdate');
+        startForbidden.current = !!(state && state.val && Number(state.val) + 66 * 60000 > Date.now()); // every hour + random 5 Minutes + random 10 seconds
+
+        state = await this.getStateAsync('HourlyNextUpdate');
+        startForbidden.hourly = !!(
+            state &&
+            state.ts &&
+            state.ts +
+                (new Date().setHours(7, 5, 0) < Date.now() && new Date().setHours(20, 6, 0) > Date.now() ? 13 : 11) *
+                    60 *
+                    60000 +
+                360000 >
+                Date.now()
+        );
+        state = await this.getStateAsync('DailyNextUpdate');
+        startForbidden.daily = !!(state && state.ts && state.ts + 6 * 60 * 60000 + 360000 > Date.now()); // every 6 hour s+ random 5 Minutes + random 10 seconds
 
         updateInterval = this.setInterval(() => {
             const now = new Date();
@@ -573,16 +628,21 @@ class Accuweather extends utils.Adapter {
                 _get12HoursTimeout();
             }
         }, 300000); // 5 minutes
-        if (!this.config.apiCallProtection) {
-            try {
+        try {
+            if (!startForbidden.hourly) {
+                this.log.info('Update hourly weather!');
                 await this.request12Hours();
-                await this.requestCurrent();
-                await this.request5Days();
-            } catch (error: any) {
-                this.log.error(error);
             }
-        } else {
-            this.log.info('The data has not been updated. The normal update cycle is running.');
+            if (!startForbidden.current) {
+                this.log.info('Update current weather!');
+                await this.requestCurrent();
+            }
+            if (!startForbidden.daily) {
+                this.log.info('Update daily weather!');
+                await this.request5Days();
+            }
+        } catch (error: any) {
+            this.log.error(error);
         }
 
         /*

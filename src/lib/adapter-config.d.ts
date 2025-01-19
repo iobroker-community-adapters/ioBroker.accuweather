@@ -7,7 +7,6 @@ declare global {
             apiKeyEncrypted:string;
             language: string;
             loKey: string;
-            apiCallProtection: boolean;
             metric: "Metric" | "Imperial";
         }
     }
