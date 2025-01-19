@@ -134,6 +134,9 @@ export class Accuapi {
         this.generateReqUrl();
         try {
             const response = await axios.get(this.url ? this.url : '');
+            if (response && response.status !== 200) {
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
+            }
             return response.data;
         } catch (error: any) {
             throw new Error(

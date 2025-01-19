@@ -553,7 +553,7 @@ class Accuweather extends utils.Adapter {
         };
         _get5DaysTimeout();
       }
-      if (now.getMinutes() < 60) {
+      if (now.getMinutes() < 5) {
         const _getMinutesTimeout = () => {
           timeout2 && this.clearTimeout(timeout2);
           timeout2 = this.setTimeout(
@@ -591,7 +591,7 @@ class Accuweather extends utils.Adapter {
         };
         _get12HoursTimeout();
       }
-    }, 6e4);
+    }, 3e5);
     try {
       if (!startForbidden.hourly) {
         this.log.info("Update hourly weather!");

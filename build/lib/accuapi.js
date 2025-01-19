@@ -136,6 +136,9 @@ class Accuapi {
     this.generateReqUrl();
     try {
       const response = await import_axios.default.get(this.url ? this.url : "");
+      if (response && response.status !== 200) {
+        throw new Error(`Status: ${response.status} text: ${response.statusText}`);
+      }
       return response.data;
     } catch (error) {
       throw new Error(
