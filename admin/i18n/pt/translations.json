@@ -6,6 +6,5 @@
     "language": "Língua",
     "loKey": "Chave de localização",
     "lo_help": "Para obter a chave de localização, vá para https://www.accuweather.com/ e insira o nome da sua cidade ou tente inserir suas coordenadas (latitude, longitude). A sua chave de localização será o número no final do URL.",
-    "apiCallProtection": "Nenhuma atualização de dados ao reiniciar o adaptador. (recomendado)",
     "metric": "Sistema de medição"
 }

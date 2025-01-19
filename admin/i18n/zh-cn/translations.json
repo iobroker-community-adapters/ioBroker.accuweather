@@ -6,6 +6,5 @@
     "language": "语言",
     "loKey": "位置键",
     "lo_help": "要获取位置密钥，请访问https://www.accuweather.com/并输入您的城市名称，或尝试输入您的坐标（纬度，经度）。您的位置键将是URL末尾的数字。",
-    "apiCallProtection": "重新启动适配器时没有数据更新。 （受到推崇的）",
     "metric": "测量系统"
 }

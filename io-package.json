@@ -163,7 +163,7 @@
     "apiKeyEncrypted": "",
     "loKey": "",
     "language": "",
-    "apiCallProtection": true
+    "metric": "Metric"
   },
   "protectedNative": [
     "apiKeyEncrypted"
