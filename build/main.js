@@ -423,21 +423,21 @@ class Accuweather extends utils.Adapter {
     if (typeof this.forecast !== "undefined") {
       const loc = this.config.loKey;
       const lang = this.config.language;
-      this.forecast.localkey(loc).timeInt("daily/5day").language(lang)[this.config.metric](true).details(true).get().then((res) => this.setDailyStates(res)).catch((err) => this.log.error(String(err)));
+      this.forecast.localkey(loc).timeInt("daily/5day").language(lang).metric(true).details(true).get().then((res) => this.setDailyStates(res)).catch((err) => this.log.error(String(err)));
     }
   }
   request12Hours() {
     if (typeof this.forecast !== "undefined") {
       const loc = this.config.loKey;
       const lang = this.config.language;
-      this.forecast.localkey(loc).timeInt("hourly/12hour").language(lang)[this.config.metric](true).details(true).get().then((res) => this.setHourlyStates(res)).catch((err) => this.log.error(err));
+      this.forecast.localkey(loc).timeInt("hourly/12hour").language(lang).metric(true).details(true).get().then((res) => this.setHourlyStates(res)).catch((err) => this.log.error(err));
     }
   }
   requestCurrent() {
     if (typeof this.forecast !== "undefined") {
       const loc = this.config.loKey;
       const lang = this.config.language;
-      this.forecast.localkey(loc).timeInt().language(lang)[this.config.metric](true).details(true).getCurrent().then((res) => this.setCurrentStates(res)).catch((err) => this.log.error(err));
+      this.forecast.localkey(loc).timeInt().language(lang).metric(true).details(true).getCurrent().then((res) => this.setCurrentStates(res)).catch((err) => this.log.error(err));
     }
   }
   async onReady() {
