@@ -1,0 +1,42 @@
+{
+    "configurations": [
+        {
+            "name": "Attach to remote",
+            "port": 9229,
+            "request": "attach",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/.dev-server/default/node_modules/**/*.js"
+            ],
+            "restart": true,
+            "type": "node"
+        },
+        {
+            "name": "Attach to remote fresh",
+            "port": 9229,
+            "request": "attach",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/.dev-server/fresh/node_modules/**/*.js"
+            ],
+            "restart": true,
+            "type": "node"
+        },
+        {
+            "address": "127.0.0.1",
+            "localRoot": "${workspaceFolder}",
+            "name": "attach to ioBroker-Adapter",
+            "port": 9229,
+            "remoteRoot": "${workspaceFolder}/.dev-server/default/node_modules/iobroker.weather-warnings",
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "smartStep": true,
+            "type": "node"
+        }
+    ],
+    // node --inspect=0.0.0.0:9229 .dev-server/default/node_modules/iobroker.weather-warnings/ --logs --force
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0"
+}
