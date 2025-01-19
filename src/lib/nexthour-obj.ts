@@ -1,4 +1,3 @@
-import { adapter } from '@iobroker/adapter-core';
 import type Accuweather from '../main';
 
 export async function createSummaryObjects(adapter: Accuweather): Promise<void> {
@@ -18,7 +17,11 @@ export async function createSummaryObjects(adapter: Accuweather): Promise<void> 
 
     for (const key in _obj) {
         const k = key as keyof typeof _obj;
-        await adapter.extendObject(key, _obj[k]);
+        const stateObj = _obj[k];
+        if (stateObj && stateObj.common && stateObj.common.unit) {
+            stateObj.common.unit = metric2Imperial(adapter, stateObj.common.unit);
+        }
+        await adapter.extendObject(key, stateObj);
     }
 }
 
@@ -47,7 +50,7 @@ export async function createNextHourForecatObjects(hour: string, adapter: Accuwe
             measure[nkey].common.role = `${role}.forecast.${hour}`;
         }
         adapter.log.debug(`key: ${nkey}, role:${JSON.stringify(measure[nkey].common.role)}, base: ${role}`);
-        adapter.extendObject(nkey, measure[nkey]);
+        await adapter.extendObject(nkey, measure[nkey]);
     }
 }
 
@@ -67,7 +70,12 @@ export async function createCurrentConditionObjects(adapter: Accuweather): Promi
 
     for (const key in obj.default) {
         const k = key as keyof typeof obj.default;
-        await adapter.extendObject(key.replace('nextHour', 'Current'), obj.default[k]);
+        const stateObj = obj.default[k];
+        if (stateObj && stateObj.common && stateObj.common.unit) {
+            stateObj.common.unit = metric2Imperial(adapter, stateObj.common.unit);
+        }
+
+        await adapter.extendObject(key.replace('nextHour', 'Current'), stateObj);
     }
 }
 
@@ -98,7 +106,7 @@ export async function createDailyForecastObjects(adapter: Accuweather): Promise<
                 if (measure[nkey].common.role) {
                     measure[nkey].common.role = `${role}.forecast.${i - 1}`;
                 }
-                adapter.extendObject(nkey, measure[nkey]);
+                await adapter.extendObject(nkey, measure[nkey]);
             } else {
                 ['Day', 'Night'].forEach(dp => {
                     nkey = String(key).replace('dayn.', `Day${i}.`).replace('dayPart.', `${dp}.`);
@@ -107,7 +115,7 @@ export async function createDailyForecastObjects(adapter: Accuweather): Promise<
                     if (measure[nkey].common.role) {
                         measure[nkey].common.role = `${role}.forecast.${i - 1}`;
                     }
-                    adapter.extendObject(nkey, measure[nkey]);
+                    adapter.extendObject(nkey, measure[nkey]).catch(() => {});
                 });
             }
         }

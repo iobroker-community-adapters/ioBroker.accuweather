@@ -35,9 +35,9 @@ __export(nexthour_obj_exports, {
   createSummaryObjects: () => createSummaryObjects
 });
 module.exports = __toCommonJS(nexthour_obj_exports);
-async function createSummaryObjects(adapter2) {
+async function createSummaryObjects(adapter) {
   const obj = await Promise.resolve().then(() => __toESM(require("../../lib/summaryObject.json")));
-  await adapter2.extendObject("Summary", {
+  await adapter.extendObject("Summary", {
     type: "channel",
     common: {
       name: "Weather Summary"
@@ -47,12 +47,16 @@ async function createSummaryObjects(adapter2) {
   const _obj = Object.assign({}, obj.default);
   for (const key in _obj) {
     const k = key;
-    await adapter2.extendObject(key, _obj[k]);
+    const stateObj = _obj[k];
+    if (stateObj && stateObj.common && stateObj.common.unit) {
+      stateObj.common.unit = metric2Imperial(adapter, stateObj.common.unit);
+    }
+    await adapter.extendObject(key, stateObj);
   }
 }
-async function createNextHourForecatObjects(hour, adapter2) {
+async function createNextHourForecatObjects(hour, adapter) {
   const obj = await Promise.resolve().then(() => __toESM(require("../../lib/nextHourObject.json")));
-  await adapter2.extendObject(`Hourly.h${hour}`, {
+  await adapter.extendObject(`Hourly.h${hour}`, {
     type: "channel",
     common: {
       name: `Hour ${hour} Forecast`
@@ -65,19 +69,19 @@ async function createNextHourForecatObjects(hour, adapter2) {
     const measure = {};
     const nkey = String(key).replace("nextHour", `Hourly.h${hour}`);
     const role = _obj[key].common.role;
-    _obj[key].common.unit = metric2Imperial(adapter2, _obj[key].common.unit);
+    _obj[key].common.unit = metric2Imperial(adapter, _obj[key].common.unit);
     measure[nkey] = Object.assign({}, _obj[key]);
     measure[nkey].common = Object.assign({}, _obj[key].common);
     if (measure[nkey].common.role) {
       measure[nkey].common.role = `${role}.forecast.${hour}`;
     }
-    adapter2.log.debug(`key: ${nkey}, role:${JSON.stringify(measure[nkey].common.role)}, base: ${role}`);
-    adapter2.extendObject(nkey, measure[nkey]);
+    adapter.log.debug(`key: ${nkey}, role:${JSON.stringify(measure[nkey].common.role)}, base: ${role}`);
+    await adapter.extendObject(nkey, measure[nkey]);
   }
 }
-async function createCurrentConditionObjects(adapter2) {
+async function createCurrentConditionObjects(adapter) {
   const obj = await Promise.resolve().then(() => __toESM(require("../../lib/currentCondObject.json")));
-  await adapter2.extendObject("Current", {
+  await adapter.extendObject("Current", {
     type: "channel",
     common: {
       name: "Current Conditions"
@@ -86,13 +90,17 @@ async function createCurrentConditionObjects(adapter2) {
   });
   for (const key in obj.default) {
     const k = key;
-    await adapter2.extendObject(key.replace("nextHour", "Current"), obj.default[k]);
+    const stateObj = obj.default[k];
+    if (stateObj && stateObj.common && stateObj.common.unit) {
+      stateObj.common.unit = metric2Imperial(adapter, stateObj.common.unit);
+    }
+    await adapter.extendObject(key.replace("nextHour", "Current"), stateObj);
   }
 }
-async function createDailyForecastObjects(adapter2) {
+async function createDailyForecastObjects(adapter) {
   const obj = await Promise.resolve().then(() => __toESM(require("../../lib/DailyObject.json")));
   for (let i = 1; i <= 5; i++) {
-    await adapter2.extendObject(`Daily.Day${i}`, {
+    await adapter.extendObject(`Daily.Day${i}`, {
       type: "channel",
       common: {
         name: `Day ${i} Forecast`
@@ -105,7 +113,7 @@ async function createDailyForecastObjects(adapter2) {
       const measure = {};
       let nkey = "";
       const role = _obj[key].common.role;
-      _obj[key].common.unit = metric2Imperial(adapter2, _obj[key].common.unit);
+      _obj[key].common.unit = metric2Imperial(adapter, _obj[key].common.unit);
       if (!String(key).indexOf("dayPart.")) {
         nkey = String(key).replace("dayn.", `Day${i}.`);
         measure[nkey] = Object.assign({}, _obj[key]);
@@ -113,7 +121,7 @@ async function createDailyForecastObjects(adapter2) {
         if (measure[nkey].common.role) {
           measure[nkey].common.role = `${role}.forecast.${i - 1}`;
         }
-        adapter2.extendObject(nkey, measure[nkey]);
+        await adapter.extendObject(nkey, measure[nkey]);
       } else {
         ["Day", "Night"].forEach((dp) => {
           nkey = String(key).replace("dayn.", `Day${i}.`).replace("dayPart.", `${dp}.`);
@@ -122,19 +130,20 @@ async function createDailyForecastObjects(adapter2) {
           if (measure[nkey].common.role) {
             measure[nkey].common.role = `${role}.forecast.${i - 1}`;
           }
-          adapter2.extendObject(nkey, measure[nkey]);
+          adapter.extendObject(nkey, measure[nkey]).catch(() => {
+          });
         });
       }
     }
   }
 }
-async function createHourlyForecastObjects(adapter2) {
+async function createHourlyForecastObjects(adapter) {
   for (let hr = 0; hr < 24; hr++) {
-    await createNextHourForecatObjects(String(hr), adapter2);
+    await createNextHourForecatObjects(String(hr), adapter);
   }
 }
-function metric2Imperial(adapter2, unit) {
-  if (unit === void 0 || adapter2.config.metric === "Metric") {
+function metric2Imperial(adapter, unit) {
+  if (unit === void 0 || adapter.config.metric === "Metric") {
     return unit;
   }
   switch (unit) {
