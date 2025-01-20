@@ -1,4 +1,5 @@
 'use strict';
+import { adapter } from '@iobroker/adapter-core';
 import axios from 'axios';
 axios.defaults.timeout = 10000;
 //const moment = require("moment");
@@ -198,7 +199,11 @@ export class Accuapi {
                         text: error.cause.text,
                     },
                 });
-            } else if (error && error.response && error.status >= 400 && error.status <= 500) {
+            } else if (
+                error &&
+                error.response &&
+                ((error.status >= 400 && error.status <= 500) || error.status === 503)
+            ) {
                 throw new Error(`Status: ${error.response.status} text: ${error.response.statusText}`, {
                     cause: {
                         status: error.status,
@@ -207,7 +212,7 @@ export class Accuapi {
                 });
             } else {
                 throw new Error(
-                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+                    `Forecast cannot be retrieved. ERROR: status:${error.status} ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
                 );
             }
         }
