@@ -1,5 +1,4 @@
 'use strict';
-import { adapter } from '@iobroker/adapter-core';
 import axios from 'axios';
 axios.defaults.timeout = 10000;
 //const moment = require("moment");
