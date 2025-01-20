@@ -458,7 +458,7 @@ class Accuweather extends utils.Adapter {
   async onReady() {
     const nameSpaceObj = await this.getForeignObjectAsync(this.namespace);
     if (!nameSpaceObj) {
-      await this.setForeignObject(this.namespace, {
+      await this.setForeignObjectAsync(this.namespace, {
         _id: this.namespace,
         type: "meta",
         common: { name: "Accuweather device", type: "meta.folder" },
@@ -470,7 +470,7 @@ class Accuweather extends utils.Adapter {
       obj.native.apiKeyEncrypted = this.encrypt(obj.native.apiKey);
       this.config.apiKeyEncrypted = obj.native.apiKey;
       delete obj.native.apiKey;
-      await this.setForeignObject(`system.adapter.${this.namespace}`, obj);
+      await this.setForeignObjectAsync(`system.adapter.${this.namespace}`, obj);
     }
     if (this.config.metric !== "Metric" && this.config.metric !== "Imperial") {
       this.config.metric = "Metric";
@@ -543,9 +543,13 @@ class Accuweather extends utils.Adapter {
                 timeout1 = null;
                 await this.request5Days();
               } catch (error) {
-                this.log.error(error);
-                this.log.info(`Retry in 10 Minutes`);
-                timeout1 = this.setTimeout(_get5DaysTimeout, 6e5);
+                if (error && error.cause && error.cause.status) {
+                  this.log.error(error.message);
+                } else {
+                  this.log.error(error);
+                  this.log.info(`Retry in 10 Minutes`);
+                  timeout1 = this.setTimeout(_get5DaysTimeout, 6e5);
+                }
               }
             },
             Math.random() * 1e4 + 1
@@ -562,9 +566,13 @@ class Accuweather extends utils.Adapter {
                 timeout2 = null;
                 await this.requestCurrent();
               } catch (error) {
-                this.log.error(error);
-                this.log.info(`Retry in 10 Minutes`);
-                timeout2 = this.setTimeout(_getMinutesTimeout, 6e5);
+                if (error && error.cause && error.cause.status) {
+                  this.log.error(error.message);
+                } else {
+                  this.log.error(error);
+                  this.log.info(`Retry in 10 Minutes`);
+                  timeout2 = this.setTimeout(_getMinutesTimeout, 6e5);
+                }
               }
             },
             Math.random() * 1e4 + 1
@@ -581,9 +589,13 @@ class Accuweather extends utils.Adapter {
                 timeout3 = null;
                 await this.request12Hours();
               } catch (error) {
-                this.log.error(error);
-                this.log.info(`Retry in 10 Minutes`);
-                timeout3 = this.setTimeout(_get12HoursTimeout, 6e5);
+                if (error && error.cause && error.cause.status) {
+                  this.log.error(error.message);
+                } else {
+                  this.log.error(error);
+                  this.log.info(`Retry in 10 Minutes`);
+                  timeout3 = this.setTimeout(_get12HoursTimeout, 6e5);
+                }
               }
             },
             Math.random() * 1e4 + 1

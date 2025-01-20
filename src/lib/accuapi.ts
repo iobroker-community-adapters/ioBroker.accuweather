@@ -110,7 +110,7 @@ export class Accuapi {
     }
 
     /**
-     * Generates the request URL for the AccuWeather API.
+     * Generates the request URL for the AccuWeather API
      *
      * @param current - A boolean indicating whether to generate the URL for current conditions or forecasts.
      *                            If true, the URL for current conditions is generated.
@@ -132,13 +132,38 @@ export class Accuapi {
      */
     async get(): Promise<any> {
         this.generateReqUrl();
+        let response;
         try {
-            const response = await axios.get(this.url ? this.url : '');
+            response = await axios.get(this.url ? this.url : '');
+            if (typeof response.data !== 'object') {
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+                    cause: {
+                        status: 503,
+                        text: 'Service Unavailable',
+                    },
+                });
+            }
             return response.data;
         } catch (error: any) {
-            throw new Error(
-                `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
-            );
+            if (error && error.cause && error.cause.status === 503) {
+                throw new Error(`Status: ${error.cause.status} text: ${error.cause.text}`, {
+                    cause: {
+                        status: error.cause.status,
+                        text: error.cause.text,
+                    },
+                });
+            } else if (error && error.response && error.status >= 400 && error.status <= 500) {
+                throw new Error(`Status: ${error.response.status} text: ${error.response.statusText}`, {
+                    cause: {
+                        status: error.status,
+                        text: error.statusText,
+                    },
+                });
+            } else {
+                throw new Error(
+                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+                );
+            }
         }
     }
 
@@ -153,13 +178,38 @@ export class Accuapi {
         //const body = require("./test-data/currentCond.json");
         //
         this.generateReqUrl(true);
+        let response;
         try {
-            const response = await axios.get(this.url ? this.url : '');
+            response = await axios.get(this.url ? this.url : '');
+            if (typeof response.data !== 'object') {
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+                    cause: {
+                        status: 503,
+                        text: 'Service Unavailable',
+                    },
+                });
+            }
             return response.data;
         } catch (error: any) {
-            throw new Error(
-                `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
-            );
+            if (error && error.cause && error.cause.status === 503) {
+                throw new Error(`Status: ${error.cause.status} text: ${error.cause.text}`, {
+                    cause: {
+                        status: error.cause.status,
+                        text: error.cause.text,
+                    },
+                });
+            } else if (error && error.response && error.status >= 400 && error.status <= 500) {
+                throw new Error(`Status: ${error.response.status} text: ${error.response.statusText}`, {
+                    cause: {
+                        status: error.status,
+                        text: error.statusText,
+                    },
+                });
+            } else {
+                throw new Error(
+                    `Forecast cannot be retrieved. ERROR: ${(error.response && JSON.stringify(error.response.data)) || error.toString()}`,
+                );
+            }
         }
     }
 }
