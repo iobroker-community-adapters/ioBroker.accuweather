@@ -110,7 +110,7 @@ export class Accuapi {
     }
 
     /**
-     * Generates the request URL for the AccuWeather API.
+     * Generates the request URL for the AccuWeather API
      *
      * @param current - A boolean indicating whether to generate the URL for current conditions or forecasts.
      *                            If true, the URL for current conditions is generated.
@@ -135,21 +135,28 @@ export class Accuapi {
         let response;
         try {
             response = await axios.get(this.url ? this.url : '');
-            if (response && response.status !== 200) {
-                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
-            }
             if (typeof response.data !== 'object') {
-                response.status = 503;
-                response.statusText = 'Service Unavailable';
-                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+                    cause: {
+                        status: 503,
+                        text: 'Service Unavailable',
+                    },
+                });
             }
             return response.data;
         } catch (error: any) {
-            if (response && response.status !== 200) {
-                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+            if (error && error.cause && error.cause.status === 503) {
+                throw new Error(`Status: ${error.cause.status} text: ${error.cause.text}`, {
                     cause: {
-                        status: response.status,
-                        text: response.statusText,
+                        status: error.cause.status,
+                        text: error.cause.text,
+                    },
+                });
+            } else if (error && error.response && error.status >= 400 && error.status <= 500) {
+                throw new Error(`Status: ${error.response.status} text: ${error.response.statusText}`, {
+                    cause: {
+                        status: error.status,
+                        text: error.statusText,
                     },
                 });
             } else {
@@ -174,21 +181,28 @@ export class Accuapi {
         let response;
         try {
             response = await axios.get(this.url ? this.url : '');
-            if (response && response.status !== 200) {
-                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
-            }
             if (typeof response.data !== 'object') {
-                response.status = 503;
-                response.statusText = 'Service Unavailable';
-                throw new Error(`Status: ${response.status} text: ${response.statusText}`);
+                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+                    cause: {
+                        status: 503,
+                        text: 'Service Unavailable',
+                    },
+                });
             }
             return response.data;
         } catch (error: any) {
-            if (response && response.status !== 200) {
-                throw new Error(`Status: ${response.status} text: ${response.statusText}`, {
+            if (error && error.cause && error.cause.status === 503) {
+                throw new Error(`Status: ${error.cause.status} text: ${error.cause.text}`, {
                     cause: {
-                        status: response.status,
-                        text: response.statusText,
+                        status: error.cause.status,
+                        text: error.cause.text,
+                    },
+                });
+            } else if (error && error.response && error.status >= 400 && error.status <= 500) {
+                throw new Error(`Status: ${error.response.status} text: ${error.response.statusText}`, {
+                    cause: {
+                        status: error.status,
+                        text: error.statusText,
                     },
                 });
             } else {

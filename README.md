@@ -43,6 +43,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 -->
 ### **WORK IN PROGRESS**
 * (ticaki) Missing Http error handling added
+* (ticaki) For error codes from the 400 series, do not attempt any unscheduled reconnections. 
 
 ### 2.1.0-alpha.0 (2025-01-19)
 * (ticaki) Change: min. js-controller to 6.0.11
