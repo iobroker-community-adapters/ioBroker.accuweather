@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "accuweather",
-    "version": "2.1.0-alpha.0",
+    "version": "2.1.0-alpha.1",
     "news": {
+      "2.1.0-alpha.1": {
+        "en": "Missing Http error handling added\nFor error codes from the 400 series, do not attempt any unscheduled reconnections.",
+        "de": "Fehlen Http Fehlerbehandlung hinzugefügt\nBei Fehlercodes aus der 400er Serie versuchen Sie keine ungezähmten Wiederverschaltungen.",
+        "ru": "Пропажа добавлена обработка ошибок Http\nДля кодов ошибок из 400-й серии не пытайтесь каких-либо незапланированных перезаключений.",
+        "pt": "Faltando Manuseio de erro Http adicionado\nPara códigos de erro da série 400, não tente nenhuma reconexão não programada.",
+        "nl": "Ontbrekend Http-foutafhandeling toegevoegd\nVoor foutcodes uit de 400-serie, probeer geen ongeplande reconnecties.",
+        "fr": "Manque Gestion des erreurs Http ajoutée\nPour les codes d'erreur de la série 400, ne tentez pas de reconnections non programmées.",
+        "it": "Mancato Gestione degli errori Http aggiunto\nPer i codici di errore della serie 400, non tentare alcuna riconnessione non programmata.",
+        "es": "Falta Tratamiento de error Htp añadido\nPara los códigos de error de la serie 400, no intenten ninguna reconexión no programada.",
+        "pl": "Brak Dodano obsługę błędów Http\nDla kodów błędów z serii 400, nie próbuj żadnych nieplanowanych ponownych połączeń.",
+        "uk": "Мапа Додана обробка помилок Http\nДля кодів помилок з серії 400 не намагайтеся ніяких небажаних відключень.",
+        "zh-cn": "失踪 添加 Http 错误处理\n对于400系列的错误代码,不要尝试任何不定期的重联."
+      },
       "2.1.0-alpha.0": {
         "en": "Change: min. js-controller to 6.0.11\nChange: Outdated data is updated at startup.\nNew: Photo link added in current weather\nNew: Metric and Imperial are available for selection - Will be taken into account with the next data update.\nNew: In the event of a data retrieval error, an attempt is made again after 10 minute\nRemove admin option (restart blocking)\nRewritten in Typescript",
         "de": "Änderung: min. js-controller auf 6.0.11\nÄnderung: Überholte Daten werden beim Start aktualisiert.\nNeu: Fotolink im aktuellen Wetter hinzugefügt\nNeu: Metric und Imperial stehen zur Auswahl - Wird mit dem nächsten Datenupdate berücksichtigt.\nNeu: Bei einem Datenabruffehler wird nach 10 Minuten erneut versucht\nAdmin-Option entfernen (Restart blockieren)\nNeu geschrieben in Typescript",
@@ -80,19 +93,6 @@
         "pl": "wprowadzono dyrekcję Wind Direction Text i Cloud Cover\nAdded json configig",
         "uk": "додана хмарна кришка вітру\nДодано json config",
         "zh-cn": "添加了Wind Direction案文 und Cloud Cover\n增编"
-      },
-      "1.2.4": {
-        "en": "dependencies update",
-        "de": "Abhängigkeiten aktualisieren",
-        "ru": "обновление зависимостей",
-        "pt": "atualização de dependências",
-        "nl": "afhankelijkheden bijwerken",
-        "fr": "mise à jour des dépendances",
-        "it": "aggiornamento delle dipendenze",
-        "es": "actualización de dependencias",
-        "pl": "aktualizacja zależności",
-        "zh-cn": "依赖更新",
-        "uk": "оновлення залежностей"
       }
     },
     "titleLang": {
