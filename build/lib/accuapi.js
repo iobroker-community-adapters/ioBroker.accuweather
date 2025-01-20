@@ -196,7 +196,7 @@ class Accuapi {
             text: error.cause.text
           }
         });
-      } else if (error && error.response && error.status >= 400 && error.status <= 500) {
+      } else if (error && error.response && (error.status >= 400 && error.status <= 500 || error.status === 503)) {
         throw new Error(`Status: ${error.response.status} text: ${error.response.statusText}`, {
           cause: {
             status: error.status,
@@ -205,7 +205,7 @@ class Accuapi {
         });
       } else {
         throw new Error(
-          `Forecast cannot be retrieved. ERROR: ${error.response && JSON.stringify(error.response.data) || error.toString()}`
+          `Forecast cannot be retrieved. ERROR: status:${error.status} ${error.response && JSON.stringify(error.response.data) || error.toString()}`
         );
       }
     }
