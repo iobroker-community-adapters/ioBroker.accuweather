@@ -576,10 +576,7 @@ class Accuweather extends utils.Adapter {
                                 timeout1 = null;
                                 await this.request5Days();
                             } catch (error: any) {
-                                if (error && error.cause && error.cause.status) {
-                                    this.log.error(error.message);
-                                } else {
-                                    this.log.error(error);
+                                if (this.errorLog(error)) {
                                     this.log.info(`Retry in 10 Minutes`);
                                     timeout1 = this.setTimeout(_get5DaysTimeout, 600000);
                                 }
@@ -599,10 +596,7 @@ class Accuweather extends utils.Adapter {
                                 timeout2 = null;
                                 await this.requestCurrent();
                             } catch (error: any) {
-                                if (error && error.cause && error.cause.status) {
-                                    this.log.error(error.message);
-                                } else {
-                                    this.log.error(error);
+                                if (this.errorLog(error)) {
                                     this.log.info(`Retry in 10 Minutes`);
                                     timeout2 = this.setTimeout(_getMinutesTimeout, 600000);
                                 }
@@ -625,10 +619,7 @@ class Accuweather extends utils.Adapter {
                                 timeout3 = null;
                                 await this.request12Hours();
                             } catch (error: any) {
-                                if (error && error.cause && error.cause.status) {
-                                    this.log.error(error.message);
-                                } else {
-                                    this.log.error(error);
+                                if (this.errorLog(error)) {
                                     this.log.info(`Retry in 10 Minutes`);
                                     timeout3 = this.setTimeout(_get12HoursTimeout, 600000);
                                 }
@@ -654,7 +645,7 @@ class Accuweather extends utils.Adapter {
                 await this.request5Days();
             }
         } catch (error: any) {
-            this.log.error(error);
+            this.errorLog(error);
         }
 
         /*
@@ -703,6 +694,20 @@ class Accuweather extends utils.Adapter {
         await this.subscribeStatesAsync('updateDaily');
     }
 
+    private errorLog(error: any): boolean {
+        if (error && error.cause && error.cause.status) {
+            if (error.cause.status === 503) {
+                this.log.error(
+                    `${error.message} - apikey incorrect, too many queries or incorrect settings in accuweather!`,
+                );
+            } else {
+                this.log.error(`${error.message} - User action required!`);
+            }
+            return false;
+        }
+        this.log.error(error);
+        return true;
+    }
     /**
      * Is called when adapter shuts down - callback has to be called under any circumstances!
      *
