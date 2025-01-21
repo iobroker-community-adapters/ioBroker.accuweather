@@ -543,10 +543,7 @@ class Accuweather extends utils.Adapter {
                 timeout1 = null;
                 await this.request5Days();
               } catch (error) {
-                if (error && error.cause && error.cause.status) {
-                  this.log.error(error.message);
-                } else {
-                  this.log.error(error);
+                if (this.errorLog(error)) {
                   this.log.info(`Retry in 10 Minutes`);
                   timeout1 = this.setTimeout(_get5DaysTimeout, 6e5);
                 }
@@ -566,10 +563,7 @@ class Accuweather extends utils.Adapter {
                 timeout2 = null;
                 await this.requestCurrent();
               } catch (error) {
-                if (error && error.cause && error.cause.status) {
-                  this.log.error(error.message);
-                } else {
-                  this.log.error(error);
+                if (this.errorLog(error)) {
                   this.log.info(`Retry in 10 Minutes`);
                   timeout2 = this.setTimeout(_getMinutesTimeout, 6e5);
                 }
@@ -589,10 +583,7 @@ class Accuweather extends utils.Adapter {
                 timeout3 = null;
                 await this.request12Hours();
               } catch (error) {
-                if (error && error.cause && error.cause.status) {
-                  this.log.error(error.message);
-                } else {
-                  this.log.error(error);
+                if (this.errorLog(error)) {
                   this.log.info(`Retry in 10 Minutes`);
                   timeout3 = this.setTimeout(_get12HoursTimeout, 6e5);
                 }
@@ -618,7 +609,7 @@ class Accuweather extends utils.Adapter {
         await this.request5Days();
       }
     } catch (error) {
-      this.log.error(error);
+      this.errorLog(error);
     }
     await this.extendObject("updateCurrent", {
       type: "state",
@@ -656,6 +647,20 @@ class Accuweather extends utils.Adapter {
     await this.subscribeStatesAsync("updateCurrent");
     await this.subscribeStatesAsync("updateHourly");
     await this.subscribeStatesAsync("updateDaily");
+  }
+  errorLog(error) {
+    if (error && error.cause && error.cause.status) {
+      if (error.cause.status === 503) {
+        this.log.error(
+          `${error.message} - apikey incorrect, too many queries or incorrect settings in accuweather!`
+        );
+      } else {
+        this.log.error(`${error.message} - User action required!`);
+      }
+      return false;
+    }
+    this.log.error(error);
+    return true;
   }
   /**
    * Is called when adapter shuts down - callback has to be called under any circumstances!
