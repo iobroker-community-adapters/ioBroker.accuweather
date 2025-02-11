@@ -84,8 +84,5 @@
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/ioBroker.accuweather/issues"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "readmeFilename": "README.md"
 }
