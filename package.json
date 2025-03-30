@@ -37,7 +37,7 @@
     "@iobroker/types": "^7.0.6",
     "@tsconfig/node20": "^20.1.5",
     "@types/chai": "^4.3.11",
-    "@types/chai-as-promised": "^8.0.1",
+    "@types/chai-as-promised": "^8.0.2",
     "@types/gulp": "^4.0.17",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.14",
