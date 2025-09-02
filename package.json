@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.3.2",
-    "axios": "^1.8.4",
+    "axios": "^1.11.0",
     "qs": "^6.14.0"
   },
   "devDependencies": {
@@ -36,12 +36,12 @@
     "@iobroker/testing": "^5.1.1",
     "@iobroker/types": "^7.0.7",
     "@tsconfig/node20": "^20.1.6",
-    "@types/node": "^22.15.29",
+    "@types/node": "^24.3.0",
     "@types/qs": "^6.14.0",
     "rimraf": "^6.0.1",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "main": "build/main.js",
   "files": [
