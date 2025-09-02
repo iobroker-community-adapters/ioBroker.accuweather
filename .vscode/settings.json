@@ -1,6 +1,7 @@
 {
-    //"editor.formatOnSave": true,
-    "eslint.enable": true
+    "eslint.enable": true,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "json.schemas": [
         {
             "fileMatch": [
@@ -12,9 +13,12 @@
             "fileMatch": [
                 "admin/jsonConfig.json",
                 "admin/jsonCustom.json",
-                "admin/jsonTab.json"
+                "admin/jsonTab.json",
+                "admin/jsonConfig.json5",
+                "admin/jsonCustom.json5",
+                "admin/jsonTab.json5"
             ],
-            "url": "https://raw.githubusercontent.com/ioBroker/adapter-react-v5/main/schemas/jsonConfig.json"
+            "url": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/packages/jsonConfig/schemas/jsonConfig.json"
         }
     ],
     //"typescript.tsdk": "node_modules/typescript/lib"
