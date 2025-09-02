@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "accuweather",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "news": {
+      "2.1.1": {
+        "en": "Dependencies have been updated",
+        "de": "Abhängigkeiten wurden aktualisiert",
+        "ru": "Зависимости были обновлены",
+        "pt": "As dependências foram atualizadas",
+        "nl": "Afhankelijkheden zijn bijgewerkt",
+        "fr": "Les dépendances ont été actualisées",
+        "it": "Le dipendenze sono state aggiornate",
+        "es": "Se han actualizado las dependencias",
+        "pl": "Zaktualizowano zależności",
+        "uk": "Залежність було оновлено",
+        "zh-cn": "依赖关系已更新"
+      },
       "2.1.0": {
         "en": "Change: min. js-controller to 6.0.11\nChange: Outdated data is updated at startup.\nNew: Photo link added in current weather\nNew: Metric and Imperial are available for selection - Will be taken into account with the next data update.\nNew: In the event of a data retrieval error, an attempt is made again after 10 minute\nRemove admin option (restart blocking)\nRewritten in Typescript\nFor error codes from the 400 series, do not attempt any unscheduled reconnections.",
         "de": "Änderung: min. js-controller auf 6.0.11\nÄnderung: Veraltete Daten werden beim Start aktualisiert.\nNeu: Fotolinkdp im aktuellen Wetter hinzugefügt\nNeu: Metric und Imperial stehen zur Auswahl - Wird mit dem nächsten Datenupdate berücksichtigt.\nNeu: Bei einem Datenabruffehler wird nach 10 Minuten erneut versucht\nAdmin-Option entfernen (Restart blockieren)\nNeu geschrieben in Typescript\nBei Fehlercodes aus der 400er Serie wird kein wiederverbindungsversuch gestartet, es bleibt beim normalen Zyklus.",
@@ -80,19 +93,6 @@
         "pl": "zależność\nuruchomione: błędy wiadomości (pol.)",
         "uk": "фіксована: залежності\nвиправлено: повідомлення про помилку [об'єкт]",
         "zh-cn": "固定:取决于\n固定:错误信息[目标]"
-      },
-      "1.3.1": {
-        "en": "added the Wind Direction Text und Cloud Cover\nAdded json config",
-        "de": "windrichtung Text und Cloud Cover\nHinzugefügt json config",
-        "ru": "добавлено направление ветра Текст und Облачная крышка\nДобавлено json config",
-        "pt": "adicionou o texto de direção do vento und Cloud Cover\nAdicionado json config",
-        "nl": "voegde de Wind Direction Text und Cloud Cover toe\n_",
-        "fr": "ajouté la fenêtre de direction du vent Text und Cloud Cover\nAjouté json config",
-        "it": "aggiunto la direzione del vento Testo und Cloud Cover\nAggiunto json config",
-        "es": "añadido el texto dirección del viento und cubierta de nube\nAñadido json config",
-        "pl": "wprowadzono dyrekcję Wind Direction Text i Cloud Cover\nAdded json configig",
-        "uk": "додана хмарна кришка вітру\nДодано json config",
-        "zh-cn": "添加了Wind Direction案文 und Cloud Cover\n增编"
       }
     },
     "titleLang": {
