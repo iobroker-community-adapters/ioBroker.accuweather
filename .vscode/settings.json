@@ -20,6 +20,6 @@
             ],
             "url": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/packages/jsonConfig/schemas/jsonConfig.json"
         }
-    ],
+    ]
     //"typescript.tsdk": "node_modules/typescript/lib"
 }
