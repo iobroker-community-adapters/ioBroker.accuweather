@@ -122,7 +122,8 @@
       "uk": "Прогноз погоди за допомогою AccuWeather API"
     },
     "authors": [
-      "algar42 <igor.aleschenkov@gmail.com>"
+      "algar42 <igor.aleschenkov@gmail.com>",
+      "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
     ],
     "keywords": [
       "Weather",
@@ -155,7 +156,7 @@
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.17.14"
+        "admin": ">=7.6.17"
       }
     ]
   },
