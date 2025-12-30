@@ -2,10 +2,10 @@
   "name": "iobroker.accuweather",
   "version": "2.1.1",
   "description": "Weather forecast using AccuWeather API",
-  "author": {
-    "name": "algar42",
-    "email": "igor.aleschenkov@gmail.com"
-  },
+  "author": "algar42 <igor.aleschenkov@gmail.com>",
+  "contributors": [
+    "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
+  ],
   "homepage": "https://github.com/iobroker-community-adapters/ioBroker.accuweather",
   "license": "MIT",
   "keywords": [
@@ -72,11 +72,5 @@
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/ioBroker.accuweather/issues"
   },
-  "readmeFilename": "README.md",
-  "contributors": [
-    {
-      "name": "iobroker-community-adapters",
-      "email": "iobroker-community-adapters@gmx.de"
-    }
-  ]
+  "readmeFilename": "README.md"
 }
