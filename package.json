@@ -1,6 +1,6 @@
 {
   "name": "iobroker.accuweather",
-  "version": "2.2.0-alpha.0",
+  "version": "2.2.0",
   "description": "Weather forecast using AccuWeather API",
   "author": "algar42 <igor.aleschenkov@gmail.com>",
   "contributors": [

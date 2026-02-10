@@ -41,7 +41,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 -->
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.2.0 (2026-02-10)
 - (copilot) Adapter requires admin 7.6.17 now
 - (mcm1957) Dependencies have been updated
 
