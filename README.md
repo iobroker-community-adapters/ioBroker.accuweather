@@ -77,6 +77,8 @@ For better view a custom lovelace card is created - see https://github.com/algar
 * (mcm1957) Node 22 support has been added to testing
 * (mcm1957) Dependencies have been updated
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
