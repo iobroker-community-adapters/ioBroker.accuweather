@@ -45,6 +45,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 ### **WORK IN PROGRESS**
 - (copilot) Adapter requires node.js >= 22 now
 - (copilot) Adapter requires admin >= 7.7.22 now
+- (mcm1957) Dependencies have been updated
 
 ### 2.2.0 (2026-02-10)
 - (copilot) Adapter requires admin 7.6.17 now
