@@ -1,6 +1,6 @@
 ![Logo](admin/accuweather.png)
 # ioBroker.accuweather
-
+ 
 ![Number of Installations](http://iobroker.live/badges/accuweather-installed.svg) ![Number of Installations](http://iobroker.live/badges/accuweather-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.accuweather.svg)](https://www.npmjs.com/package/iobroker.accuweather)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.accuweather.svg)](https://www.npmjs.com/package/iobroker.accuweather)
 
