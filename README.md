@@ -43,6 +43,7 @@ For better view a custom lovelace card is created - see https://github.com/algar
 ## Changelog
 
 ### **WORK IN PROGRESS**
+- (copilot) Adapter requires node.js >= 22.19.0 now
 - (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.
 
 ### 2.3.0 (2026-05-04)
